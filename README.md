@@ -601,7 +601,7 @@ Cuando ya estés lista para codear, te sugerimos empezar de esta manera:
   `README.md`.
 * [ ] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
   en `README.md`.
-* [ ] Incluye link a Zeplin en `README.md`.
+* [ ] Incluye link a prototipo de alta fidelidad (Zeplin|Figma|Canva) en `README.md`.
 * [ ] Incluye la `Plan de acción` (Objetivos de Aprendizaje priorizados) de cada programadora en el `README.md` o otro documento.
 * [ ] Incluye el listado de problemas que detectaste a través de tests de
   usabilidad en el `README.md`.

@@ -529,7 +529,7 @@ Cuando ya estés lista para codear, te sugerimos empezar de esta manera:
    tus _coaches_ te compartirán un _link_ a un repo y te darán acceso de lectura
    en ese repo. La otra integrante del equipo deber hacer un fork **del
    repositorio de su compañera** y
-   [configurar](https://gist.github.com/BCasal/026e4c7f5c71418485c1) un `remote`
+   [configurar](https://gist.github.com/SabAlej/b8d8f3a95c3cda5c0ad08a3ebce0f092) un `remote`
    hacia el mismo.
 2. :arrow_down: [Clona](https://help.github.com/articles/cloning-a-repository/)
    tu *fork* a tu computadora (copia local).

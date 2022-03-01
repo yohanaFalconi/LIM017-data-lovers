@@ -13,23 +13,34 @@
 }
 .contFirstScreen{
     display: flex;
-    padding: 40px;
+    padding: 10px;
     background-color:blue;
-
-    width: 90%;
     margin: auto;
     text-align: center;
-    padding-top: 40px;
+   
 }
 .contFirstScreen img{
     width: 35%;
+    height: 35%;
+    margin: auto;
 }
-.firstScreen p{
+.intro{
+    margin:20px;
+}
+#hello{
+    font-size: 25px;
+    margin: 15px;
+}
+#message{
     font-size: 20px;
-    padding:50px 100px;
+    padding: 10px;
+    text-align: justify;
+    margin: 25px;
 }
-.firstScreenButtons{
-    width: 150px;
-    margin: 5px;
-
+/* .firstScreenButtons{
+    /* width: 150px;
+    margin: 5px; */
+#btnStart, #topTen{
+    margin: 15px;
+    padding: 15px;
 }

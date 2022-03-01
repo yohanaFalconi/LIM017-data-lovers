@@ -5,5 +5,31 @@
     list-style: none;
 }
 .mainTitle{
-display: flex;
+    display: flex;
+    font-size: 30px;
+    line-height: 40px; /*altura del título*/
+    padding: 40px;
+    justify-content: center;
+}
+.contFirstScreen{
+    display: flex;
+    padding: 40px;
+    background-color:blue;
+
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    padding-top: 40px;
+}
+.contFirstScreen img{
+    width: 35%;
+}
+.firstScreen p{
+    font-size: 20px;
+    padding:50px 100px;
+}
+.firstScreenButtons{
+    width: 150px;
+    margin: 5px;
+
 }

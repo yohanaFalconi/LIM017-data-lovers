@@ -14,7 +14,7 @@
 }
 .firstScreen{
     background-image: url(../img/forest.jpg);
-
+    display: none;
     min-height: 100vh; 
 }
 .contFirstScreen{

@@ -4,16 +4,16 @@ import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 
 
-let pokemones = data.pokemon;
-for(let prop in pokemones.data){
-    console.log(prop["name"])
-    const text = document.getElementsByClassName("text");
-    text.innerHTML=
-        `<div>
-           <p>Este es el primer pokemón</p>
-           <img src="${pokemones[2].img}">
-        </div>`
-}
+// let pokemones = data.pokemon;
+// for(let prop in pokemones.data){
+//     console.log(prop["name"])
+//     const text = document.getElementsByClassName("text");
+//     text.innerHTML=
+//         `<div>
+//            <p>Este es el primer pokemón</p>
+//            <img src="${pokemones[2].img}">
+//         </div>`
+// }
 
 
 // console.log(pokemones[0]["type"]);

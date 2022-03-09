@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
-
     <section class="firstScreen">
       <header class="mainTitle">
         <h1>Bienvenidos a PokeDéx</h1>
@@ -32,13 +32,59 @@
         </div> -->
       </section>
     </section>
-
+    
     <section class="secondScreen">
-      <p class="container">hola</p>
+      <header class="titleSecondScreen">
+        <h1>POKEDEX</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <input type="search" id="cardPokeSearch"  placeholder="Ingrese el nombre de su pokemón" >    
+                <button>Search</button>
+            <li><button>Evolución por Caramelos</button></li>
+          </ul>
+        </nav>
+        <select class="orderBySelect">
+          <option disabled selected >Ordenar por</option>
+          <option value="bottomNumber" class = "orderOption" >Número inferior</option>
+          <option value="topNumber" class = "orderOption">Número superior</option>
+          <option value="A_Z" class = "orderOption">A-Z</option>
+          <option value="Z_A" class = "orderOption">Z-A</option>
+
+          
+        </select>
+     </header>
+     <div class="blockContent">
+      <aside class="sideBar">
+        <ul class="optionsType">
+         <li class="optionsPokType" id="steel"> Acero </li>
+         <li class="optionsPokType" id="water">Agua</li>
+         <li class="optionsPokType" id="dragon">Dragón</li>
+         <li class="optionsPokType" id="electric">Eléctrico</li>
+         <li class="optionsPokType" id="ghost">Fantasma</li>
+         <li class="optionsPokType" id="fire">Fuego</li>
+         <li class="optionsPokType" id="fairy">Hada</li>
+         <li class="optionsPokType" id="ice">Hielo</li>
+         <li class="optionsPokType" id="bug">Insecto</li>
+         <li class="optionsPokType" id="fighting">Luchador</li>
+         <li class="optionsPokType" id="grass">Planta</li>
+         <li class="optionsPokType" id="psychic">Psíquico</li>
+         <li class="optionsPokType" id="rock" >Roca</li>
+         <li class="optionsPokType" id="normal">Normal</li>
+         <li class="optionsPokType" id="flying">Volador</li>
+         <li class="optionsPokType" id="poison">Veneno</li>
+         <li class="optionsPokType" id="dark">Siniestro</li>
+         <li class="optionsPokType" id="ground">Tierra</li>
+       </ul>
+      </aside>
+      
+      <div class="container"></div>
+
+     </div>  
+    
     </section>
-
-
-
+     
+    <script src="data.js" type="module"></script>
     <script src="main.js" type="module"></script>
   </body>
 </html>

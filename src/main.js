@@ -5,6 +5,15 @@ import data from './data/pokemon/pokemon.js';
 
 let pokemones = data.pokemon;
 
+	// aparezca la segunda pantalla
+  const firstScreen = document.querySelector('.firstScreen');
+  const secondScreen = document.querySelector('.secondScreen');
+  const btnStart = document.getElementById('btnStart');
+  btnStart.addEventListener('click', screenAppear);
+  function screenAppear(){
+    firstScreen.style.display = 'none';
+    secondScreen.style.display ='block';
+  }
 
 // MÉTODO MAPS
 let container= document.querySelector(".container");

@@ -44,7 +44,7 @@ pokemonFeatures(pokemones)
 
 // Filtrando según el tipo de pokémon
 const selectBtn = document.querySelectorAll('.optionsPokType');
-//console.log(selectBtn)
+   //console.log(selectBtn)
 selectBtn.forEach((e)=>{
   //console.log(e)
   e.addEventListener("click", (event) => { 
@@ -54,4 +54,11 @@ selectBtn.forEach((e)=>{
       pokemonFeatures(filterData(pokemones,"type",clickType))
     
   })
+})
+
+//Funcionamiento del botón pokeAll
+const pokeAll = document.getElementById("pokeAll");
+pokeAll.addEventListener('click',()=>{
+  container.innerHTML="";
+  pokemonFeatures(pokemones);
 })

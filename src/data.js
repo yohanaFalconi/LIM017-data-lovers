@@ -1,10 +1,12 @@
 // estas funciones son de ejemplo
 
-export const example = () => {
-  return 'example';
-};
+export const filterData  = (data, property, value) => {
+  const type = data.filter(elem=> elem[property].includes(value))
+  //console.log(type)
+  return type
+}
 
-export const anotherExample = () => {
+/*export const sortData = () => {
   return 'OMG';
-};
+};*/
 

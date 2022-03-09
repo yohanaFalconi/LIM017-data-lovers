@@ -40,7 +40,7 @@
 }
 .intro{
     margin:50px;
-    background-color: #d8c9c2cf;
+    background-color: #ecbd65cf;
     border-radius: 15px;
     border: 2px solid  rgb(228, 183, 60);
     position: relative;
@@ -343,6 +343,7 @@ header{
    box-shadow: 0 0 20px #eee;
    border-radius: 10px;
    display: block;
+   cursor: pointer;
  }
 
  #btnStart, #topTen:hover {
@@ -361,6 +362,8 @@ header{
    color: white;            
    box-shadow: 0 0 20px #eee;
    border-radius: 5px;
+   cursor: pointer;
+
  }
 
 #pokeSearch,#pokeEvolution:hover {

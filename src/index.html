@@ -34,14 +34,20 @@
     </section>
     
     <section class="secondScreen">
-      <header class="titleSecondScreen">
-        <h1>POKEDEX</h1>
-        <nav>
+      <header>
+        <h1 class="titleSecondScreen" >POKEDEX</h1>
+        <nav class = "pokeBrowser">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <input type="search" id="cardPokeSearch"  placeholder="Ingrese el nombre de su pokemón" >    
-                <button>Search</button>
-            <li><button>Evolución por Caramelos</button></li>
+            <!-- <li><a href="index.html">Home</a></li> -->
+            <li>
+              <figure>
+                <img src="./img/iconoPoke.png" id="pokeAll">
+                <figcaption>ALL</figcaption>
+              </figure>
+            </li>
+            <li><input type="search" id="cardPokeSearch"  placeholder="Ingrese el nombre de su pokemón" >    
+                <button id="pokeSearch">Search</button></li>
+            <li><button id="pokeEvolution" >Evolución por Caramelos</button></li>
           </ul>
         </nav>
         <select class="orderBySelect">

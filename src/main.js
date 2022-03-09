@@ -22,7 +22,7 @@ let pokemonFeatures = (data)=>{
       <p id="pokemonType">${prop.type}</p>
       <p id="pokemonRegion">${prop.generation.name}</p>
       <p id="pokemonHeight">${prop.size.height}</p>
-      <p id="pokemonWeight">${prop.size.weight}</p>
+      <p ipm d="pokemonWeight">${prop.size.weight}</p>
       <p id="pokemonWeaknesses">${prop.weaknesses}</p>
       <p id="pokemonWeaknesses">${prop.resistant}</p>
       <p id="pokemonWeaknesses">${prop["pokemon-rarity"]}</p>

@@ -111,20 +111,28 @@
     padding: 5px;
     background: rgb(224, 221, 210);
   }
-
-  figure{
+  #home{
+    height: 45px;
+    width: 45px;
+    margin: 0px 15px;
+  }
+  #home:hover{
+    border-color: #c49a4dcf;
+    transform: scale(1.1);
+  }
+  .icoAllPoke{
     display: flex;
     flex-direction: column;
-    margin: 5px;
+    margin: 0px 15px;
     cursor: pointer
   }
-  figure:hover{
+  .icoAllPoke:hover{
     color:rgb(27, 66, 53);
     transform: scale(1.5);
   }
   #pokeAll{
-    height:25px;
-    width:25px;
+    height: 40px;
+    width: 40px;
   }
 
   .pokeBrowser ul{
@@ -133,21 +141,28 @@
     justify-content: center;
     align-items: center;
   }
-
-  #cardPokeSearch{
+  .pokeBrowser ul li{
+    display: flex;
+  }
+   #lupa{
+    height: 35px;
+    width: 35px;
+    margin: 0px 10px;
+  }
+  #inputPokeSearch{
     height: 35px;
     border-radius: 3px;
     width: 400px;
     background: rgb(215 232 226);
-    margin-left: 30px;
+    margin-left: 50px;
   }
-  #cardPokeSearch:hover, #pokeSearch:hover, #pokeEvolution:hover{
+  #inputPokeSearch:hover, #pokeEvolution:hover{
     border-color:rgb(187, 133, 64);
     transform: scale(1.1);
     border-radius: 3px;
   }
 
-  #pokeSearch,#pokeEvolution{
+  #pokeEvolution{
     height: 45px;
     background: rgb(118 167 165);
     border-style: groove;
@@ -156,7 +171,37 @@
     border-radius: 5px;
     padding: 10px;
   }
+    /*---Sección de búsqueda y error--*/
+   .errorSearch{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+   }
+   
+    #error{
+      width: 50%;
+      margin: 20px;
+   }
+   #tryAgain{
+    width: 20%;
+    margin: 10px;
+   }
+   
+   .errorSearch p{
+    margin: 10px;
+  }
 
+   .figTryAgain{
+     align-items: center;
+     display: flex;
+     flex-direction: column;
+   }
+
+   .figTryAgain:hover {
+    color:rgb(27, 66, 53);
+    transform: scale(1.2);
+  }
   /*--- SECCIÓN - CONTENEDOR DE POKEMONES  ---*/
   .blockContent{
     display: flex;
@@ -170,6 +215,7 @@
     flex-wrap:wrap;
     margin: 15px;
     justify-content: space-evenly;
+    width: 100vw;
 
   }
   .pokemonCard{
@@ -228,7 +274,7 @@
   #pokemonName{
     display: flex;
     justify-content: center;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     margin: auto;
   }
 
@@ -270,7 +316,6 @@
   cursor:pointer;
 
 }
-
 
 .orderBySelect{
   float: right;

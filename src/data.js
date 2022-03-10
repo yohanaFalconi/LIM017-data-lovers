@@ -10,3 +10,7 @@ export const filterData  = (data, property, value) => {
   return 'OMG';
 };*/
 
+export const searchData = (data,property,condition) =>{
+  const searchPoke = data.filter(element => (element[property].indexOf(condition) !== -1))
+  return searchPoke;
+}

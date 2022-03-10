@@ -10,7 +10,6 @@ const pokemones = data.pokemon;
 const firstScreen = document.querySelector('.firstScreen');
 const secondScreen = document.querySelector('.secondScreen');
 const btnStart = document.getElementById('btnStart');
-const pokemonCard = document.querySelectorAll(".pokemonCard");
 const selectBtn = document.querySelectorAll('.optionsPokType');
 const pokeAll = document.getElementById("pokeAll");
 const orderBySelect = document.querySelector('.orderBySelect');

@@ -1,17 +1,22 @@
 //import { resetDefaultConfig } from 'eslint/lib/rule-tester/rule-tester';
-import { filterData, searchData } from './data.js';
+import { filterData, orderBy, searchData } from './data.js';
+
 // import data from './data/lol/lol.js';
 import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 
 const pokemones = data.pokemon;
 
-	// aparezca la segunda pantalla
-  const firstScreen = document.querySelector('.firstScreen');
-  const secondScreen = document.querySelector('.secondScreen');
-  const btnStart = document.getElementById('btnStart');
+const firstScreen = document.querySelector('.firstScreen');
+const secondScreen = document.querySelector('.secondScreen');
+const btnStart = document.getElementById('btnStart');
+const pokemonCard = document.querySelectorAll(".pokemonCard");
+const selectBtn = document.querySelectorAll('.optionsPokType');
+const pokeAll = document.getElementById("pokeAll");
+const orderBySelect = document.querySelector('.orderBySelect');
 
-  btnStart.addEventListener('click', screenAppear);
+	// aparezca la segunda pantalla
+ btnStart.addEventListener('click', screenAppear);
   function screenAppear(){
     firstScreen.style.display = 'none';
     secondScreen.style.display ='block';
@@ -49,9 +54,8 @@ const pokemonFeatures = (data)=>{
     </div>
   </div> `
     
-    
-  //rotar las imágenes
   const pokemonCard = document.querySelectorAll(".pokemonCard");
+  //rotar las imágenes
   pokemonCard.forEach((elem) => {
   elem.addEventListener('click', () => {
     elem.classList.toggle('active')
@@ -63,17 +67,15 @@ const pokemonFeatures = (data)=>{
 pokemonFeatures(pokemones)
 
 // Filtrando según el tipo de pokémon
-const selectBtn = document.querySelectorAll('.optionsPokType');
 selectBtn.forEach((e)=>{
   e.addEventListener("click", (event) => { 
-      const clickType = event.target.id
-      pokemonFeatures(filterData(pokemones,"type",clickType))
-    
+    const clickType = event.target.id
+    container.innerHTML=""
+    pokemonFeatures(filterData(pokemones,"type",clickType))    
   })
 })
 
 //Funcionamiento del botón pokeAll
-const pokeAll = document.getElementById("pokeAll");
 pokeAll.addEventListener('click',()=>{
   pokemonFeatures(pokemones);
 })
@@ -102,8 +104,12 @@ inputPokeSearch.addEventListener('keyup',()=>{
   const figTryAgain = document.querySelector('.figTryAgain');
   figTryAgain.addEventListener('click',()=>{
   pokemonFeatures(pokemones);
-  })
-
-
-});
+    })
+  });
  
+// ordenando 
+orderBySelect.addEventListener('change', function (e){
+  const clickSelected = e.target.value
+  container.innerHTML="";
+  pokemonFeatures(orderBy(pokemones,clickSelected))
+})

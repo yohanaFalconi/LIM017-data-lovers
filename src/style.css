@@ -243,6 +243,9 @@
     flex-direction: column;
     display: flex;
     margin: auto;
+
+    /*mis cambios*/
+    box-shadow: 0 0 10px rgb(33 36 35);
     
   }  
   
@@ -304,9 +307,14 @@
 }
 .sideBar ul{
   list-style: none;
-  text-decoration:none;
-  margin: 15px;
+  text-decoration: none;
+  margin: 5px;
   text-align: center;
+  display: block;
+  padding: 0px;
+  width: 140px;
+  text-align: inherit;
+  font-size: 14px;
   
 }
 .sideBar ul li{
@@ -314,7 +322,24 @@
   padding: 15px;
   margin: 5px;
   cursor:pointer;
+}
+.sideBar .filterBy{
+  display: block;
+  text-align: center;
+  border-bottom: #fef7f7 solid 1px;
+  background-color: rgb(4, 4, 116);
 
+}   
+
+.icon-filter {
+  left: 1em;
+  top: 0.2em;
+}
+
+.icon-medium {
+  width: 32px;
+  height: 32px;
+  margin: 1px;
 }
 
 .orderBySelect{
@@ -416,3 +441,16 @@ header{
    color: #fff;
    text-decoration: none;
  }
+
+ /***eliminar luego*/
+ .firstScreen{
+   display: none;
+ }
+ .secondScreen{
+   display:block;
+ }
+
+
+
+
+

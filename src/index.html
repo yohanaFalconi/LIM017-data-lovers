@@ -56,22 +56,24 @@
               <img src="./img/lupa.png" id="lupa">
               <input type="search" id="inputPokeSearch"  placeholder="Ingrese el nombre de su pokemón"></li>
             <li><button id="pokeEvolution" >Evolución por Caramelos</button></li>
+            <select class="orderBySelect">
+              <option disabled selected >Ordenar por</option>
+              <option value="bottomNumber" class = "orderOption">Número inferior</option>
+              <option value="topNumber" class = "orderOption">Número superior</option>
+              <option value="A_Z" class = "orderOption">A-Z</option>
+              <option value="Z_A" class = "orderOption">Z-A</option>
+            </select>
           </ul>
         </nav>
-        <select class="orderBySelect">
-          <option disabled selected >Ordenar por</option>
-          <option value="bottomNumber" class = "orderOption" >Número inferior</option>
-          <option value="topNumber" class = "orderOption">Número superior</option>
-          <option value="A_Z" class = "orderOption">A-Z</option>
-          <option value="Z_A" class = "orderOption">Z-A</option>
 
-          
-        </select>
      </header>
      <div class="blockContent">
       <aside class="sideBar">
         <ul class="optionsType">
-         <li class="optionsPokType" id="steel"> Acero </li>
+         <li class="filterBy"> Filtar por </li>
+         <li class="optionsPokType" id="steel"> Acero
+         </li>
+         
          <li class="optionsPokType" id="water">Agua</li>
          <li class="optionsPokType" id="dragon">Dragón</li>
          <li class="optionsPokType" id="electric">Eléctrico</li>
@@ -84,7 +86,9 @@
          <li class="optionsPokType" id="grass">Planta</li>
          <li class="optionsPokType" id="psychic">Psíquico</li>
          <li class="optionsPokType" id="rock" >Roca</li>
-         <li class="optionsPokType" id="normal">Normal</li>
+         <li class="optionsPokType" id="normal">Normal
+          <img class="icon-medium icon-filter" src="img/normal-icon.png" style="user-select: auto;"></img> 
+         </li>
          <li class="optionsPokType" id="flying">Volador</li>
          <li class="optionsPokType" id="poison">Veneno</li>
          <li class="optionsPokType" id="dark">Siniestro</li>

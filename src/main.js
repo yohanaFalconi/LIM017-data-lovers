@@ -1,19 +1,25 @@
-import { filterData } from './data.js';
+import { filterData, orderBy } from './data.js';
 // import data from './data/lol/lol.js';
 import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 
 let pokemones = data.pokemon;
 
-	// aparezca la segunda pantalla
-  const firstScreen = document.querySelector('.firstScreen');
-  const secondScreen = document.querySelector('.secondScreen');
-  const btnStart = document.getElementById('btnStart');
-  btnStart.addEventListener('click', screenAppear);
-  function screenAppear(){
-    firstScreen.style.display = 'none';
-    secondScreen.style.display ='block';
-  }
+const firstScreen = document.querySelector('.firstScreen');
+const secondScreen = document.querySelector('.secondScreen');
+const btnStart = document.getElementById('btnStart');
+const pokemonCard = document.querySelectorAll(".pokemonCard");
+const selectBtn = document.querySelectorAll('.optionsPokType');
+const pokeAll = document.getElementById("pokeAll");
+const orderBySelect = document.querySelector('.orderBySelect');
+
+
+// aparezca la segunda pantalla
+btnStart.addEventListener('click', screenAppear);
+function screenAppear(){
+  firstScreen.style.display = 'none';
+  secondScreen.style.display ='block';
+}
 
 // MÉTODO MAPS
 let container= document.querySelector(".container");
@@ -38,9 +44,8 @@ let pokemonFeatures = (data)=>{
     </div>
   </div> `
     
-    
-  //rotar las imágenes
   const pokemonCard = document.querySelectorAll(".pokemonCard");
+  //rotar las imágenes
   pokemonCard.forEach((elem) => {
   elem.addEventListener('click', () => {
     elem.classList.toggle('active')
@@ -52,22 +57,25 @@ let pokemonFeatures = (data)=>{
 pokemonFeatures(pokemones)
 
 // Filtrando según el tipo de pokémon
-const selectBtn = document.querySelectorAll('.optionsPokType');
-   //console.log(selectBtn)
 selectBtn.forEach((e)=>{
-  //console.log(e)
   e.addEventListener("click", (event) => { 
-      const clickType = event.target.id
-      //console.log(clickType)
-      container.innerHTML=""
-      pokemonFeatures(filterData(pokemones,"type",clickType))
+    const clickType = event.target.id
+    container.innerHTML=""
+    pokemonFeatures(filterData(pokemones,"type",clickType))
     
   })
 })
 
 //Funcionamiento del botón pokeAll
-const pokeAll = document.getElementById("pokeAll");
 pokeAll.addEventListener('click',()=>{
   container.innerHTML="";
   pokemonFeatures(pokemones);
 })
+
+// ordenando 
+orderBySelect.addEventListener('change', function (e){
+  const clickSelected = e.target.value
+  container.innerHTML="";
+  pokemonFeatures(orderBy(pokemones,clickSelected))
+})
+

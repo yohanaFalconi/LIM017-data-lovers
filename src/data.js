@@ -37,6 +37,8 @@ export function orderBy(data,clicked){
   return newArray; 
 }
 
-export const evolution = () =>{
-  
+export const evolution = (pokemons, numPokedex) =>{
+    const pokemonObtenido = pokemons.find(function(pokemon) { return pokemon.num == numPokedex; });
+    return pokemonObtenido;
 }
+

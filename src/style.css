@@ -95,16 +95,18 @@
   .secondScreen{
     background-color: #e9e9ab;
     display: none;
+    position: relative;
+    width: 100%;
   }
 
   /*---HEADER---*/
-  .titleSecondScreen{
+  /* .titleSecondScreen{
     height: 150px;
     color: white;
     background-color: rgb(228, 183, 60);
     text-align: center;
-    padding: 10px;
-  }
+    padding: 10px; 
+  }*/
   /*---barra de navegación horizontal--*/
   .pokeBrowser{
     text-align: center;
@@ -397,8 +399,7 @@ header{
  .headImage{
     width: 10%;
     height: 10%;
-    position: absolute;
-    float: left;
+   
 }
 .contFirstScreen .pokedexGif{
     width: 27%;
@@ -406,11 +407,11 @@ header{
     margin-bottom: 20px;
     margin:0;
 }
-.headImage{
+/* .headImage{
     width: 15%;
     height: 20%;
     margin-left: 600px ;
-}
+} */
 
 
 /*BOTONES*/
@@ -468,8 +469,37 @@ header{
   visibility: visible;
 }
 
+#containerModal{
+  position:absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: #a39d9d99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-
+.dataEvolution{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #8bc34a;
+  height: 480px;
+  width: 480px;
+  border-radius: 15px;
+}
+ 
+ /*CONTENIDO DEL MODAL*/
+  /*TABLAS*/
+  td{
+    width: 180px;
+    padding: 10px;
+    text-align: center;
+    background-color: aqua
+  }
 
 
 

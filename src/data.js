@@ -36,3 +36,7 @@ export function orderBy(data,clicked){
   }
   return newArray; 
 }
+
+export const evolution = () =>{
+  
+}

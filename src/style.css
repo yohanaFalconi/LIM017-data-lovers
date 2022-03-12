@@ -143,34 +143,41 @@
   }
   .pokeBrowser ul li{
     display: flex;
+    align-items: center;
   }
    #lupa{
-    height: 35px;
-    width: 35px;
-    margin: 0px 10px;
+    height: 37px;
+    width: 37px;
+    margin: 0px 5px 0px 10px;
   }
   #inputPokeSearch{
     height: 35px;
     border-radius: 3px;
     width: 400px;
     background: rgb(215 232 226);
-    margin-left: 50px;
+    margin-left: 18px;
   }
   #inputPokeSearch:hover, #pokeEvolution:hover{
     border-color:rgb(187, 133, 64);
+    border-width: 3px;
     transform: scale(1.1);
     border-radius: 3px;
   }
 
-  #pokeEvolution{
-    height: 45px;
+  .pokeBrowser li #pokeEvolution{
+    width: 35px;
+    height: 35px;
+    margin-left: 35px;
+
+    /* height: 45px;
     background: rgb(118 167 165);
     border-style: groove;
     border-width: 5px;
     margin: 0px 30px;
     border-radius: 5px;
-    padding: 10px;
+    padding: 10px; */
   }
+
     /*---Sección de búsqueda y error--*/
    .errorSearch{
      display: flex;
@@ -203,6 +210,10 @@
     transform: scale(1.2);
   }
   /*--- SECCIÓN - CONTENEDOR DE POKEMONES  ---*/
+  
+  .hidden{
+    display: none;
+  }
   .blockContent{
     display: flex;
   }
@@ -277,7 +288,7 @@
   #pokemonName{
     display: flex;
     justify-content: center;
-    /*text-transform: uppercase;*/
+    text-transform: uppercase;
     margin: auto;
   }
 
@@ -286,7 +297,11 @@
     justify-content: center;
     margin: auto;
   }
-
+  #candyEvolution{
+    width:25px;
+    height: 25px;
+    /* display: none; */
+  }
   .reverseCard1 p{
     font-size: 10px;
     padding:5px;
@@ -443,6 +458,15 @@ header{
  }
 
  /***eliminar luego*/
+ 
+ /*Modal de card evolution*/
+ .ocultar {
+  visibility: hidden;
+}
+
+.mostrar {
+  visibility: visible;
+}
 
 
 

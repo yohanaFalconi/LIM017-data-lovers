@@ -1,5 +1,5 @@
 //import { resetDefaultConfig } from 'eslint/lib/rule-tester/rule-tester';
-import { filterData, orderBy, searchData } from './data.js';
+import { filterData, orderBy, searchData, topStats} from './data.js';
 
 // import data from './data/lol/lol.js';
 import data from './data/pokemon/pokemon.js';
@@ -61,15 +61,20 @@ const pokemonFeatures = (data, isCheck)=>{
           <p id="pokemonWeaknesses">${prop.resistant}</p>
           <p id="pokemonWeaknesses">${prop["pokemon-rarity"]}</p>
        </div>
+       <div class="statsReverseCard">
+          <p id="baseAttack">${prop["base-attack"]}</p>
+          <p id="baseDefense">${prop["base-defense"]}</p>
+          <p id="baseStamina">${prop["base-stamina"]}</p>
+          <p id="maxCp">${prop["max-cp"]}</p>
+          <p id="maxHp">${prop["max-hp"]}</p>
+       </div>
      </div> `
     
-  const pokemonCard = sectionElement.querySelectorAll(".pokemonCard");
-  
+  const pokemonCard = sectionElement.querySelectorAll(".pokemonCard")
   //rotar las imágenes
   if(isCheck === false){
     pokemonCard.forEach((elem) => {
       elem.addEventListener('click', () => {    
-  
         elem.classList.toggle('active');
       })
     })
@@ -150,7 +155,6 @@ orderBySelect.addEventListener('change', function (e){
 })
 
 //Modal
-
 pokeEvolution.addEventListener('change', () => {
   container.innerHTML = ''
   if(pokeEvolution.checked){
@@ -278,3 +282,75 @@ const pokeEvolutionImage = (poke, cardContainer) => {
   //console.log(evolutions)
   return divInfo;
 }
+ 
+//estadísticos
+const statsBtn = document.getElementById("statsBtn");
+const optionsType = document.querySelector(".optionsType");
+const blockContentStat = document.querySelector(".blockContentStat");
+const sideBar = document.querySelector(".sideBar")
+const reverseCard1= document.querySelector(".reverseCard1");
+const statsReverseCard = document.querySelector(".statsReverseCard");
+statsBtn.addEventListener("click", (e) =>{
+  orderBySelect.style.display = "none";
+  optionsType.style.display = "none"
+  blockContentStat.style.display = 'block';
+
+  //reverseCard1.style.display = "none";
+  //container.classList.remove('statsReverseCard')
+  //pokemonCard.classList.add("")
+  //statsReverseCard
+  //container.classList.remove("reverseCard1");
+  //container.classList.replace("reverseCard1", "statsReverseCard")
+
+});
+
+// Filtrando según el Estadístico
+const statOptions = document.querySelectorAll(".statOptions")
+statOptions.forEach((e)=>{
+  e.addEventListener("click", (event) => { 
+    const clickStat = event.target.id
+    pokemonFeatures(topStats(pokemones, clickStat))    
+  })
+})
+
+
+
+
+
+
+
+
+
+
+
+//estadísticos suma
+/*
+const pokemonStats = pokemones.map(function (event){
+  const baseAttack = event.stats;
+  const baseDefense = event.stats["base-defense"];
+  const baseStamina = event.stats["base-stamina"]; 
+  const maxCp = event.stats["max-cp"]; 
+  const maxHp = event.stats["max-hp"]; 
+
+  //newArrayStats = baseAttack 
+  const statKeys = Object.keys(event.stats)
+  //console.log(statValues)
+  //console.log(statKeys)
+//buscando hacer un const de solo los estadís
+  let entrsPok = Object.entries(event)
+  const entriesStats = entrsPok[10][1]
+  //console.log(entriesStats)
+ //sumar los estadísticos de cada pokemon
+ const statValues = Object.values(entriesStats)
+ console.log(statValues) //esto muestra los val de base-defense
+ //let statVa_ = newArray.sort((a, b) => b-a)
+ //console.log(newArray)
+})
+*/
+//creando una función que reconozca que los array deben de estar en objetos
+/*
+function sum(property){
+  property.reduce((a,n) => (a += n, a),0)
+} */
+
+

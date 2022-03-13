@@ -163,56 +163,88 @@ pokeEvolution.addEventListener('change', () => {
   }
 })
 
- // Función para mostrar imágenes de evolución
- const pokeEvolutionImage = (poke, cardContainer, prev, next) => {
+// Función para mostrar imágenes de evolución
+const pokeEvolutionImage = (poke, cardContainer) => {
   cardContainer.innerHTML = '';
-  let divCardContainer =[]; let pokemn=[];
-  
-  if (prev !== undefined) {
-    for (let i = 0; i < prev.length; i += 1) {
-      pokemn = poke.find(pk => pk.name === prev[i].name);
-      //console.log(pokemn)
-     if (pokemn !== undefined) {
-         divCardContainer = document.createElement('div');
-  //     console.log(divCardContainer)
-         divCardContainer.className = 'cardPokemonEvolution';
-  //     console.log(divCardContainer.setAttribute('id', 'dataEvolution'))
-         divCardContainer.innerHTML = `<span class="font one-fraction ">${pokemn.name}</span>
-  //                                 <img src="${pokemn.img}" alt="" class="imageModal">
-  //                                 <p>${pokemn["candy-cost"]}</p> 
-  //                                 `;
-         cardContainer.append(divCardContainer);
-  //      console.log(cardContainer.append(divCardContainer))
-       }
-     }
-  }
-    divCardContainer = document.createElement('div');
-  //  console.log(divCardContainer)
-    divCardContainer.className = 'cardPokemonEvolution';
-    divCardContainer.innerHTML = `<span class="modalEvolImg ">${poke.name}</span>
-  //                             <img src="${poke.img}" alt="" class="imageModal">
-  //                             <p>${poke["candy-cost"]}</p>`;
-    cardContainer.append(divCardContainer);
-  //  console.log(cardContainer.append(divCardContainer))
-    if (next !== undefined) {
-       for (let i = 0; i < next.length; i += 1) {
-          pokemn = pokemones.find(pk => pk.name === next[i].name);
-  //        console.log(pokemn)
-          if (pokemn !== undefined) {
-              divCardContainer = document.createElement('div');
-  //          console.log(divCardContainer)
-              divCardContainer.className = 'cardPokemonEvolution';
-              divCardContainer.innerHTML = `<span class="modalEvolImg">${pokemn.name}</span>
-                                           <img src="${pokemn.img}" alt="" class="imageModal">
-                                            <p>${pokemn["candy-cost"]}</p>`;
-              cardContainer.append(divCardContainer);
-          }
-       }
+  const prev = (poke.evolution['prev-evolution']) ? (poke.evolution['prev-evolution']) : [];
+  const next = (poke.evolution['next-evolution']) ? (poke.evolution['next-evolution']) : [];
+  let divCardContainer =''; 
+  let pokemn=[];
+
+  if(prev.length !== 0){
+    for(let i=0; i< prev.length ; i++){
+      pokemn = pokemones.find(pk => pk.name === prev[i].name);      
+      divCardContainer = document.createElement('div');
+      divCardContainer.className = 'cardPokemonEvolution';
+      divCardContainer.innerHTML = `<span  class="namePokeEvol">${prev[i].name}</span>
+                                    <img src="${pokemn.img}" alt="" class="imagePokeModal">
+                                    <div class="candyCost"9>
+                                        <p class="qtyCandy">${prev[i]["candy-cost"]} candy</p> 
+                                        <img src="./img/candyCost.png" class="candy">
+                                    </div>
+                                    
+                                `;
+      cardContainer.append(divCardContainer);
+
+      if(prev[i]['prev-evolution']){
+        
+        for(let j=0; j< prev[i]['prev-evolution'].length; j++){
+          pokemn = pokemones.find(pk => pk.name === prev[i]['prev-evolution'][j].name);      
+          
+          divCardContainer = document.createElement('div');
+          divCardContainer.className = 'cardPokemonEvolution';
+          divCardContainer.innerHTML = `<span  class="namePokeEvol">${prev[i]['prev-evolution'][j].name}</span>
+                                        <img src="${pokemn.img}" alt="" class="imagePokeModal">
+                                        <div class="candyCost">
+                                            <p class="qtyCandy">${prev[i]['prev-evolution'][j]["candy-cost"]} candy</p>
+                                            <img src="./img/candyCost.png" class="candy">
+                                        </div>
+                                         
+                                `;
+          cardContainer.append(divCardContainer);
+        }
+      }
     }
   }
+  
 
+  if(next.length !== 0){
+    for(let i=0; i< next.length ; i++){
+      pokemn = pokemones.find(pk => pk.name === next[i].name);      
+      divCardContainer = document.createElement('div');
+      divCardContainer.className = 'cardPokemonEvolution';
+      divCardContainer.innerHTML = `<span class="namePokeEvol">${next[i].name}</span>
+                                    <img src="${pokemn.img}" alt="" class="imagePokeModal">
+                                    <div class="candyCost">
+                                      <p class="qtyCandy">${next[i]["candy-cost"]} candy</p>
+                                      <img src="./img/candyCost.png" class="candy">
+                                    </div>
+                                     
+                                `;
+      cardContainer.append(divCardContainer);
 
-console.log(pokeEvolutionImage(pokemones,containerModal,data.pokemon.evolution['prev-evolution'],data.pokemon.evolution['next-evolution']));
+      if(next[i]['next-evolution']){
+        
+        for(let j=0; j< next[i]['next-evolution'].length; j++){
+          pokemn = pokemones.find(pk => pk.name === next[i]['next-evolution'][j].name);      
+      
+          divCardContainer = document.createElement('div');
+          divCardContainer.className = 'cardPokemonEvolution';
+          divCardContainer.innerHTML = `<span class="namePokeEvol">${next[i]['next-evolution'][j].name}</span>
+                                        <img src="${pokemn.img}" alt="" class="imageModal">
+                                        <div class="candyCost">
+                                            <p class="qtyCandy">${next[i]['next-evolution'][j]["candy-cost"]} candy</p>
+                                            <img src="./img/candyCost.png" class="candy">
+                                        </div>
+                                `;
+          cardContainer.append(divCardContainer);
+        }
+      }
+      
+    }
+  }
+  
+} 
 
  const moreInformation = (dataEvol) => {
     containerModal.innerHTML = '';
@@ -220,27 +252,29 @@ console.log(pokeEvolutionImage(pokemones,containerModal,data.pokemon.evolution['
     divInfo.setAttribute('class', 'dataEvolution');
     const info = `
       <i class="fas fa-times" id="exit">X</i>
-      <p>${dataEvol.name}</p>  
-      <p>${dataEvol.type}</p>
+      <p id="namePokeEvol">${dataEvol.name}</p>  
+      <p id="typePokeEvol">${dataEvol.type}</p>
 
-      <table>
-        <caption>Medidas</caption>
+      <table class="tableEvol">
+        <caption id="sizes">Medidas</caption>
         <tr>
-            <th scope="col">Altura</th>
-            <th scope="col">Peso</th>
+            <th scope="col" class="titleHeight">Altura</th>
+            <th scope="col" class="titleWeight">Peso</th>
         </tr> 
         <tr>
-            <td>${dataEvol.size.height}</th>
-            <td>${dataEvol.size.weight}</td>
+            <td class="dataSize">${dataEvol.size.height}</td>
+            <td class="dataSize">${dataEvol.size.weight}</td>
          </tr>
       </table>
-      <div id=sectionImgEvolution> </div>
+      <div id=sectionImgEvolution> 
+        <h2>Evoluciones</h2> 
+      </div>
       `
     
   //pokeEvolutionImage(pokemones,evolutions,pokemones.evolution['pre-evolution'],pokemones.evolution['next-evolution'])
   divInfo.innerHTML = info;
   const evolutions= divInfo.querySelector("#sectionImgEvolution")
-  //pokeEvolutionImage(pokemones,evolutions,pokemones.evolution['prev-evolution'],pokemones.evolution['next-evolution'])
+  pokeEvolutionImage(dataEvol,evolutions)
   //console.log(evolutions)
   return divInfo;
- }
+}

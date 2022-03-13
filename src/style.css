@@ -407,12 +407,6 @@ header{
     margin-bottom: 20px;
     margin:0;
 }
-/* .headImage{
-    width: 15%;
-    height: 20%;
-    margin-left: 600px ;
-} */
-
 
 /*BOTONES*/
 
@@ -473,11 +467,10 @@ header{
   position:absolute;
   top: 0px;
   left: 0px;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: #a39d9d99;
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
@@ -490,16 +483,67 @@ header{
   height: 480px;
   width: 480px;
   border-radius: 15px;
+  margin-top: 200px;
+  position: fixed;
 }
  
  /*CONTENIDO DEL MODAL*/
-  /*TABLAS*/
+  /*Título*/
+  #namePokeEvol{
+    text-transform: capitalize;
+  }
+  #typePokeEvol{
+    
+  }
+
+  #exit{
+    cursor: pointer;
+    background-color: beige;
+    margin-bottom: 15px;
+    position: left;
+    top: left;
+    align-items: right;
+    display: flex;
+    padding: 10px;
+    border-radius: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+  #exit:hover{
+    transform: scale(1.1);
+    background-color: rgb(89, 89, 172);
+  }
+ /*TABLAS*/
   td{
     width: 180px;
     padding: 10px;
     text-align: center;
     background-color: aqua
   }
+  th{
 
+  }
 
+  /*Sección de imagen de evoluciones*/
+  .cardPokemonEvolution{
 
+  }
+  .namePokeEvol{
+    text-transform: uppercase;
+    background-color: #e3e2d7;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  .imagePokeModal{
+
+  }
+  .candyCost{
+
+  }
+  .qtyCandy{
+
+  }
+  .candy{
+    width: 15px;
+    height: 15px;
+  }

@@ -15,7 +15,16 @@
     text-decoration: none;
     list-style: none;
     font-family: helvetica, arial, sans-serif;
+<<<<<<< HEAD
+<<<<<<< HEAD
 }
+=======
+    /*font-size: 1em;*/
+  }
+>>>>>>> 51ec41d88cc38e65a70d032c2428378826f68cfe
+=======
+}
+>>>>>>> 5d590021329a4788547b0b69b2c3705b7a5f31fc
 
 /*---PRIMERA SECCIÓN---*/
 .mainTitle{
@@ -542,7 +551,11 @@ header{
     box-shadow: inset 4px 2px 5px;
     font-size: 25px;
   }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 
+>>>>>>> 5d590021329a4788547b0b69b2c3705b7a5f31fc
   #typePokeEvol{
     text-decoration: dotted;
     text-transform: uppercase;
@@ -551,6 +564,14 @@ header{
     background-color: #e2da8b;
     border-radius: 7px;
   }
+<<<<<<< HEAD
+=======
+  /*#typePokeEvol{
+    
+  }*/
+>>>>>>> 51ec41d88cc38e65a70d032c2428378826f68cfe
+=======
+>>>>>>> 5d590021329a4788547b0b69b2c3705b7a5f31fc
 
   #exit{
     cursor: pointer;

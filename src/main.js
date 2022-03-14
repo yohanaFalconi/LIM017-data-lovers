@@ -301,7 +301,7 @@ statsBtn.addEventListener("click", () =>{
   //container.classList.remove("reverseCard1");
   //container.classList.replace("reverseCard1", "statsReverseCard")
 
-// });
+ });
 
 // Filtrando según el Estadístico
 const statOptions = document.querySelectorAll(".statOptions")

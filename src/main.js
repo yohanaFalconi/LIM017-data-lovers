@@ -22,9 +22,10 @@ const pokeEvolution = document.getElementById("pokeEvolution");
     
   }
   
- //botón de home
-const home = document.getElementById("home");
-home.addEventListener("click",()=>{
+ //botón de atrás: Back Arrow
+//const home = document.getElementById("home");
+const backArrow = document.getElementById("backArrow");
+backArrow.addEventListener("click",()=>{
    firstScreen.style.display = 'block';
    secondScreen.style.display = 'none';
    pokeEvolution.checked = false;
@@ -283,17 +284,17 @@ const pokeEvolutionImage = (poke, cardContainer) => {
   return divInfo;
 }
  
-//estadísticos
-const statsBtn = document.getElementById("statsBtn");
-const optionsType = document.querySelector(".optionsType");
-const blockContentStat = document.querySelector(".blockContentStat");
-const sideBar = document.querySelector(".sideBar")
-const reverseCard1= document.querySelector(".reverseCard1");
-const statsReverseCard = document.querySelector(".statsReverseCard");
-statsBtn.addEventListener("click", (e) =>{
-  orderBySelect.style.display = "none";
-  optionsType.style.display = "none"
-  blockContentStat.style.display = 'block';
+// //estadísticos
+// const statsBtn = document.getElementById("statsBtn");
+// const optionsType = document.querySelector(".optionsType");
+// const blockContentStat = document.querySelector(".blockContentStat");
+// const sideBar = document.querySelector(".sideBar")
+// const reverseCard1= document.querySelector(".reverseCard1");
+// const statsReverseCard = document.querySelector(".statsReverseCard");
+// statsBtn.addEventListener("click", (e) =>{
+//   orderBySelect.style.display = "none";
+//   optionsType.style.display = "none"
+//   blockContentStat.style.display = 'block';
 
   //reverseCard1.style.display = "none";
   //container.classList.remove('statsReverseCard')
@@ -302,7 +303,7 @@ statsBtn.addEventListener("click", (e) =>{
   //container.classList.remove("reverseCard1");
   //container.classList.replace("reverseCard1", "statsReverseCard")
 
-});
+// });
 
 // Filtrando según el Estadístico
 const statOptions = document.querySelectorAll(".statOptions")

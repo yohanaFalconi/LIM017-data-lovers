@@ -13,7 +13,6 @@
        <img src="./img/Pokemones.png" class="homeImg">
       </header>
 
-      <div>
       <section class="contFirstScreen">
         <!--<img src="./img/pokebola_.png">-->
         <div class="intro">
@@ -33,6 +32,7 @@
         </div> -->
 
       </section>
+
     </section>
     
     <section class="secondScreen">
@@ -41,6 +41,7 @@
         <!-- <h1 class="titleSecondScreen"></h1> -->
         <nav class = "pokeBrowser">
           <ul>
+            <li><img src="./img/flecha-izquierda.png" id="backArrow"></li>
             <li><img src="./img/casa.png" id="home"></li>
             <li>
               <figure class="icoAllPoke">
@@ -56,14 +57,16 @@
             <li>
               <button id="statsBtn">Estadísticos</button>
             </li> 
-
-            <select class="orderBySelect">
-              <option disabled selected >Ordenar por</option>
-              <option value="bottomNumber" class = "orderOption">Número inferior</option>
-              <option value="topNumber" class = "orderOption">Número superior</option>
-              <option value="A_Z" class = "orderOption">A-Z</option>
-              <option value="Z_A" class = "orderOption">Z-A</option>
-            </select>
+            <li>
+              <select class="orderBySelect">
+                <option disabled selected >Ordenar por</option>
+                <option value="bottomNumber" class = "orderOption">Número inferior</option>
+                <option value="topNumber" class = "orderOption">Número superior</option>
+                <option value="A_Z" class = "orderOption">A-Z</option>
+                <option value="Z_A" class = "orderOption">Z-A</option>
+              </select>
+            </li>
+                
           </ul>
         </nav>
 
@@ -74,65 +77,65 @@
          <li class="filterBy"> Filtar por </li>
  
           <li class="optionsPokType" id="steel">Acero
-            <img class="icon-medium icon-filter" src="img/steel-icon.png"></img> 
+            <img class="icon-medium icon-filter" src="img/steel-icon.png">
          </li>
          <li class="optionsPokType" id="water">Agua
-          <img class="icon-medium icon-filter" src="img/water-icon.png"></img> 
+          <img class="icon-medium icon-filter" src="img/water-icon.png">
          </li>
          <li class="optionsPokType" id="dragon">Dragón
-          <img class="icon-medium icon-filter" src="img/dragon-icon.png"></img> 
+          <img class="icon-medium icon-filter" src="img/dragon-icon.png">
          </li>
          <li class="optionsPokType" id="electric">Eléctrico
-          <img class="icon-medium icon-filter" src="img/electric-icon.png"></img> 
+          <img class="icon-medium icon-filter" src="img/electric-icon.png">
          </li>
          <li class="optionsPokType" id="ghost">Fantasma
-          <img class="icon-medium icon-filter" src="img/ghost-icon.png"></img> 
+          <img class="icon-medium icon-filter" src="img/ghost-icon.png">
          </li>
          <li class="optionsPokType" id="fire">Fuego
-          <img class="icon-medium icon-filter" src="img/fire-icon.png"></img> 
+          <img class="icon-medium icon-filter" src="img/fire-icon.png">
          </li>
          <li class="optionsPokType" id="fairy">Hada
-          <img class="icon-medium icon-filter" src="img/fairy-icon.png"></img> 
+          <img class="icon-medium icon-filter" src="img/fairy-icon.png">
          </li>
          <li class="optionsPokType" id="ice">Hielo
-          <img class="icon-medium icon-filter" src="img/ice-icon.png"></img> 
+          <img class="icon-medium icon-filter" src="img/ice-icon.png">
          </li>
          <li class="optionsPokType" id="bug">Insecto
-          <img class="icon-medium icon-filter" src="img/bug-icon.png"></img> 
+          <img class="icon-medium icon-filter" src="img/bug-icon.png"> 
          </li>
          <li class="optionsPokType" id="fighting">Luchador
-          <img class="icon-medium icon-filter" src="img/fighting-icon.png"></img> 
+          <img class="icon-medium icon-filter" src="img/fighting-icon.png">
          </li>
          <li class="optionsPokType" id="grass">Planta
-          <img class="icon-medium icon-filter" src="img/grass-icon.png"></img> 
+          <img class="icon-medium icon-filter" src="img/grass-icon.png">
          </li>
          <li class="optionsPokType" id="psychic">Psíquico
-          <img class="icon-medium icon-filter" src="img/psychic-icon.png"></img> 
+          <img class="icon-medium icon-filter" src="img/psychic-icon.png">
          </li>
          <li class="optionsPokType" id="rock" >Roca
-          <img class="icon-medium icon-filter" src="img/rock-icon.png"></img> 
+          <img class="icon-medium icon-filter" src="img/rock-icon.png">
          </li>
          <li class="optionsPokType" id="normal">Normal
-          <img class="icon-medium icon-filter" src="img/normal-icon.png"></img> 
+          <img class="icon-medium icon-filter" src="img/normal-icon.png">
          </li>
          <li class="optionsPokType" id="flying">Volador
-          <img class="icon-medium icon-filter" src="img/flying-icon.png"></img> 
+          <img class="icon-medium icon-filter" src="img/flying-icon.png">
          </li>
          <li class="optionsPokType" id="poison">Veneno
-          <img class="icon-medium icon-filter" src="img/poison-icon.png"></img> 
+          <img class="icon-medium icon-filter" src="img/poison-icon.png">
          </li>
          <li class="optionsPokType" id="dark">Siniestro
-          <img class="icon-medium icon-filter" src="img/dark-icon.png"></img> 
+          <img class="icon-medium icon-filter" src="img/dark-icon.png">
          </li>
          <li class="optionsPokType" id="ground">Tierra
-          <img class="icon-medium icon-filter" src="img/ground-icon.png"></img> 
+          <img class="icon-medium icon-filter" src="img/ground-icon.png">
          </li>
          
        </ul>
        <ul class="blockContentStat">
          <li class="topTenMessage">Top 10</li>
           <li class="statOptions" id="base-attack">Ataque
-            <img class="icon-medium icon-filter" src="img/attack-icon.png"></img> 
+            <img class="icon-medium icon-filter" src="img/attack-icon.png">
           </li>
           <li class="statOptions" id="base-defense">Defensa</li>
           <li class="statOptions" id="base-stamina">Resistencia</li>

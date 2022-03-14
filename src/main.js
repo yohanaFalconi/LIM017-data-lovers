@@ -22,9 +22,10 @@ const pokeEvolution = document.getElementById("pokeEvolution");
     
   }
   
- //botón de home
-const home = document.getElementById("home");
-home.addEventListener("click",()=>{
+ //botón de atrás: Back Arrow
+//const home = document.getElementById("home");
+const backArrow = document.getElementById("backArrow");
+backArrow.addEventListener("click",()=>{
    firstScreen.style.display = 'block';
    secondScreen.style.display = 'none';
    pokeEvolution.checked = false;
@@ -300,7 +301,7 @@ statsBtn.addEventListener("click", () =>{
   //container.classList.remove("reverseCard1");
   //container.classList.replace("reverseCard1", "statsReverseCard")
 
-});
+// });
 
 // Filtrando según el Estadístico
 const statOptions = document.querySelectorAll(".statOptions")

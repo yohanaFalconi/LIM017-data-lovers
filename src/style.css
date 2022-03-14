@@ -40,8 +40,12 @@ header{
 
 .homeImg{
   width: 50%;
+  height: 50%;
 }
-
+.homePokemon{
+  width: 25%;
+  height: 25%;
+}
 
 .contFirstScreen{
     display: flex;
@@ -538,6 +542,7 @@ header{
     box-shadow: inset 4px 2px 5px;
     font-size: 25px;
   }
+
   #typePokeEvol{
     text-decoration: dotted;
     text-transform: uppercase;
@@ -571,24 +576,24 @@ header{
     text-align: center;
     background-color: aqua
   }
-  th{
-  }
+  /*th{
+  }*/
 
   /*Sección de imagen de evoluciones*/
-  .cardPokemonEvolution{
-  }
+  /*.cardPokemonEvolution{
+  }*/
   .namePokeEvol{
     text-transform: uppercase;
     background-color: #e3e2d7;
     padding: 10px;
     border-radius: 5px;
   }
-  .imagePokeModal{
-  }
-  .candyCost{
-  }
-  .qtyCandy{
-}
+  /*.imagePokeModal{
+  }*/
+  /*.candyCost{
+  }*/
+  /*.qtyCandy{
+}*/
 .statsReverseCard{
   display:none;
 } 
@@ -596,7 +601,7 @@ ul.blockContentStat{
   display:none;
 }
 
-  .candy{
-    width: 15px;
-    height: 15px;
-  }
+.candy{
+  width: 15px;
+  height: 15px;
+}

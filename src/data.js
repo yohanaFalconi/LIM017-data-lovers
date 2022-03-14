@@ -2,7 +2,6 @@
 
 export const filterData  = (data, property, value) => {
   const type = data.filter(elem=> elem[property].includes(value))
-  //console.log(type)
   return type
 }
 
@@ -33,26 +32,8 @@ export function orderBy(data,clicked){
 }
 
 // funcion para top10 segun puntos de combate
-export const topStats = (data, click) => {
+export const topStats = (data, click, i) => {
   let topTenPokemon = [];
-  switch(click) {
-    case 'base-attack':
-      topTenPokemon = data.sort((a, b) => (parseInt(b.stats['base-attack']) - parseInt(a.stats['base-attack']))).slice(0, 10);
-      break;
-    case 'base-defense':
-      topTenPokemon = data.sort((a, b) => (parseInt(b.stats['base-defense']) - parseInt(a.stats['base-defense']))).slice(0, 10);
-      break;
-    case 'base-stamina':
-      topTenPokemon = data.sort((a, b) => (parseInt(b.stats['base-stamina']) - parseInt(a.stats['base-stamina']))).slice(0, 10);
-      break;
-    case 'max-cp':
-      topTenPokemon = data.sort((a, b) => (parseInt(b.stats['max-cp']) - parseInt(a.stats['max-cp']))).slice(0, 10);
-      break;
-    case 'max-hp':
-      topTenPokemon = data.sort((a, b) => (parseInt(b.stats['max-hp']) - parseInt(a.stats['max-hp']))).slice(0, 10);
-      break;
-    default:
-      // do nothing
-  }
+  topTenPokemon = data.sort((a, b) => (parseInt(b.stats[click]) - parseInt(a.stats[click]))).slice(0, i);
   return topTenPokemon
 }

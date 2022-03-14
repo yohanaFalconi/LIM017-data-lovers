@@ -15,7 +15,12 @@
     text-decoration: none;
     list-style: none;
     font-family: helvetica, arial, sans-serif;
+<<<<<<< HEAD
 }
+=======
+    /*font-size: 1em;*/
+  }
+>>>>>>> 51ec41d88cc38e65a70d032c2428378826f68cfe
 
 /*---PRIMERA SECCIÓN---*/
 .mainTitle{
@@ -40,6 +45,11 @@ header{
 
 .homeImg{
   width: 50%;
+  height: 50%;
+}
+.homePokemon{
+  width: 25%;
+  height: 25%;
 }
 
 
@@ -538,6 +548,7 @@ header{
     box-shadow: inset 4px 2px 5px;
     font-size: 25px;
   }
+<<<<<<< HEAD
   #typePokeEvol{
     text-decoration: dotted;
     text-transform: uppercase;
@@ -546,6 +557,11 @@ header{
     background-color: #e2da8b;
     border-radius: 7px;
   }
+=======
+  /*#typePokeEvol{
+    
+  }*/
+>>>>>>> 51ec41d88cc38e65a70d032c2428378826f68cfe
 
   #exit{
     cursor: pointer;
@@ -571,24 +587,24 @@ header{
     text-align: center;
     background-color: aqua
   }
-  th{
-  }
+  /*th{
+  }*/
 
   /*Sección de imagen de evoluciones*/
-  .cardPokemonEvolution{
-  }
+  /*.cardPokemonEvolution{
+  }*/
   .namePokeEvol{
     text-transform: uppercase;
     background-color: #e3e2d7;
     padding: 10px;
     border-radius: 5px;
   }
-  .imagePokeModal{
-  }
-  .candyCost{
-  }
-  .qtyCandy{
-}
+  /*.imagePokeModal{
+  }*/
+  /*.candyCost{
+  }*/
+  /*.qtyCandy{
+}*/
 .statsReverseCard{
   display:none;
 } 
@@ -596,7 +612,7 @@ ul.blockContentStat{
   display:none;
 }
 
-  .candy{
-    width: 15px;
-    height: 15px;
-  }
+.candy{
+  width: 15px;
+  height: 15px;
+}

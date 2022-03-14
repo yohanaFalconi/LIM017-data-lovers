@@ -284,17 +284,15 @@ const pokeEvolutionImage = (poke, cardContainer) => {
   return divInfo;
 }
  
-// //estadísticos
-// const statsBtn = document.getElementById("statsBtn");
-// const optionsType = document.querySelector(".optionsType");
-// const blockContentStat = document.querySelector(".blockContentStat");
-// const sideBar = document.querySelector(".sideBar")
-// const reverseCard1= document.querySelector(".reverseCard1");
-// const statsReverseCard = document.querySelector(".statsReverseCard");
-// statsBtn.addEventListener("click", (e) =>{
-//   orderBySelect.style.display = "none";
-//   optionsType.style.display = "none"
-//   blockContentStat.style.display = 'block';
+//estadísticos
+const statsBtn = document.getElementById("statsBtn");
+const optionsType = document.querySelector(".optionsType");
+const blockContentStat = document.querySelector(".blockContentStat");
+
+statsBtn.addEventListener("click", () =>{
+  orderBySelect.style.display = "none";
+  optionsType.style.display = "none"
+  blockContentStat.style.display = 'block';
 
   //reverseCard1.style.display = "none";
   //container.classList.remove('statsReverseCard')
@@ -310,7 +308,7 @@ const statOptions = document.querySelectorAll(".statOptions")
 statOptions.forEach((e)=>{
   e.addEventListener("click", (event) => { 
     const clickStat = event.target.id
-    pokemonFeatures(topStats(pokemones, clickStat))    
+    pokemonFeatures(topStats(pokemones, clickStat, 10))    
   })
 })
 

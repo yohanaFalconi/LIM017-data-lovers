@@ -5,6 +5,10 @@ import { filterData, orderBy, searchData, topStats} from './data.js';
 import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 
+/* <p id="pokemonResistant">
+              <strong class="pokeFeatTitle">RESISTENCIA</strong>
+              <span class="pokeFeat">${prop.resistant}</span>
+          </p> */
 const pokemones = data.pokemon;
 
 const firstScreen = document.querySelector('.firstScreen');
@@ -12,6 +16,9 @@ const secondScreen = document.querySelector('.secondScreen');
 const btnStart = document.getElementById('btnStart');
 const selectBtn = document.querySelectorAll('.optionsPokType');
 const pokeAll = document.getElementById("pokeAll");
+const sideBar = document.querySelector(".sideBar");
+const optionsType = document.querySelector(".optionsType");
+const blockContentStat = document.querySelector(".blockContentStat");
 const orderBySelect = document.querySelector('.orderBySelect');
 const pokeEvolution = document.getElementById("pokeEvolution");
 	// aparezca la segunda pantalla
@@ -19,11 +26,11 @@ const pokeEvolution = document.getElementById("pokeEvolution");
   function screenAppear(){
     firstScreen.style.display = 'none';
     secondScreen.style.display ='block';
-    
+
   }
   
  //botón de atrás: Back Arrow
-//const home = document.getElementById("home");
+
 const backArrow = document.getElementById("backArrow");
 backArrow.addEventListener("click",()=>{
    firstScreen.style.display = 'block';
@@ -32,9 +39,29 @@ backArrow.addEventListener("click",()=>{
    pokemonFeatures(pokemones,false);
 }) 
 
+  //botón de recargar la página todos los pokemones, sin filtros
+  const home = document.getElementById("home");
+  home.addEventListener('click', () =>{
+    pokemonFeatures(pokemones,false);
+    sideBar.classList.add("hide");
+    orderBySelect.style.display="block";
+    pokeEvolution.checked=false;
+  })
+
+
+  //Funcionamiento del botón pokeAll y aparición de tipos
+  pokeAll.addEventListener('click',()=>{
+    pokemonFeatures(pokemones,false);
+    sideBar.classList.remove("hide");
+    optionsType.classList.remove("hide");
+    blockContentStat.classList.add("hide");
+  })
+
+  
 // MÉTODO MAPS
 const container = document.querySelector(".container");
 const containerModal = document.querySelector("#containerModal");
+//const statsBtn = document.getElementById("statsBtn");
   
 const pokemonFeatures = (data, isCheck)=>{
   container.innerHTML  = ""
@@ -44,32 +71,48 @@ const pokemonFeatures = (data, isCheck)=>{
     sectionElement.innerHTML += `
     
       <div class="pokemonCard">
-       <div class = "frontCard">    
-         <img id="imgPok"src=${prop.img}>
-         <p id="pokemonName">${prop.name}</p>      
-         <p id="pokemonNumber">${prop.num}</p>
-         <div class= "candyImg hidden ">
+      
+        <div class = "frontCard">    
+          <img id="imgPok"src=${prop.img}>
+          <p id="pokemonName">${prop.name}</p>      
+          <p id="pokemonNumber">${prop.num}</p>
+          <div class= "candyImg hide ">
             <img src="./img/candy.png" id="candyEvolution">
-         </div>
+          </div>
         </div>
-       <div class = "reverseCard1">
-          <p id="pokemonAbout">${prop.about}</p>
-          <p id="pokemonType">${prop.type}</p>
-          <p id="pokemonRegion">${prop.generation.name}</p>
-          <p id="pokemonHeight">${prop.size.height}</p>
-          <p id="pokemonWeight">${prop.size.weight}</p>
-          <p id="pokemonWeaknesses">${prop.weaknesses}</p>
-          <p id="pokemonWeaknesses">${prop.resistant}</p>
-          <p id="pokemonWeaknesses">${prop["pokemon-rarity"]}</p>
-       </div>
-       <div class="statsReverseCard">
+        <div class = "reverseCard1">
+          <p id="pokemonType">
+              <strong class="pokeFeatTitle">TIPO</strong>
+              <span class="pokeFeat">${prop.type}</span>
+          </p>
+          <p id="pokemonRegion">
+              <strong class="pokeFeatTitle">REGIÓN</strong>
+              <span class="pokeFeat">${prop.generation.name}</span>
+          </p>
+          <p id="titleSizeType"><strong> MEDIDAS </strong></p>
+          <div class="sizeType">          
+            <p class="pokemonHeight">${prop.size.height}</p>
+            <p class="pokemonWeight">${prop.size.weight}</p>
+          </div>
+          <p id="pokemonWeaknesses">
+              <strong class="pokeFeatTitle">DEBILIDAD</strong>
+              <span class="pokeFeat">${prop.weaknesses}</span>
+          </p>
+          
+          <p id="pokemonRarity">
+              <strong class="pokeFeatTitle">RAREZA-POKEMÓN</strong>
+              <span class="pokeFeat">${prop["pokemon-rarity"]}</span>
+          </p>
+        </div>
+        <div class="statsReverseCard hide">
           <p id="baseAttack">${prop["base-attack"]}</p>
           <p id="baseDefense">${prop["base-defense"]}</p>
           <p id="baseStamina">${prop["base-stamina"]}</p>
           <p id="maxCp">${prop["max-cp"]}</p>
           <p id="maxHp">${prop["max-hp"]}</p>
-       </div>
-     </div> `
+        </div>
+      </div>
+    `
     
   const pokemonCard = sectionElement.querySelectorAll(".pokemonCard")
   //rotar las imágenes
@@ -81,14 +124,30 @@ const pokemonFeatures = (data, isCheck)=>{
     })
   }
 
+
+//   //cambio del reverso de Información
+// const statsReverseCard = sectionElement.querySelectorAll(".statsReverseCard");
+// const reverseCard1 = sectionElement.querySelectorAll(".reverseCard1");
+
+//   statsBtn.addEventListener("click", () => {
+//     pokemonCard.forEach(() => {
+//       reverseCard1.classList.add('.hide');
+//       statsReverseCard.classList.remove('.hide');
+
+//     })
+//   })
+   
+
+
+
   const candyImg = (isCheck) ? sectionElement.querySelector(".candyImg"): "";
   //console.log(candyImg)
     if(isCheck === true){
-      candyImg.classList.remove("hidden")
+      candyImg.classList.remove("hide")
     }
    
     candyImg && candyImg.addEventListener('click', () => {
-      //console.log('Aquí irá lo del modal')
+
       containerModal.classList.remove('ocultar');
       containerModal.classList.add('mostrar');
       containerModal.appendChild(moreInformation(prop));
@@ -113,11 +172,6 @@ selectBtn.forEach((e)=>{
     const clickType = event.target.id
     pokemonFeatures(filterData(pokemones,"type",clickType),false)    
   })
-})
-
-//Funcionamiento del botón pokeAll
-pokeAll.addEventListener('click',()=>{
-  pokemonFeatures(pokemones,false);
 })
 
 //Función buscar
@@ -184,7 +238,7 @@ const pokeEvolutionImage = (poke, cardContainer) => {
       divCardContainer.innerHTML = `<span  class="namePokeEvol">${prev[i].name}</span>
                                     <img src="${pokemn.img}" alt="" class="imagePokeModal">
                                     <div class="candyCost"9>
-                                        <p class="qtyCandy">${prev[i]["candy-cost"]} candy</p> 
+                                        <p class="qtyCandy">${prev[i]["candy-cost"]} </p> 
                                         <img src="./img/candyCost.png" class="candy">
                                     </div>
                                     
@@ -201,7 +255,7 @@ const pokeEvolutionImage = (poke, cardContainer) => {
           divCardContainer.innerHTML = `<span  class="namePokeEvol">${prev[i]['prev-evolution'][j].name}</span>
                                         <img src="${pokemn.img}" alt="" class="imagePokeModal">
                                         <div class="candyCost">
-                                            <p class="qtyCandy">${prev[i]['prev-evolution'][j]["candy-cost"]} candy</p>
+                                            <p class="qtyCandy">${prev[i]['prev-evolution'][j]["candy-cost"]} </p>
                                             <img src="./img/candyCost.png" class="candy">
                                         </div>
                                          
@@ -221,7 +275,7 @@ const pokeEvolutionImage = (poke, cardContainer) => {
       divCardContainer.innerHTML = `<span class="namePokeEvol">${next[i].name}</span>
                                     <img src="${pokemn.img}" alt="" class="imagePokeModal">
                                     <div class="candyCost">
-                                      <p class="qtyCandy">${next[i]["candy-cost"]} candy</p>
+                                      <p class="qtyCandy">${next[i]["candy-cost"]} </p>
                                       <img src="./img/candyCost.png" class="candy">
                                     </div>
                                      
@@ -238,7 +292,7 @@ const pokeEvolutionImage = (poke, cardContainer) => {
           divCardContainer.innerHTML = `<span class="namePokeEvol">${next[i]['next-evolution'][j].name}</span>
                                         <img src="${pokemn.img}" alt="" class="imageModal">
                                         <div class="candyCost">
-                                            <p class="qtyCandy">${next[i]['next-evolution'][j]["candy-cost"]} candy</p>
+                                            <p class="qtyCandy">${next[i]['next-evolution'][j]["candy-cost"]} </p>
                                             <img src="./img/candyCost.png" class="candy">
                                         </div>
                                 `;
@@ -247,6 +301,12 @@ const pokeEvolutionImage = (poke, cardContainer) => {
       }
       
     }
+  }
+  if(next.length===0 & prev.length===0){
+      divCardContainer = document.createElement('div');
+      divCardContainer.className = 'cardPokemonEvolution';
+      divCardContainer.innerHTML = `<p id="noEvolution">No hay evoluciones</p>`;
+      cardContainer.append(divCardContainer);
   }
   
 } 
@@ -259,20 +319,26 @@ const pokeEvolutionImage = (poke, cardContainer) => {
       <i class="fas fa-times" id="exit">X</i>
       <p id="namePokeEvol">${dataEvol.name}</p>  
       <p id="typePokeEvol">${dataEvol.type}</p>
-
+      <p id="sizes">Medidas</p>
       <table class="tableEvol">
-        <caption id="sizes">Medidas</caption>
         <tr>
             <th scope="col" class="titleHeight">Altura</th>
             <th scope="col" class="titleWeight">Peso</th>
         </tr> 
         <tr>
-            <td class="dataSize">${dataEvol.size.height}</td>
-            <td class="dataSize">${dataEvol.size.weight}</td>
+            <td class="dataSize">
+              <span>${dataEvol.size.height}</span>
+              <img src="./img/altura.png" id="imgHeight">
+            </td>
+            <td class="dataSize">
+              <span>${dataEvol.size.weight}</span>
+              <img src="./img/peso.png" id="imgWeight">
+            </td>
          </tr>
       </table>
-      <div id=sectionImgEvolution> 
-        <h2>Evoluciones</h2> 
+      <h2 id="evolutionsTitle">Evoluciones</h2> 
+      <div id="sectionImgEvolution"> 
+        
       </div>
       `
     
@@ -286,8 +352,6 @@ const pokeEvolutionImage = (poke, cardContainer) => {
  
 //estadísticos
 const statsBtn = document.getElementById("statsBtn");
-const optionsType = document.querySelector(".optionsType");
-const blockContentStat = document.querySelector(".blockContentStat");
 
 statsBtn.addEventListener("click", () =>{
   orderBySelect.style.display = "none";

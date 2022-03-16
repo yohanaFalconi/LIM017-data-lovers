@@ -12,7 +12,7 @@
        <!-- <h1>Bienvenidos a PokeDéx</h1>-->
        <!--<img src="./img/pokemones_1.png" class="homePokemon">-->
        <img src="./img/Pokemones.png" class="homeImg">
-       <img src="./img/magicpattern-blob.png" class="homeImg">
+      
        <!--<img src="./img/pokemon-nidoking.png" class="homeImg">-->
       </header>
       <section class="contFirstScreen">
@@ -44,16 +44,20 @@
             <li><img src="./img/flecha-izquierda.png" id="backArrow"></li>
             <li><img src="./img/casa.png" id="home"></li>
             <li>
-              <figure class="icoAllPoke">
-                <img src="./img/iconoPoke.png" id="pokeAll">
-                <figcaption>ALL</figcaption>
-              </figure>
-            </li>
-            <li>
               <img src="./img/lupa.png" id="lupa">
               <input type="search" id="inputPokeSearch"  placeholder="Ingrese el nombre de su pokemón">
             </li>
-            <li><input type="checkbox" id="pokeEvolution">Evolución por Caramelos</li>
+            <li>
+              <!-- <figure class="icoAllPoke"> -->
+                <img src="./img/pokebola_.png" id="pokeAll">
+                <!-- <figcaption>ALL</figcaption> -->
+              <!-- </figure> -->
+            </li>
+            <li><input type="checkbox" id="pokeEvolution">
+                <label>
+                  <img src="./img/rare-candy.png" id="candyEvol">
+                </label>
+            </li>
             <li>
               <button id="statsBtn">Estadísticos</button>
             </li> 
@@ -72,7 +76,7 @@
 
      </header>
      <div class="blockContent">
-      <aside class="sideBar">
+      <aside class="sideBar hide">
         <ul class="optionsType">
          <li class="filterBy"> Filtar por </li>
          <li class="optionsPokType" id="steel">Acero

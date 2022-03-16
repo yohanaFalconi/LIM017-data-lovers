@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+@import url("http://fonts.cdnfonts.com/css/sofia-pro");
 
 
 *{
@@ -7,45 +8,32 @@
     padding:0;
     text-decoration: none;
     list-style: none;
-    font-family: helvetica, arial, sans-serif;
+    font-family: "Sofia Pro", arial, sans-serif;
 }
 
 /*---PRIMERA SECCIÓN---*/
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 599px){
-  /*For cellphones*/
-
-}
-@media (min-width: 600px) and (max-width: 767px) {
-  /* For tablets: */
-
-}
-
-@media only screen and (min-width: 768px) {
-  /* For desktop: */
 
 
-
-
-}
 .firstScreen{
   min-height: 100vh; 
 }
 .mainPart{
   background: black;
-  padding: 15px;
+  /*padding: 15px;*/
 }
 .pokemonLogo{
-  width: 50%;
+  width: 30%;
   position: relative;
   margin: 0px auto;
   display: block;
 }
 .battleGift{
-  width: 90%;
+  width: 70%;
   position: unset;
-  margin: 10px auto;
+  margin: 0px auto;
   display: block;
+  padding: 10px;
 }
 .homePokemon{
   width: 25%;
@@ -53,38 +41,33 @@
 }
 .contFirstScreen{
   min-height: 100vh;
-
   padding: 10px;
   margin: auto;
-  /*background-image: url(../img/backgroundSky.jpg);*/
   background-image: url(../img/pokebolas_.PNG);
-
   background-position: center center;
-  background-size: cover;/*cambiar para responsive*/
-  background-repeat: no-repeat;
-  width: 100%;
-
-  align-items: flex-start;
-
+  background-size: contain;
+  /* background-repeat: no-repeat; */
+  /* width: 100%; */
+  /*align-items: flex-start;*/
   background-attachment: fixed;
   
 }
 
 #hello{
-  color: #020e16;
+  color: #e97c00;
   text-align: center;
   font-size: 20px;
   text-transform: uppercase;
   font-weight: bold;
-  margin: 20px;
   text-shadow: #333;
   text-shadow: #0000005e 0.1em 0.1em 0.2em;
+  margin-bottom: 15px;;
 }
 #helloMessage{
   top: 90%;
   text-align: center;
   font-size: 16px;
-  color: #020e16;
+  color: #ffff;
 }
 
 #btnStart{
@@ -96,10 +79,11 @@
   align-items: center;
   text-align: center;
   position: absolute;
-  top: 50%; 
-  left: 50%;
+  top: 250px; 
+  left: 40%;
   transform: translate(-50%, 200%);
   cursor: pointer;
+  color: #ffd04d;
 }
 .row{
   margin-top: 5%;
@@ -116,28 +100,25 @@
   flex-direction: column;
 }
 .introBox{
-  background: #f8efe4;
-  color: rgb(45,69,150);
-  height: 300px;
+  width: 450px;
+  height: 350px;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: #006d7a;
   position: absolute;
   box-shadow: 0px 10px 15px -5px rgb(0 0 0 / 65%);
   padding: 5% 7%;
-  top: 100px;
-  left: 20%;
-  right: 20%;
-  position: absolute;
-  opacity: 0.60;
-  border-radius: 30px
-  
+  top: 18px;
+  left: 30%;
+  right: 30%;
+  opacity: 80%;
+  border-radius: 30px; 
+  background-color: rgb(63, 66, 66); 
 }
 
 
 #message{
-  font-size: 5%;
+  font-size: 3%;
   padding: 15px;
   text-align: justify;
   margin: 10px;
@@ -146,7 +127,7 @@
 #masterImage{
   width: 17%;
   top: 140%;
-  right: 15%;
+  right: 25%;
   position: absolute;
   animation: floating 4s linear infinite;
 }
@@ -161,7 +142,7 @@
 #cinderaImage{
   width: 22%;
   top: 135%;
-  left: 6%;
+  left: 13%;
   position: absolute;
   animation: floating 4s linear infinite;
 }
@@ -185,6 +166,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: black;
   }
  
   /*---HEADER---*/
@@ -323,7 +305,6 @@
     display: flex;
   }
   .container{
-    background-color: green;
     margin: 10px;
     /*-webkit-perspective: 800;*/
     perspective: 800;
@@ -567,10 +548,10 @@
    /*text-transform: uppercase;*/
    transition: 0.5s;
    background-size: 200% auto;
-   color: white;            
-   box-shadow: 0 0 20px #eee;
+   color: black;            
    border-radius: 5px;
    cursor: pointer;
+ 
  }
 
 #pokeSearch,#pokeEvolution:hover {
@@ -641,7 +622,7 @@
     padding: 10px;
     background-color: #e2da8b;
     border-radius: 7px;
-    font-size: 18px;
+    font-size: 15px;
   }
 
   #exit{

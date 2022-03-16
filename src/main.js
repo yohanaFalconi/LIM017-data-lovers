@@ -301,7 +301,7 @@ statsBtn.addEventListener("click", () =>{
   //container.classList.remove("reverseCard1");
   //container.classList.replace("reverseCard1", "statsReverseCard")
 
-// });
+});
 
 // Filtrando según el Estadístico
 const statOptions = document.querySelectorAll(".statOptions")
@@ -311,16 +311,6 @@ statOptions.forEach((e)=>{
     pokemonFeatures(topStats(pokemones, clickStat, 10))    
   })
 })
-
-
-
-
-
-
-
-
-
-
 
 //estadísticos suma
 /*
@@ -351,5 +341,3 @@ const pokemonStats = pokemones.map(function (event){
 function sum(property){
   property.reduce((a,n) => (a += n, a),0)
 } */
-
-

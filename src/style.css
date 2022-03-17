@@ -35,6 +35,7 @@
   display: block;
   padding: 10px;
 }
+        /*preguntar si esto va o si se quita*/
 .homePokemon{
   width: 25%;
   height: 25%;
@@ -183,10 +184,12 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
   }
   .pokeBrowser ul li{
     display: flex;
     align-items: center;
+    margin:3px 10px;
   }
 
   #backArrow{
@@ -194,66 +197,81 @@
     width: 40px;
     margin: 5px;
   }
-  #home{
+  #noFilter{
     height: 45px;
     width: 45px;
     margin: 0px 15px;
   }
-  
-  /* .icoAllPoke{
+
+ 
+  #candyEvolBtn:hover, #pokeAllBtn:hover, #cleanFilterBtn:hover,#backArrow:hover, #statsBtn:hover{
+    background-color:rgb(97, 172, 147);
+    transform: scale(1.2);
+  }
+  #pokeAllBtn {
+    border-radius: 5PX;
     display: flex;
     flex-direction: column;
-    margin: 0px 15px;
-    cursor: pointer
-  } */
-  /*.icoAllPoke:hover,*/ #pokeAll:hover, #home:hover,#backArrow:hover{
-    background-color:rgb(97, 172, 147);
-    transform: scale(1.3);
+    align-items: center;
+    text-justify: distribute;
+    width: max-content;
+    padding: 5px;
   }
-  #pokeAll{
-    height: 40px;
-    width: 40px;
-    cursor: pointer;
-    margin: 0px 15px;
+  #candyEvolBtn {
+    border-radius: 5PX;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: max-content;
+    padding: 5px;
+    background-color: #f3f2ed;
+    font-size: 13.5px;
+    border-style: groove;
+    border-color: gray;
   }
-
-   #lupa{
-    height: 37px;
-    width: 37px;
-    margin: 0px 5px 0px 10px;
-  }
-  #inputPokeSearch{
-    height: 35px;
-    border-radius: 3px;
-    width: 400px;
-    background: rgb(215 232 226);
-    margin-left: 18px;
+  #cleanFilterBtn,#statsBtn{
+    border-radius: 5PX;
+    display: flex;
+    text-justify: distribute;
+    width: max-content;
+    padding: 12px 5px;
+    align-items: center;
     
   }
-  #inputPokeSearch:hover, /*#pokeEvolution:hover,*/ #statsBtn:hover{
+  #pokebol,#candyEvol,#noFilter,#top10{
+    height: 15px;
+    width: 15px;
+    /* cursor: pointer; */
+    margin: 0px 3px;
+  }
+
+  #inputPokeSearch{
+    height: 40px;
+    border-radius: 10px;
+    width: 30vw;
+    background: rgb(215 232 226);
+    text-align: center;
+    
+  }
+  #inputPokeSearch::placeholder{
+    background-image: url(./img/lupa.png);
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    background-position: 1rem center ;   
+  }
+  #inputPokeSearch:focus{
+    outline: none;
+  }
+  #inputPokeSearch:hover{
     border-color:rgb(187, 133, 64);
     border-width: 3px;
     transform: scale(1.1);
     border-radius: 3px;
    
   }
-  #candyEvol{
-    width:35%;
-  }
-   /* #pokeEvolution{
-    width: 35px;
-    height: 35px;
-    margin-left: 35px;
-    display:none;*/
-
-    /* height: 45px;
-    background: rgb(118 167 165);
-    border-style: groove;
-    border-width: 5px;
-    margin: 0px 30px;
-    border-radius: 5px;
-    padding: 10px; */
-  /* } */ 
+   #pokeEvolution{
+    display:none;
+  } 
   .orderBySelect{
     width: 150px;
     height: auto;
@@ -299,7 +317,7 @@
   /*--- SECCIÓN - CONTENEDOR DE POKEMONES  ---*/
   
   .hide{
-    display: none;
+    display: none  !important;
   }
   .blockContent{
     display: flex;
@@ -444,13 +462,13 @@
   text-decoration:none;
 }
 
-.sideBar{
+.sideBarType{
   margin: 5px;
-  background: aliceblue;
-  height: max-content;
+  /* background: aliceblue;
+  height: max-content; */
 
 }
-.sideBar ul{
+.sideBarType ul{
   list-style: none;
   text-decoration: none;
   margin: 5px;
@@ -461,7 +479,7 @@
   font-size: 14px;
   
 }
-.sideBar ul li{
+.sideBarType ul li{
   background: green;
   padding: 8px;
   margin: 3px;
@@ -473,7 +491,14 @@
   margin: 5px;
   cursor:pointer;
 }
-.sideBar .filterBy{
+/*.asides,*/.sideBarType, .sideBarStat{
+  display: flex;
+  flex-direction: column;
+  background: aliceblue;
+  height: max-content;
+}
+
+.filterBy, .topTenMessage{
   display: block;
   text-align: center;
   border-bottom: #fef7f7 solid 1px;
@@ -541,7 +566,7 @@
 /*BOTONES*/
 
 
-#btnStart, #statsBtn/*, #pokeEvolution*/{
+#btnStart /*#statsBtn*//*, #pokeEvolution*/{
   font-size: 16px;
    margin: 35px;
    text-align: center;
@@ -554,7 +579,7 @@
  
  }
 
-#pokeSearch,#pokeEvolution:hover {
+#pokeEvolution:hover {
    background-position: right center; /* change the direction of the change here */
    color: #fff;
    text-decoration: none;
@@ -728,8 +753,12 @@
 .statsReverseCard{
   display:none;
 } 
-ul.blockContentStat{
+/* ul.blockContentStat{
   display:none;
-}
+} */
 
-  
+@media only screen and (min-width:320px) {
+  #inputPokeSearch::placeholder{
+
+  }
+}

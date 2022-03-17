@@ -40,28 +40,24 @@
     <section class="secondScreen">
       <header>
         <img class="headImage" src="./img/pokemon_go.png">
-        <!-- <h1 class="titleSecondScreen"></h1> -->
         <nav class = "pokeBrowser">
           <ul>
             <li><img src="./img/flecha-izquierda.png" id="backArrow"></li>
-            <li><img src="./img/casa.png" id="home"></li>
             <li>
-              <img src="./img/lupa.png" id="lupa">
-              <input type="search" id="inputPokeSearch"  placeholder="Ingrese el nombre de su pokemón">
+              <input type="search" id="inputPokeSearch"  placeholder="Ingrese el nombre del pokemón">
             </li>
             <li>
-              <!-- <figure class="icoAllPoke"> -->
-                <img src="./img/pokebola_.png" id="pokeAll">
-                <!-- <figcaption>ALL</figcaption> -->
-              <!-- </figure> -->
+               <button id="pokeAllBtn">TIPOS DE POKEMÓN<img src="./img/pokebola_.png" id="pokebol"></button> 
             </li>
             <li><input type="checkbox" id="pokeEvolution">
-                <label>
-                  <img src="./img/rare-candy.png" id="candyEvol">
+                <label for="pokeEvolution" id="candyEvolBtn">
+                  EVOLUCIONES <img src="./img/rare-candy.png" id="candyEvol"/> 
+                  <!-- <button id="candyEvolBtn">EVOLUCIONES <img src="./img/rare-candy.png" id="candyEvol"/>  </button> -->
+                  <!-- <img src="./img/rare-candy.png" id="candyEvol"> -->
                 </label>
             </li>
             <li>
-              <button id="statsBtn">Estadísticos</button>
+              <button id="statsBtn">ESTADÍSTICOS<img src="./img/top-10.png" id="top10"></button>
             </li> 
             <li>
               <select class="orderBySelect">
@@ -72,86 +68,91 @@
                 <option value="Z_A" class = "orderOption">Z-A</option>
               </select>
             </li>
-                
+            <li><button id="cleanFilterBtn">LIMPIAR<img src="./img/sinfiltro.png" id="noFilter"></button></li>    
           </ul>
         </nav>
 
      </header>
      <div class="blockContent">
-      <aside class="sideBar hide">
-        <ul class="optionsType">
-         <li class="filterBy"> Filtar por </li>
-         <li class="optionsPokType" id="steel">Acero
-            <img class="icon-medium icon-filter" src="img/steel-icon.png">
-         </li>
-         <li class="optionsPokType" id="water">Agua
-          <img class="icon-medium icon-filter" src="img/water-icon.png">
-         </li>
-         <li class="optionsPokType" id="dragon">Dragón
-          <img class="icon-medium icon-filter" src="img/dragon-icon.png">
-         </li>
-         <li class="optionsPokType" id="electric">Eléctrico
-          <img class="icon-medium icon-filter" src="img/electric-icon.png">
-         </li>
-         <li class="optionsPokType" id="ghost">Fantasma
-          <img class="icon-medium icon-filter" src="img/ghost-icon.png">
-         </li>
-         <li class="optionsPokType" id="fire">Fuego
-          <img class="icon-medium icon-filter" src="img/fire-icon.png">
-         </li>
-         <li class="optionsPokType" id="fairy">Hada
-          <img class="icon-medium icon-filter" src="img/fairy-icon.png">
-         </li>
-         <li class="optionsPokType" id="ice">Hielo
-          <img class="icon-medium icon-filter" src="img/ice-icon.png">
-         </li>
-         <li class="optionsPokType" id="bug">Insecto
-          <img class="icon-medium icon-filter" src="img/bug-icon.png"> 
-         </li>
-         <li class="optionsPokType" id="fighting">Luchador
-          <img class="icon-medium icon-filter" src="img/fighting-icon.png">
-         </li>
-         <li class="optionsPokType" id="grass">Planta
-          <img class="icon-medium icon-filter" src="img/grass-icon.png">
-         </li>
-         <li class="optionsPokType" id="psychic">Psíquico
-          <img class="icon-medium icon-filter" src="img/psychic-icon.png">
-         </li>
-         <li class="optionsPokType" id="rock" >Roca
-          <img class="icon-medium icon-filter" src="img/rock-icon.png">
-         </li>
-         <li class="optionsPokType" id="normal">Normal
-          <img class="icon-medium icon-filter" src="img/normal-icon.png">
-         </li>
-         <li class="optionsPokType" id="flying">Volador
-          <img class="icon-medium icon-filter" src="img/flying-icon.png">
-         </li>
-         <li class="optionsPokType" id="poison">Veneno
-          <img class="icon-medium icon-filter" src="img/poison-icon.png">
-         </li>
-         <li class="optionsPokType" id="dark">Siniestro
-          <img class="icon-medium icon-filter" src="img/dark-icon.png">
-         </li>
-         <li class="optionsPokType" id="ground">Tierra
-          <img class="icon-medium icon-filter" src="img/ground-icon.png">
-         </li>
-         
-       </ul>
-       <ul class="blockContentStat">
-         <li class="topTenMessage">Top 10</li>
-          <li class="statOptions" id="base-attack">Ataque
-            <img class="icon-medium icon-filter" src="img/attack-icon.png">
-          </li>
-          <li class="statOptions" id="base-defense">Defensa</li>
-          <li class="statOptions" id="base-stamina">Resistencia</li>
-          <li class="statOptions" id="max-cp">Poder de Combate</li>
-          <li class="statOptions" id="max-hp">Poder de Sanación</li>
-       </ul>
-      </aside>
+        <!-- <div class="asides"> -->
+        <aside class="sideBarType hide">
+          <ul class="optionsType">
+            <li class="filterBy"> 
+              <input>
+              <label>FILTRAR POR TIPO</label>
+            </li>
+            <li class="optionsPokType" id="steel">Acero
+                <img class="icon-medium icon-filter" src="img/steel-icon.png">
+            </li>
+            <li class="optionsPokType" id="water">Agua
+              <img class="icon-medium icon-filter" src="img/water-icon.png">
+            </li>
+            <li class="optionsPokType" id="dragon">Dragón
+              <img class="icon-medium icon-filter" src="img/dragon-icon.png">
+            </li>
+            <li class="optionsPokType" id="electric">Eléctrico
+              <img class="icon-medium icon-filter" src="img/electric-icon.png">
+            </li>
+            <li class="optionsPokType" id="ghost">Fantasma
+              <img class="icon-medium icon-filter" src="img/ghost-icon.png">
+            </li>
+            <li class="optionsPokType" id="fire">Fuego
+              <img class="icon-medium icon-filter" src="img/fire-icon.png">
+            </li>
+            <li class="optionsPokType" id="fairy">Hada
+              <img class="icon-medium icon-filter" src="img/fairy-icon.png">
+            </li>
+            <li class="optionsPokType" id="ice">Hielo
+              <img class="icon-medium icon-filter" src="img/ice-icon.png">
+            </li>
+            <li class="optionsPokType" id="bug">Insecto
+              <img class="icon-medium icon-filter" src="img/bug-icon.png"> 
+            </li>
+            <li class="optionsPokType" id="fighting">Luchador
+              <img class="icon-medium icon-filter" src="img/fighting-icon.png">
+            </li>
+            <li class="optionsPokType" id="grass">Planta
+              <img class="icon-medium icon-filter" src="img/grass-icon.png">
+            </li>
+            <li class="optionsPokType" id="psychic">Psíquico
+              <img class="icon-medium icon-filter" src="img/psychic-icon.png">
+            </li>
+            <li class="optionsPokType" id="rock" >Roca
+              <img class="icon-medium icon-filter" src="img/rock-icon.png">
+            </li>
+            <li class="optionsPokType" id="normal">Normal
+              <img class="icon-medium icon-filter" src="img/normal-icon.png">
+            </li>
+            <li class="optionsPokType" id="flying">Volador
+              <img class="icon-medium icon-filter" src="img/flying-icon.png">
+            </li>
+            <li class="optionsPokType" id="poison">Veneno
+              <img class="icon-medium icon-filter" src="img/poison-icon.png">
+            </li>
+            <li class="optionsPokType" id="dark">Siniestro
+              <img class="icon-medium icon-filter" src="img/dark-icon.png">
+            </li>
+            <li class="optionsPokType" id="ground">Tierra
+              <img class="icon-medium icon-filter" src="img/ground-icon.png">
+            </li>
+          </ul>
+        </aside>
+        <aside class="sideBarStat hide">
+         <ul class="blockContentStat">
+            <li class="topTenMessage">Top 10</li>
+            <li class="statOptions" id="base-attack">Ataque
+              <img class="icon-medium icon-filter" src="img/attack-icon.png">
+            </li>
+            <li class="statOptions" id="base-defense">Defensa</li>
+            <li class="statOptions" id="base-stamina">Resistencia</li>
+            <li class="statOptions" id="max-cp">Poder de Combate</li>
+            <li class="statOptions" id="max-hp">Poder de Sanación</li>
+          </ul>
+        </aside>
 
-      
-      <div class="container"></div>
-     </div>  
+       <!-- </div> -->
+        <div class="container"></div>
+      </div>  
      <div id="containerModal" class="ocultar"></div>  
 
     </section>

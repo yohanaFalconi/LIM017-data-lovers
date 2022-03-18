@@ -15,10 +15,12 @@ const firstScreen = document.querySelector('.firstScreen');
 const secondScreen = document.querySelector('.secondScreen');
 const btnStart = document.getElementById('btnStart');
 const selectBtn = document.querySelectorAll('.optionsPokType');
-const pokeAll = document.getElementById("pokeAll");
-const sideBar = document.querySelector(".sideBar");
-const optionsType = document.querySelector(".optionsType");
-const blockContentStat = document.querySelector(".blockContentStat");
+const pokeAllBtn = document.getElementById("pokeAllBtn");
+//const asides = document.querySelector(".asides");
+const sideBarStat = document.querySelector('.sideBarStat');
+const sideBarType = document.querySelector(".sideBarType");
+// const optionsType = document.querySelector(".optionsType");
+// const blockContentStat = document.querySelector(".blockContentStat");
 const orderBySelect = document.querySelector('.orderBySelect');
 const pokeEvolution = document.getElementById("pokeEvolution");
 	// aparezca la segunda pantalla
@@ -26,35 +28,44 @@ const pokeEvolution = document.getElementById("pokeEvolution");
   function screenAppear(){
     firstScreen.style.display = 'none';
     secondScreen.style.display ='block';
+    window.scrollTo(0, 0);
+    pokemonFeatures(pokemones,false);
+    //asides.classList.add("hide");
+    sideBarType.classList.add("hide");
+    sideBarStat.classList.add("hide");
+    orderBySelect.style.display="block";
+    pokeEvolution.checked=false;
 
   }
   
  //botón de atrás: Back Arrow
 
-const backArrow = document.getElementById("backArrow");
-backArrow.addEventListener("click",()=>{
-   firstScreen.style.display = 'block';
-   secondScreen.style.display = 'none';
-   pokeEvolution.checked = false;
-   pokemonFeatures(pokemones,false);
-}) 
+// const backArrow = document.getElementById("backArrow");
+// backArrow.addEventListener("click",()=>{
+//    firstScreen.style.display = 'block';
+//    secondScreen.style.display = 'none';
+//    pokeEvolution.checked = false;
+//    pokemonFeatures(pokemones,false);
+// }) 
 
   //botón de recargar la página todos los pokemones, sin filtros
-  const home = document.getElementById("home");
-  home.addEventListener('click', () =>{
+  const cleanFilterBtn = document.getElementById("cleanFilterBtn");
+  cleanFilterBtn.addEventListener('click', () =>{
     pokemonFeatures(pokemones,false);
-    sideBar.classList.add("hide");
+    sideBarType.classList.add("hide");
+    sideBarStat.classList.add("hide");
+    //asides.classList.add("hide");
     orderBySelect.style.display="block";
     pokeEvolution.checked=false;
   })
 
 
-  //Funcionamiento del botón pokeAll y aparición de tipos
-  pokeAll.addEventListener('click',()=>{
+  //Funcionamiento del botón pokeAllBtn y aparición de tipos
+  pokeAllBtn.addEventListener('click',()=>{
     pokemonFeatures(pokemones,false);
-    sideBar.classList.remove("hide");
-    optionsType.classList.remove("hide");
-    blockContentStat.classList.add("hide");
+    sideBarType.classList.remove("hide");
+    sideBarStat.classList.add('hide');
+    pokeEvolution.checked=false;
   })
 
   
@@ -98,7 +109,10 @@ const pokemonFeatures = (data, isCheck)=>{
               <strong class="pokeFeatTitle">DEBILIDAD</strong>
               <span class="pokeFeat">${prop.weaknesses}</span>
           </p>
-          
+          <p id="pokemonResistant">
+              <strong class="pokeFeatTitle">RESISTENCIA</strong>
+              <span class="pokeFeat">${prop.resistant} </span>
+          </p> 
           <p id="pokemonRarity">
               <strong class="pokeFeatTitle">RAREZA-POKEMÓN</strong>
               <span class="pokeFeat">${prop["pokemon-rarity"]}</span>
@@ -123,22 +137,6 @@ const pokemonFeatures = (data, isCheck)=>{
       })
     })
   }
-
-
-//   //cambio del reverso de Información
-// const statsReverseCard = sectionElement.querySelectorAll(".statsReverseCard");
-// const reverseCard1 = sectionElement.querySelectorAll(".reverseCard1");
-
-//   statsBtn.addEventListener("click", () => {
-//     pokemonCard.forEach(() => {
-//       reverseCard1.classList.add('.hide');
-//       statsReverseCard.classList.remove('.hide');
-
-//     })
-//   })
-   
-
-
 
   const candyImg = (isCheck) ? sectionElement.querySelector(".candyImg"): "";
   //console.log(candyImg)
@@ -171,7 +169,9 @@ selectBtn.forEach((e)=>{
   e.addEventListener("click", (event) => { 
     const clickType = event.target.parentElement.id
     console.log(event.target.parentElement)
+
     pokemonFeatures(filterData(pokemones,"type",clickType),false)    
+    pokeEvolution.checked=false;
   })
 })
 
@@ -203,11 +203,13 @@ inputPokeSearch.addEventListener('keyup',()=>{
   }
 });
  
-// ordenando 
+//Función ordenar
 orderBySelect.addEventListener('change', function (e){
+  pokeEvolution.checked=false;
   const clickSelected = e.target.value
   container.innerHTML="";
   pokemonFeatures(orderBy(pokemones,clickSelected),false)
+  
 })
 
 //Modal
@@ -355,16 +357,10 @@ const pokeEvolutionImage = (poke, cardContainer) => {
 const statsBtn = document.getElementById("statsBtn");
 
 statsBtn.addEventListener("click", () =>{
+  pokeEvolution.checked=false;
   orderBySelect.style.display = "none";
-  optionsType.style.display = "none"
-  blockContentStat.style.display = 'block';
-
-  //reverseCard1.style.display = "none";
-  //container.classList.remove('statsReverseCard')
-  //pokemonCard.classList.add("")
-  //statsReverseCard
-  //container.classList.remove("reverseCard1");
-  //container.classList.replace("reverseCard1", "statsReverseCard")
+  sideBarType.classList.add("hide");
+  sideBarStat.classList.remove("hide");
 
 });
 
@@ -373,36 +369,8 @@ const statOptions = document.querySelectorAll(".statOptions")
 statOptions.forEach((e)=>{
   e.addEventListener("click", (event) => { 
     const clickStat = event.target.id
-    pokemonFeatures(topStats(pokemones, clickStat, 10))    
+    pokemonFeatures(topStats(pokemones, clickStat, 10))   
+    pokeEvolution.checked=false; 
   })
 })
 
-//estadísticos suma
-/*
-const pokemonStats = pokemones.map(function (event){
-  const baseAttack = event.stats;
-  const baseDefense = event.stats["base-defense"];
-  const baseStamina = event.stats["base-stamina"]; 
-  const maxCp = event.stats["max-cp"]; 
-  const maxHp = event.stats["max-hp"]; 
-
-  //newArrayStats = baseAttack 
-  const statKeys = Object.keys(event.stats)
-  //console.log(statValues)
-  //console.log(statKeys)
-//buscando hacer un const de solo los estadís
-  let entrsPok = Object.entries(event)
-  const entriesStats = entrsPok[10][1]
-  //console.log(entriesStats)
- //sumar los estadísticos de cada pokemon
- const statValues = Object.values(entriesStats)
- console.log(statValues) //esto muestra los val de base-defense
- //let statVa_ = newArray.sort((a, b) => b-a)
- //console.log(newArray)
-})
-*/
-//creando una función que reconozca que los array deben de estar en objetos
-/*
-function sum(property){
-  property.reduce((a,n) => (a += n, a),0)
-} */

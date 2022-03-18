@@ -221,7 +221,7 @@ right: 0%;
 /* ---SEGUNDA SECCIÓN--- */
 
   .secondScreen{
-    background-color: #e9e9ab;
+    background-color: #fcfcfc;
     display: none;
     position: relative;
     width: 100%;
@@ -239,87 +239,144 @@ right: 0%;
   /*---barra de navegación horizontal--*/
   .pokeBrowser{
     text-align: center;
-    padding: 5px;
-    background: rgb(224, 221, 210);
-    width: 100vw;
+    /* padding: 5px; */
+    /* background: rgb(224, 221, 210); */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
   }
-  .pokeBrowser ul{
+  .selectInfo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #397f91;
+  }
+  .selectInfo>ul{
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  .selectInfo>ul>li{
+    /* padding: 5px; */
+  
+  }
+  .filterSelectClean{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    background-color: #a3dbe9;
+  }
+  .filterSelectClean>ul{
+    display: flex;
+  }
+  .filterSelectClean>ul>li{
+    margin: 5px;
+  }
+  /* .pokeBrowser ul{
     margin: 15px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-  }
-  .pokeBrowser ul li{
+    flex-wrap: wrap;
+  } */
+  /* .pokeBrowser ul li{
     display: flex;
     align-items: center;
-  }
+    margin:3px 10px;
+  } */
 
-  #backArrow{
+  /* #backArrow{
     height: 40px;
     width: 40px;
     margin: 5px;
-  }
-  #home{
+  } */
+  #noFilter{
     height: 45px;
     width: 45px;
     margin: 0px 15px;
   }
-  
-  /* .icoAllPoke{
+
+ 
+  .labelFilter:hover, #pokeAllBtn:hover, #cleanFilterBtn:hover,#backArrow:hover, #statsBtn:hover{
+    background-color:rgb(97, 172, 147);
+    transform: scale(1.2);
+  }
+  #pokeAllBtn {
+    border-radius: 5PX;
     display: flex;
     flex-direction: column;
-    margin: 0px 15px;
-    cursor: pointer
-  } */
-  /*.icoAllPoke:hover,*/ #pokeAll:hover, #home:hover,#backArrow:hover{
-    background-color:rgb(97, 172, 147);
-    transform: scale(1.3);
+    align-items: center;
+    text-justify: distribute;
+    width: max-content;
+    padding: 5px;
   }
-  #pokeAll{
-    height: 40px;
-    width: 40px;
-    cursor: pointer;
-    margin: 0px 15px;
+  .labelFilter {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    padding: 15px;
+    background-color: #488490;
+    font-size: 13.5px;
+    color: white;
   }
-
-   #lupa{
-    height: 37px;
-    width: 37px;
-    margin: 0px 5px 0px 10px;
-  }
-  #inputPokeSearch{
-    height: 35px;
-    border-radius: 3px;
-    width: 400px;
-    background: rgb(215 232 226);
-    margin-left: 18px;
+  #cleanFilterBtn,#statsBtn{
+    border-radius: 5PX;
+    display: flex;
+    text-justify: distribute;
+    width: max-content;
+    padding: 12px 5px;
+    align-items: center;
     
   }
-  #inputPokeSearch:hover, /*#pokeEvolution:hover,*/ #statsBtn:hover{
-    border-color:rgb(187, 133, 64);
+  #cleanFilterBtn{
+    border-radius: 5PX;
+    display: flex;
+    text-justify: distribute;
+    width: max-content;
+    padding: 8px 5px;
+    align-items: center;
+    
+  }
+
+  #pokebol,#candyEvol,#noFilter,#top10{
+    height: 25px;
+    width: 25px;
+    /* cursor: pointer; */
+    margin: 0px 3px;
+  }
+
+  #inputPokeSearch{
+    height: 40px;
+    border-radius: 10px;
+    width: 45vw;
+    background: rgb(215 232 226);
+    text-align: center;
+    margin: 5px 15px;
+    padding: 3px;
+  }
+  #inputPokeSearch::placeholder{
+    background-image: url(./img/lupa.png);
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    background-position: 1rem center ;   
+  }
+  #inputPokeSearch:focus{
+    outline: none;
+  }
+  #inputPokeSearch:hover{
+    border-color:rgb(32, 75, 64);
     border-width: 3px;
-    transform: scale(1.1);
+    transform: scale(1.05);
     border-radius: 3px;
    
   }
-  #candyEvol{
-    width:35%;
-  }
-   /* #pokeEvolution{
-    width: 35px;
-    height: 35px;
-    margin-left: 35px;
-    display:none;*/
-
-    /* height: 45px;
-    background: rgb(118 167 165);
-    border-style: groove;
-    border-width: 5px;
-    margin: 0px 30px;
-    border-radius: 5px;
-    padding: 10px; */
-  /* } */ 
+   #pokeEvolution,#pokeAllBtn, #statsBtn{
+    display:none;
+  } 
   .orderBySelect{
     width: 150px;
     height: auto;
@@ -365,7 +422,7 @@ right: 0%;
   /*--- SECCIÓN - CONTENEDOR DE POKEMONES  ---*/
   
   .hide{
-    display: none;
+    display: none  !important;
   }
   .blockContent{
     display: flex;
@@ -503,6 +560,15 @@ right: 0%;
   }
 
   /*---barra de navegación lateral---*/
+  
+  #filterType{
+    display: none;
+  }
+
+  #menuType{
+    width: 35px;
+    height: 35px;
+  }
   nav > ul{
   height:100%;
   display: flex; 
@@ -510,40 +576,52 @@ right: 0%;
   text-decoration:none;
 }
 
-.sideBar{
+.sideBarType{
   margin: 5px;
-  background: aliceblue;
-  height: max-content;
+  /* background: aliceblue;
+  height: max-content; */
 
 }
-.sideBar ul{
+.sideBarType ul{
   list-style: none;
   text-decoration: none;
   margin: 5px;
   text-align: left;
-  display: block;
+  display: flex;
   width: 140px;
   text-align: none;
   font-size: 14px;
+  flex-direction: column;
   
 }
-.sideBar ul li{
+/* .sideBarType ul li{
   background: green;
   padding: 8px;
   margin: 3px;
   cursor:pointer;
-}
+} */
 .statOptions{
   background: green;
   padding: 15px;
   margin: 5px;
   cursor:pointer;
 }
-.sideBar .filterBy{
-  display: block;
+/*.asides,*/.sideBarType, .sideBarStat{
+  display: flex;
+  flex-direction: column;
+  background: aliceblue;
+  height: max-content;
+}
+
+.filterBy, .topTenMessage{
+  display: flex;
   text-align: center;
   border-bottom: #fef7f7 solid 1px;
-  background-color: rgb(4, 4, 116);
+  background-color: rgb(78 121 150);
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 5px;
 
 }   
 
@@ -558,24 +636,31 @@ right: 0%;
   height: 32px;
   margin: 1px;
 }
-.optionsPokType{
+.optionsPokType,.statOptions{
+  /* position: relative; */
+  color: aliceblue;
+  font-size: 16px;
+  /* font-weight: bold; */
+  /* text-align: end; */
+  /*font-family: 'Baloo Thambi 2', cursive;*/
+  text-transform: uppercase;
+  background: rgb(127, 178, 212);
+  padding: 8px;
+  /* margin: 3px; */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+/* .statOptions{
   position: relative;
   color: aliceblue;
   font-size: 16px;
   font-weight: bold;
   text-align: end;
   /*font-family: 'Baloo Thambi 2', cursive;*/
-  text-transform: capitalize;
-}
-.statOptions{
-  position: relative;
-  color: aliceblue;
-  font-size: 16px;
-  font-weight: bold;
-  text-align: end;
-  /*font-family: 'Baloo Thambi 2', cursive;*/
-  text-transform: capitalize;
-}
+  /* text-transform: capitalize;
+} */ 
 
 
 
@@ -604,19 +689,7 @@ right: 0%;
     margin:0;
 }
 
-/*BOTONES*/
 
-
-
-#pokeSearch,#pokeEvolution:hover {
-   background-position: right center; /* change the direction of the change here */
-   color: #fff;
-   text-decoration: none;
- }
-
-
-
- 
  /*Modal de card evolution*/
  .ocultar {
   visibility: hidden;
@@ -777,8 +850,12 @@ right: 0%;
 .statsReverseCard{
   display:none;
 } 
-ul.blockContentStat{
+/* ul.blockContentStat{
   display:none;
-}
+} */
 
-  
+@media only screen and (max-width:300px) {
+  #inputPokeSearch{
+    width: 100%;
+  }
+}

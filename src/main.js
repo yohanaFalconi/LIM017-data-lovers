@@ -167,8 +167,9 @@ const pokemonFeatures = (data, isCheck)=>{
 // Filtrando según el tipo de pokémon
 selectBtn.forEach((e)=>{
   e.addEventListener("click", (event) => { 
-    
-    const clickType = event.target.id
+    const clickType = event.target.parentElement.id
+    console.log(event.target.parentElement)
+
     pokemonFeatures(filterData(pokemones,"type",clickType),false)    
     pokeEvolution.checked=false;
   })
@@ -373,32 +374,3 @@ statOptions.forEach((e)=>{
   })
 })
 
-//estadísticos suma
-/*
-const pokemonStats = pokemones.map(function (event){
-  const baseAttack = event.stats;
-  const baseDefense = event.stats["base-defense"];
-  const baseStamina = event.stats["base-stamina"]; 
-  const maxCp = event.stats["max-cp"]; 
-  const maxHp = event.stats["max-hp"]; 
-
-  //newArrayStats = baseAttack 
-  const statKeys = Object.keys(event.stats)
-  //console.log(statValues)
-  //console.log(statKeys)
-//buscando hacer un const de solo los estadís
-  let entrsPok = Object.entries(event)
-  const entriesStats = entrsPok[10][1]
-  //console.log(entriesStats)
- //sumar los estadísticos de cada pokemon
- const statValues = Object.values(entriesStats)
- console.log(statValues) //esto muestra los val de base-defense
- //let statVa_ = newArray.sort((a, b) => b-a)
- //console.log(newArray)
-})
-*/
-//creando una función que reconozca que los array deben de estar en objetos
-/*
-function sum(property){
-  property.reduce((a,n) => (a += n, a),0)
-} */

@@ -156,7 +156,7 @@
 /* ---SEGUNDA SECCIÓN--- */
 
   .secondScreen{
-    background-color: #e9e9ab;
+    background-color: #fcfcfc;
     display: none;
     position: relative;
     width: 100%;
@@ -174,29 +174,61 @@
   /*---barra de navegación horizontal--*/
   .pokeBrowser{
     text-align: center;
-    padding: 5px;
-    background: rgb(224, 221, 210);
-    width: 100vw;
+    /* padding: 5px; */
+    /* background: rgb(224, 221, 210); */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
   }
-  .pokeBrowser ul{
+  .selectInfo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #397f91;
+  }
+  .selectInfo>ul{
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  .selectInfo>ul>li{
+    /* padding: 5px; */
+  
+  }
+  .filterSelectClean{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    background-color: #a3dbe9;
+  }
+  .filterSelectClean>ul{
+    display: flex;
+  }
+  .filterSelectClean>ul>li{
+    margin: 5px;
+  }
+  /* .pokeBrowser ul{
     margin: 15px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-  }
-  .pokeBrowser ul li{
+  } */
+  /* .pokeBrowser ul li{
     display: flex;
     align-items: center;
     margin:3px 10px;
-  }
+  } */
 
-  #backArrow{
+  /* #backArrow{
     height: 40px;
     width: 40px;
     margin: 5px;
-  }
+  } */
   #noFilter{
     height: 45px;
     width: 45px;
@@ -204,7 +236,7 @@
   }
 
  
-  #candyEvolBtn:hover, #pokeAllBtn:hover, #cleanFilterBtn:hover,#backArrow:hover, #statsBtn:hover{
+  .labelFilter:hover, #pokeAllBtn:hover, #cleanFilterBtn:hover,#backArrow:hover, #statsBtn:hover{
     background-color:rgb(97, 172, 147);
     transform: scale(1.2);
   }
@@ -217,17 +249,14 @@
     width: max-content;
     padding: 5px;
   }
-  #candyEvolBtn {
-    border-radius: 5PX;
+  .labelFilter {
     display: flex;
-    flex-direction: column;
     align-items: center;
     width: max-content;
-    padding: 5px;
-    background-color: #f3f2ed;
+    padding: 15px;
+    background-color: #488490;
     font-size: 13.5px;
-    border-style: groove;
-    border-color: gray;
+    color: white;
   }
   #cleanFilterBtn,#statsBtn{
     border-radius: 5PX;
@@ -238,9 +267,19 @@
     align-items: center;
     
   }
+  #cleanFilterBtn{
+    border-radius: 5PX;
+    display: flex;
+    text-justify: distribute;
+    width: max-content;
+    padding: 8px 5px;
+    align-items: center;
+    
+  }
+
   #pokebol,#candyEvol,#noFilter,#top10{
-    height: 15px;
-    width: 15px;
+    height: 25px;
+    width: 25px;
     /* cursor: pointer; */
     margin: 0px 3px;
   }
@@ -248,10 +287,11 @@
   #inputPokeSearch{
     height: 40px;
     border-radius: 10px;
-    width: 30vw;
+    width: 45vw;
     background: rgb(215 232 226);
     text-align: center;
-    
+    margin: 5px 15px;
+    padding: 3px;
   }
   #inputPokeSearch::placeholder{
     background-image: url(./img/lupa.png);
@@ -263,13 +303,13 @@
     outline: none;
   }
   #inputPokeSearch:hover{
-    border-color:rgb(187, 133, 64);
+    border-color:rgb(32, 75, 64);
     border-width: 3px;
-    transform: scale(1.1);
+    transform: scale(1.05);
     border-radius: 3px;
    
   }
-   #pokeEvolution{
+   #pokeEvolution,#pokeAllBtn, #statsBtn{
     display:none;
   } 
   .orderBySelect{
@@ -455,6 +495,15 @@
   }
 
   /*---barra de navegación lateral---*/
+  
+  #filterType{
+    display: none;
+  }
+
+  #menuType{
+    width: 35px;
+    height: 35px;
+  }
   nav > ul{
   height:100%;
   display: flex; 
@@ -473,18 +522,19 @@
   text-decoration: none;
   margin: 5px;
   text-align: left;
-  display: block;
+  display: flex;
   width: 140px;
   text-align: none;
   font-size: 14px;
+  flex-direction: column;
   
 }
-.sideBarType ul li{
+/* .sideBarType ul li{
   background: green;
   padding: 8px;
   margin: 3px;
   cursor:pointer;
-}
+} */
 .statOptions{
   background: green;
   padding: 15px;
@@ -499,10 +549,14 @@
 }
 
 .filterBy, .topTenMessage{
-  display: block;
+  display: flex;
   text-align: center;
   border-bottom: #fef7f7 solid 1px;
-  background-color: rgb(4, 4, 116);
+  background-color: rgb(78 121 150);
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 5px;
 
 }   
 
@@ -517,24 +571,31 @@
   height: 32px;
   margin: 1px;
 }
-.optionsPokType{
+.optionsPokType,.statOptions{
+  /* position: relative; */
+  color: aliceblue;
+  font-size: 16px;
+  /* font-weight: bold; */
+  /* text-align: end; */
+  /*font-family: 'Baloo Thambi 2', cursive;*/
+  text-transform: uppercase;
+  background: rgb(127, 178, 212);
+  padding: 8px;
+  /* margin: 3px; */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+/* .statOptions{
   position: relative;
   color: aliceblue;
   font-size: 16px;
   font-weight: bold;
   text-align: end;
   /*font-family: 'Baloo Thambi 2', cursive;*/
-  text-transform: capitalize;
-}
-.statOptions{
-  position: relative;
-  color: aliceblue;
-  font-size: 16px;
-  font-weight: bold;
-  text-align: end;
-  /*font-family: 'Baloo Thambi 2', cursive;*/
-  text-transform: capitalize;
-}
+  /* text-transform: capitalize;
+} */ 
 
 
 
@@ -579,15 +640,15 @@
  
  }
 
-#pokeEvolution:hover {
+/* #pokeEvolution:hover {
    background-position: right center; /* change the direction of the change here */
-   color: #fff;
+   /* color: #fff;
    text-decoration: none;
- }
+ } */ */
 
 
 
- #btnStart:hover, #statsBtn:hover, #pokeEvolution:hover{
+ #btnStart:hover/*, #statsBtn:hover, #pokeEvolution:hover*/{
    background-position: right center; 
    color: #fff;
    text-decoration: none;
@@ -757,8 +818,8 @@
   display:none;
 } */
 
-@media only screen and (min-width:320px) {
-  #inputPokeSearch::placeholder{
-
+@media only screen and (max-width:300px) {
+  #inputPokeSearch{
+    width: 100%;
   }
 }

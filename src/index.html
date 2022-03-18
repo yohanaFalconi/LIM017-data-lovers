@@ -41,35 +41,42 @@
       <header>
         <img class="headImage" src="./img/pokemon_go.png">
         <nav class = "pokeBrowser">
-          <ul>
-            <li><img src="./img/flecha-izquierda.png" id="backArrow"></li>
-            <li>
-              <input type="search" id="inputPokeSearch"  placeholder="Ingrese el nombre del pokemón">
-            </li>
-            <li>
-               <button id="pokeAllBtn">TIPOS DE POKEMÓN<img src="./img/pokebola_.png" id="pokebol"></button> 
-            </li>
-            <li><input type="checkbox" id="pokeEvolution">
-                <label for="pokeEvolution" id="candyEvolBtn">
-                  EVOLUCIONES <img src="./img/rare-candy.png" id="candyEvol"/> 
-                  <!-- <button id="candyEvolBtn">EVOLUCIONES <img src="./img/rare-candy.png" id="candyEvol"/>  </button> -->
-                  <!-- <img src="./img/rare-candy.png" id="candyEvol"> -->
-                </label>
-            </li>
-            <li>
-              <button id="statsBtn">ESTADÍSTICOS<img src="./img/top-10.png" id="top10"></button>
-            </li> 
-            <li>
-              <select class="orderBySelect">
-                <option disabled selected >Ordenar por</option>
-                <option value="bottomNumber" class = "orderOption">Número inferior</option>
-                <option value="topNumber" class = "orderOption">Número superior</option>
-                <option value="A_Z" class = "orderOption">A-Z</option>
-                <option value="Z_A" class = "orderOption">Z-A</option>
-              </select>
-            </li>
-            <li><button id="cleanFilterBtn">LIMPIAR<img src="./img/sinfiltro.png" id="noFilter"></button></li>    
-          </ul>
+          <div class = "selectInfo">
+            <ul>
+              <!-- <li><img src="./img/flecha-izquierda.png" id="backArrow"></li> -->
+              <li>
+                  <input type="checkbox" id="pokeAllBtn">
+                  <label for ="pokeAllBtn" class="labelFilter">
+                    TIPOS DE POKEMÓN<img src="./img/pokebola_.png" id="pokebol"> 
+                  </label>
+              </li>
+              <li><input type="checkbox" id="pokeEvolution">
+                  <label for="pokeEvolution" class="labelFilter">
+                    EVOLUCIONES <img src="./img/rare-candy.png" id="candyEvol"/>
+                  </label>
+              </li>
+              <li><input type="checkbox" id="statsBtn">
+                  <label for="statsBtn" class="labelFilter"> 
+                  ESTADÍSTICOS <img src="./img/top-10.png" id="top10">
+                  </label>
+              </li> 
+            </ul>
+            <input type="search" id="inputPokeSearch"  placeholder="Ingrese el nombre del pokemón">
+          </div>  
+          <div class="filterSelectClean">
+            <ul>
+              <li>
+                <select class="orderBySelect">
+                  <option disabled selected >ORDENAR POR</option>
+                  <option value="bottomNumber" class = "orderOption">Número inferior</option>
+                  <option value="topNumber" class = "orderOption">Número superior</option>
+                  <option value="A_Z" class = "orderOption">A-Z</option>
+                  <option value="Z_A" class = "orderOption">Z-A</option>
+                </select>
+              </li>
+              <li><button id="cleanFilterBtn">LIMPIAR<img src="./img/sinfiltro.png" id="noFilter"></button></li>    
+            </ul>
+          </div>
         </nav>
 
      </header>
@@ -78,8 +85,8 @@
         <aside class="sideBarType hide">
           <ul class="optionsType">
             <li class="filterBy"> 
-              <input>
-              <label>FILTRAR POR TIPO</label>
+              <input type="checkbox" id="filterType">
+              <label><img src="./img/menuicono.png" id="menuType"> FILTRAR TIPO</label>
             </li>
             <li class="optionsPokType" id="steel">Acero
                 <img class="icon-medium icon-filter" src="img/steel-icon.png">

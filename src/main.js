@@ -40,13 +40,13 @@ const pokeEvolution = document.getElementById("pokeEvolution");
   
  //botón de atrás: Back Arrow
 
-const backArrow = document.getElementById("backArrow");
-backArrow.addEventListener("click",()=>{
-   firstScreen.style.display = 'block';
-   secondScreen.style.display = 'none';
-   pokeEvolution.checked = false;
-   pokemonFeatures(pokemones,false);
-}) 
+// const backArrow = document.getElementById("backArrow");
+// backArrow.addEventListener("click",()=>{
+//    firstScreen.style.display = 'block';
+//    secondScreen.style.display = 'none';
+//    pokeEvolution.checked = false;
+//    pokemonFeatures(pokemones,false);
+// }) 
 
   //botón de recargar la página todos los pokemones, sin filtros
   const cleanFilterBtn = document.getElementById("cleanFilterBtn");

@@ -169,7 +169,8 @@ const pokemonFeatures = (data, isCheck)=>{
 // Filtrando según el tipo de pokémon
 selectBtn.forEach((e)=>{
   e.addEventListener("click", (event) => { 
-    const clickType = event.target.id
+    const clickType = event.target.parentElement.id
+    console.log(event.target.parentElement)
     pokemonFeatures(filterData(pokemones,"type",clickType),false)    
   })
 })

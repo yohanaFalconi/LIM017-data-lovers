@@ -168,7 +168,7 @@ const pokemonFeatures = (data, isCheck)=>{
 selectBtn.forEach((e)=>{
   e.addEventListener("click", (event) => { 
     const clickType = event.target.parentElement.id
-    console.log(event.target.parentElement)
+    //console.log(event.target.parentElement)
 
     pokemonFeatures(filterData(pokemones,"type",clickType),false)    
     pokeEvolution.checked=false;
@@ -207,7 +207,7 @@ inputPokeSearch.addEventListener('keyup',()=>{
 orderBySelect.addEventListener('change', function (e){
   pokeEvolution.checked=false;
   const clickSelected = e.target.value
-  container.innerHTML="";
+  // container.innerHTML="";
   pokemonFeatures(orderBy(pokemones,clickSelected),false)
   
 })

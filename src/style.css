@@ -1,12 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 @import url("http://fonts.cdnfonts.com/css/sofia-pro");
 
-.color1 {color: #ffdc41;}
 .color2 {color: #e9e56d;}
 .color3 {color: #002c9a;}
 .color4 {color: #007fe3;}
+
 .color5 {color: #00e4ff;}
 .color6 {color: #f8fd4f;}
+
+.color1 {color: #0f191c;}
+.color2 {color: #3a445d;}
+.color3 {color: #2693b3;}
+.color4 {color: #2bc9c8;}
+.color5 {color: #d1eaea;}
+
+
+
 *{
   box-sizing: border-box;
   margin:0; 
@@ -130,11 +139,13 @@ right: 0%;
     font-size: 12px;
 }
 
-#btnStart:hover {
+#btnStart:hover, #pokemonNumber:hover {
    background-position: right center; /* change the direction of the change here */
    color: rgb(63, 66, 66);
    text-decoration: none;
 }
+
+
 .footer{
   background-color: rgb(142, 142, 165);
   width: 100%;
@@ -174,8 +185,6 @@ right: 0%;
 .imgFooter img{
   width: 50%;
   height: auto;
-
-  display: block;
 }
 @media (min-width: 300px) and (max-width: 501px) {
   .introBox{
@@ -255,6 +264,10 @@ right: 0%;
 
 }
 
+.fa-solid{
+  color: red;
+
+}
 
 
 
@@ -269,7 +282,7 @@ right: 0%;
     width: 100%;
   }
 
-  .secondScreen header{
+  .secondScreen .secondScreenMain{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -281,6 +294,7 @@ right: 0%;
   /*---barra de navegación horizontal--*/
   .headLogo{
     display: flex;
+    justify-content: center;
   }
   .iconMenu{
     display:flex;
@@ -303,7 +317,7 @@ right: 0%;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    background-color: #397f91;
+    background-color: #2693b3;
   }
   .selectInfo>ul{
     display: flex;
@@ -378,7 +392,7 @@ right: 0%;
     align-items: center;
     width: max-content;
     padding: 15px;
-    background-color: #488490;
+    background-color: #2693b3;
     font-size: 13.5px;
     color: white;
     cursor: pointer;
@@ -390,6 +404,8 @@ right: 0%;
     width: max-content;
     padding: 12px 5px;
     align-items: center;
+    background-color: #c1cbe4;
+    color: #0f191c;
     
   }
   #cleanFilterBtn{
@@ -413,7 +429,7 @@ right: 0%;
     height: 40px;
     border-radius: 10px;
     width: 45vw;
-    background: rgb(215 232 226);
+    background: #d1eaea;
     text-align: center;
     margin: 5px 15px;
     padding: 3px;
@@ -445,7 +461,8 @@ right: 0%;
     border-style: ridge;
     border-width: 3px;
     text-align: center;
-    background: rgb(238, 222, 178);
+    background-color: #c1cbe4;
+    color: #0f191c;
   }
   
     /*---barra de navegación LATERAL---*/
@@ -592,6 +609,8 @@ right: 0%;
   }
   .blockContent{
     display: flex;
+    background: #d1eaea;
+
   }
   .container{
     margin: 10px;
@@ -608,7 +627,7 @@ right: 0%;
     width: 200px;
     height: 250px;
     margin: 15px;
-    background-color:orange;
+    /*background-color:orange;*/
     position:relative;
     margin-bottom: 16px; 
     transform: rotateY(0deg);
@@ -629,33 +648,41 @@ right: 0%;
   }
   /*LADO FRONTAL DE LA CARD*/
   .frontCard {
-    background-color: #8bc34a;
     width: 200px;
     height: 250px;
     flex-direction: column;
     display: flex;
     margin: auto;
-    box-shadow: 0 0 10px rgb(33 36 35);
+    box-shadow: 0 0 5px rgb(33 36 35);
     align-items: center;
     border-radius: 10px;
+    background: #2bc9c8;
+
   }  
   #imgPok{
     width: 100%;
-    background: pink;
+    background: #0e2736fa;
     image-rendering: unset;
     border-radius: 10px;
+    
   }
   #pokemonName{
     display: flex;
     justify-content: center;
     text-transform: uppercase;
     margin: auto;
+    color: #0f191c;
   }
 
   #pokemonNumber{
     display: flex;
     justify-content: center;
     margin: auto;
+    color: #0f191c;
+    padding: 3px;
+    border-radius: 50%;
+    background-image: linear-gradient(to right, #e9e56d 41%, #00C9FF 100%);
+    cursor: pointer;
   }
   #candyEvolution{
     width: 35px;
@@ -663,7 +690,7 @@ right: 0%;
   }
   /**LADO REVERSO DE LA CARD*/
   .reverseCard1{
-    background-color: #d67676;
+    background-color: #2bc9c8;
     width: 200px;
     height: 270px;
     flex-direction: column;
@@ -698,15 +725,16 @@ right: 0%;
   }
   .pokeFeatTitle,#titleSizeType{
     padding: 3px 18px;
-    background: #cab8db;
+    background: #0f191c;
     border-radius: 3px;
     display: flex;
     justify-content: center;
     margin: 3px;
+    color: white;
   }
  
   .pokeFeat{
-    background: beige;
+    background: #d0e9e9;
     padding: 2px 12px;
     border-radius: 3px;
     margin: 2px;
@@ -721,7 +749,7 @@ right: 0%;
     align-items: center;
     display: flex;
     margin: auto;
-    background-color: azure;
+    background-color: #d0e9e9;
     padding: 6px 12px;
   }
 
@@ -743,8 +771,8 @@ right: 0%;
 }
 
  .headImage{
-    width: 10%;
-    height: 10%;   
+    width: 20%;
+    height: auto;   
 }
 .contFirstScreen .pokedexGif{
     width: 27%;

@@ -9,11 +9,12 @@
 
   </head>
   <body>
-    <header class="mainPart">
-      <img class="pokemonLogo" src="./img/pokemon-logo-png-0.png">
-      <img class= "battleGift" src="./img/Battle1Gift.gif">
-    </header>
     <section class="firstScreen">
+      <header class="mainPart">
+        <img class="pokemonLogo" src="./img/pokemon-logo-png-0.png">
+        <img class= "battleGift" src="./img/Battle1Gift.gif">
+      </header>
+ 
       <div class="contFirstScreen">
         <div class="row">
           <div class="introBox">
@@ -32,7 +33,7 @@
     </section>
     
     <section class="secondScreen">
-      <header>
+      <header class="secondScreenMain">
         <div class="headLogo">
           <div class="iconMenu">
             <input type="checkbox" id="menuBtn">
@@ -40,12 +41,11 @@
               <img src="./img/Imagenmenu.png" id="menuHor"> 
             </label>
           </div>
-          <img class="headImage" src="./img/pokemon_go.png">
+          <img class="headImage" src="./img/pokemon-logo-png-0.png">
         </div>
         <nav class = "pokeBrowser">
           <div class = "selectInfo">
             <ul>
-              <!-- <li><img src="./img/flecha-izquierda.png" id="backArrow"></li> -->
               <li>
                   <input type="checkbox" id="pokeAllBtn">
                   <label for ="pokeAllBtn" class="labelFilter">
@@ -150,9 +150,13 @@
          <ul class="blockContentStat">
             <li class="topTenMessage">Top 10</li>
             <li class="statOptions" id="base-attack">Ataque
-              <img class="icon-medium icon-filter" src="img/attack-icon.png">
+              <i class="fa-solid fa-mace"></i>
             </li>
-            <li class="statOptions" id="base-defense">Defensa</li>
+            <li class="statOptions" id="base-defense">Defensa
+              <img class="icon-medium icon-filter" src="img/attack-icon.png">
+              <i class="fa-solid fa-shield-halved"></i>
+            </li>
+
             <li class="statOptions" id="base-stamina">Resistencia</li>
             <li class="statOptions" id="max-cp">Poder de Combate</li>
             <li class="statOptions" id="max-hp">Poder de Sanación</li>

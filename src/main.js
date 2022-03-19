@@ -358,7 +358,6 @@ const statsBtn = document.getElementById("statsBtn");
 
 statsBtn.addEventListener("click", () =>{
   pokeEvolution.checked=false;
-  orderBySelect.style.display = "none";
   sideBarType.classList.add("hide");
   sideBarStat.classList.remove("hide");
 

@@ -34,7 +34,15 @@
     
     <section class="secondScreen">
       <header>
-        <img class="headImage" src="./img/pokemon_go.png">
+        <div class="headLogo">
+          <div class="iconMenu">
+            <input type="checkbox" id="menuBtn">
+            <label for ="menuBtn" class="menuHorLabel">
+              <img src="./img/Imagenmenu.png" id="menuHor"> 
+            </label>
+          </div>
+          <img class="headImage" src="./img/pokemon_go.png">
+        </div>
         <nav class = "pokeBrowser">
           <div class = "selectInfo">
             <ul>
@@ -81,7 +89,7 @@
           <ul class="optionsType">
             <li class="filterBy"> 
               <input type="checkbox" id="filterType">
-              <label><img src="./img/menuicono.png" id="menuType"> FILTRAR TIPO</label>
+              <label id="titleFilterType" ><img src="./img/menuicono.png" id="menuType"> FILTRAR TIPO</label>
             </li>
             <li class="optionsPokType" id="steel">Acero
                 <img class="icon-medium icon-filter" src="img/steel-icon.png">

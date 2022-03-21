@@ -377,15 +377,15 @@ statOptions.forEach((e)=>{
 
 //Menú hamburguesa
  //ocultar menú 
- const optionNavMenu = document.querySelector(".optionNavMenu");
-//  const pokeAllBtn = document.getElementById("pokeAllBtn");
- const labelFilter = document.querySelector(".labelFilter");
- const navMenHor = document.getElementById("navMenHor");
- const backMenu = document.querySelector(".backMenu")
+//  const optionNavMenu = document.querySelector(".optionNavMenu");
+// //  const pokeAllBtn = document.getElementById("pokeAllBtn");
+//  const labelFilter = document.querySelector(".labelFilter");
+//  const navMenHor = document.getElementById("navMenHor");
+//  const backMenu = document.querySelector(".backMenu")
 
-// labelFilter.addEventListener("click",()=>{
-//   if(pokeEvolution.checked===true){
-//     console. log("hola")
+// // labelFilter.addEventListener("click",()=>{
+// //   if(pokeEvolution.checked===true){
+// //     console. log("hola")
 
 //   }
 //   // console. log("hola")

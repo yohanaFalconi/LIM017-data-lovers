@@ -383,49 +383,48 @@ statOptions.forEach((e)=>{
  const navMenHor = document.getElementById("navMenHor");
  const backMenu = document.querySelector(".backMenu")
 
-labelFilter.addEventListener("click",()=>{
-  if(pokeEvolution.checked===true){
-    console. log("hola")
+// labelFilter.addEventListener("click",()=>{
+//   if(pokeEvolution.checked===true){
+//     console. log("hola")
 
-  }
-  // console. log("hola")
-  // backMenu.style.display="none";
-  // navMenHor.style.left= "-105%"
-})
+//   }
+//   // console. log("hola")
+//   // backMenu.style.display="none";
+//   // navMenHor.style.left= "-105%"
+// })
 
 
 
-/* flecha.addEventListener("click", (mostrar))
- x . ("click, ocultar")
+//  flecha.addEventListener("click", (mostrar))
+//  x . ("click, ocultar")
   //  console.log("hola")
   // backMenu.style.display="none";
   // //  console.log("hola")
   //  console.log('lable', pokeAllBtn.checked)
 
-function ocultar =(){
-  backMenu.style.display="none";
-    navMenHor.style.left= "-105%"
-}
-  function mostrar = (){
-    backMenu.style.display="block";
-    navMenHor.style.left= "0"
-  }
-  //  if(labelFilter.checked){
-  //   console.log("hola")
-    // backMenu.style.display="none";
-    //   console.log("hola")
-    // navMenHor.style.left= "-105%"
+// function ocultar =(){
+//   backMenu.style.display="none";
+//     navMenHor.style.left= "-105%"
+// }
+//   function mostrar = (){
+//     backMenu.style.display="block";
+//     navMenHor.style.left= "0"
+//   }
+//   // //  if(labelFilter.checked){
+//   // //   console.log("hola")
+//   //   // backMenu.style.display="none";
+//   //   //   console.log("hola")
+//   //   // navMenHor.style.left= "-105%"
 
-    if(pokeAllBtn.checked|| pokeEvolution.checked || statsBtn.checked){
-      backMenu.style.display="none";
-      navMenHor.style.left= "-105%"
-   }
-  // // console.log("hola")
-  //   }
-//  });
-// Responsive types
-const arrowOpen = document.getElementById("arrowOpen");
-const arrowRight = document.getElementById("arrowRight");
-const txt = document.getElementById("text");
-*/
+//     if(pokeAllBtn.checked|| pokeEvolution.checked || statsBtn.checked){
+//       backMenu.style.display="none";
+//       navMenHor.style.left= "-105%"
+//    }
+//   // // console.log("hola")
+//   //   }
+// //  });
+// // Responsive types
+// const arrowOpen = document.getElementById("arrowOpen");
+// const arrowRight = document.getElementById("arrowRight");
+// const txt = document.getElementById("text");
 

@@ -402,14 +402,14 @@ labelFilter.addEventListener("click",()=>{
   // //  console.log("hola")
   //  console.log('lable', pokeAllBtn.checked)
 
-function ocultar =(){
-  backMenu.style.display="none";
-    navMenHor.style.left= "-105%"
-}
-  function mostrar = (){
-    backMenu.style.display="block";
-    navMenHor.style.left= "0"
-  }
+// function ocultar =(){
+//   backMenu.style.display="none";
+//     navMenHor.style.left= "-105%"
+// }
+//   function mostrar = (){
+//     backMenu.style.display="block";
+//     navMenHor.style.left= "0"
+//   }
   //  if(labelFilter.checked){
   //   console.log("hola")
     // backMenu.style.display="none";

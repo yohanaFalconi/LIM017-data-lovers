@@ -373,3 +373,10 @@ statOptions.forEach((e)=>{
   })
 })
 
+
+// Responsive types
+const arrowOpen = document.getElementById("arrowOpen");
+const arrowRight = document.getElementById("arrowRight");
+const txt = document.getElementById("text");
+
+

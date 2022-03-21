@@ -395,7 +395,7 @@ labelFilter.addEventListener("click",()=>{
 
 
 
- flecha.addEventListener("click", (mostrar))
+/* flecha.addEventListener("click", (mostrar))
  x . ("click, ocultar")
   //  console.log("hola")
   // backMenu.style.display="none";
@@ -427,5 +427,5 @@ function ocultar =(){
 const arrowOpen = document.getElementById("arrowOpen");
 const arrowRight = document.getElementById("arrowRight");
 const txt = document.getElementById("text");
-
+*/
 

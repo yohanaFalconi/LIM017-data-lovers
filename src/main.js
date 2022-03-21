@@ -373,3 +373,52 @@ statOptions.forEach((e)=>{
   })
 })
 
+
+//Menú hamburguesa
+ //ocultar menú 
+ const optionNavMenu = document.querySelector(".optionNavMenu");
+//  const pokeAllBtn = document.getElementById("pokeAllBtn");
+ const labelFilter = document.querySelector(".labelFilter");
+ const navMenHor = document.getElementById("navMenHor");
+ const backMenu = document.querySelector(".backMenu")
+
+labelFilter.addEventListener("click",()=>{
+  if(pokeEvolution.checked===true){
+    console. log("hola")
+
+  }
+  // console. log("hola")
+  // backMenu.style.display="none";
+  // navMenHor.style.left= "-105%"
+})
+
+
+
+ flecha.addEventListener("click", (mostrar))
+ x . ("click, ocultar")
+  //  console.log("hola")
+  // backMenu.style.display="none";
+  // //  console.log("hola")
+  //  console.log('lable', pokeAllBtn.checked)
+
+function ocultar =(){
+  backMenu.style.display="none";
+    navMenHor.style.left= "-105%"
+}
+  function mostrar = (){
+    backMenu.style.display="block";
+    navMenHor.style.left= "0"
+  }
+  // //  if(labelFilter.checked){
+  // //   console.log("hola")
+  //   // backMenu.style.display="none";
+  //   //   console.log("hola")
+  //   // navMenHor.style.left= "-105%"
+
+    if(pokeAllBtn.checked|| pokeEvolution.checked || statsBtn.checked){
+      backMenu.style.display="none";
+      navMenHor.style.left= "-105%"
+   }
+  // // console.log("hola")
+  //   }
+//  });

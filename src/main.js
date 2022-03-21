@@ -374,6 +374,7 @@ statOptions.forEach((e)=>{
 })
 
 
+
 //Menú hamburguesa
  //ocultar menú 
  const optionNavMenu = document.querySelector(".optionNavMenu");
@@ -422,3 +423,9 @@ function ocultar =(){
   // // console.log("hola")
   //   }
 //  });
+// Responsive types
+const arrowOpen = document.getElementById("arrowOpen");
+const arrowRight = document.getElementById("arrowRight");
+const txt = document.getElementById("text");
+
+

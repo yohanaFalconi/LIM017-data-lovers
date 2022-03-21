@@ -29,7 +29,7 @@
 
 
 .mainPart{
-  background: black;
+  background: rgb(21 20 20);
  /*min-height: 100vh; usar en pantalla grande */
   padding: 10px 10px;
 }
@@ -48,7 +48,7 @@
 }
 .contFirstScreen{
   min-height: 100vh;
-  padding: 5% 10%;
+  padding: 15% 15%;
   margin: auto;
   background-image: url(../img/pokebolas_.PNG);
   /* background-position: center center; */
@@ -80,12 +80,13 @@
   filter: brightness(34);
 }
 #helloMessage{
-  text-align: justify;
+  text-align: center;
   color: #e4e4f6;
   margin-top: 5%;
   margin-bottom: 5%;
   font-weight: 300;
   padding: 1% 1%;
+  font-size: 14px;
 }
 .row{
   position: relative;
@@ -93,16 +94,20 @@
   flex-basis:30%;
   flex-direction: column;
 }
-.cinderaContainer{
-  width: 100%; 
-  position: relative;
-  bottom: 70px;
-right: 0%;
-}
-#cinderaImage{
-  width: 40%;
+/*.masterContainer{
+  width: 10%; 
+  height: 30%;
+  background-color: blue;
+}*/
+#masterImage{
+  max-width: 35%;
+  height: auto;
   position: absolute;
   animation: floating 4s linear infinite;
+  text-align: center;
+  top: 80px;
+  right: -40px;
+
 }
 @keyframes floating{
   0%, 100% {
@@ -117,26 +122,25 @@ right: 0%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 5%;
+  margin-top: 10%;
 }
 #btnStart{
   padding: 3%;
-  width:80%;
+  width: 50%;
   border-radius: 10px;
   border-width: 5px;
   align-items: center;
   text-align: center;
   cursor: pointer;
-    background-image: linear-gradient(to right, #00C9FF 0%, rgba(232, 247,43)  51%, #00C9FF  100%);
-    font-weight: 600;
-    color: black;
-    text-transform: uppercase;
-    transition: 0.5s;
-
-    background-size: 200% auto;
-    box-shadow: 0 0 5px #eee;
-    display: block;
-    font-size: 12px;
+  background-image: linear-gradient(to right, #00C9FF 0%, rgba(232, 247,43)  51%, #00C9FF  100%);
+  font-weight: 600;
+  color: black;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  box-shadow: 0 0 5px #eee;
+  display: block;
+  font-size: 10px;
 }
 
 #btnStart:hover, #pokemonNumber:hover {
@@ -144,12 +148,10 @@ right: 0%;
    color: rgb(63, 66, 66);
    text-decoration: none;
 }
-
-
 .footer{
-  background-color: rgb(142, 142, 165);
+  background-color: rgb(63, 66, 66);
   width: 100%;
-  height: 150px;
+  height: 230px;
   padding: 10px;
 }
 .footerContainer {
@@ -169,61 +171,82 @@ right: 0%;
 }
 
 .socialContent a {
-  font-size: 20px;
+  font-size: 25px;
   cursor: pointer;
   color: rgba(232, 247,43);
 }
+.oficialPagesFooter{
+  padding: 5px;
+}
+.oficialPagesFooter p{
+  color: #e4e4f6;
+}
+.oficialPage{
+  margin: 0px auto;
+  display: block;
+  font-size: 12px;
+  text-align: center;
+  text-decoration: none;
+  color: #88d3d3;
+}
 .textFooter{
   width: 100%;
-  
   text-align: center;
+  font-size: 12px;
+  color: #e4e4f6;
 }
 .imgFooter{
   align-items: center;
   position: relative;
 }
 .imgFooter img{
-  width: 50%;
+  width: 30%;
   height: auto;
+  margin: 0px auto;
+  display: block;
 }
-@media (min-width: 300px) and (max-width: 501px) {
+/*celulares 300 a 600*/
+/*tablet 600 a 767*/
+
+
+@media (min-width: 600px) and (max-width: 767px) {
+
   .introBox{
     padding: 10% 10%;
+    align-items: justify;
   }
   #helloMessage{
-    margin-bottom: 10%;
+    margin-bottom: 11%;
+    line-height: 20px;
   }
   .btnStart{
-    margin-top: 10px;
-  }
-  .btnStart{
-    position: relative;
-  }
-  .cinderaContainer{
-    position: absolute;
+    font-size: 13px;
+    width: 40%;
   }
   #cinderaImage {
-    width: 31%;
-    top: -70px;
-    right: 0%;
+    top: 40px;
+    right: -40px;
+
   }
 
 }
 
-@media (min-width: 502px) and (max-width: 767px) {
+@media only screen and (min-width: 768px) {
   /* For tablets: */
   .contFirstScreen{
-    padding: 7% 10%;
+    padding: 8% 10%;
   }
-
-  #cinderaImage {
-    width: 38%;
+  #helloMessage{
+    line-height: 25px;
+  }
+  #masterImage {
     top: -55px;
     left: 85%;
   }
   #btnStart{
-    padding: 2%;
+    padding: 3%;
     width: 40%;
+    font-size: 12px;
   }
 }
 
@@ -241,26 +264,54 @@ right: 0%;
     width:70%;
   }
   .contFirstScreen{
-    padding: 8% 25%;
+    padding: 5% 20%;
   }
   .introBox{
     padding: 10% 10%;
+    align-items: justify;
   }
   #hello{
-    font-size: 18px;
+    font-size: 22px;
   }
   #helloMessage{
+    font-size: 18px;
     line-height: 25px;
+    text-align: center;
   }
-  #cinderaImage {
-    width: 45%;
-    top: -155px;
-    left: 90%;
+  #masterImage {
+    width: 30%;
+    top: -10px;
+    right: -40px;
   }
   #btnStart{
     padding: 2%;
-    width: 40%;
+    width: 30%;
+    font-size: 13px;
   }
+  
+  .footer {
+    height: 340px;
+  }
+  .socialContent{
+    column-gap: 40px;
+  }
+  .socialContent a {
+    font-size: 30px;
+  }
+  .oficialPage {
+    font-size: 16px;
+  }
+  .imgFooter img {
+    width: 22%;
+  }
+  .textFooter{
+    font-size: 16px;
+  }
+
+
+
+
+
 
 }
 
@@ -287,14 +338,14 @@ right: 0%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: rgb(21 20 20);
   }
  
   /*---HEADER---*/
   /*---barra de navegación horizontal--*/
   .headLogo{
     display: flex;
-    justify-content: center;
+    background-color:rgb(21 20 20);
   }
   .iconMenu{
     display:flex;
@@ -632,6 +683,9 @@ right: 0%;
     background: #d1eaea;
 
   }
+  .arrowOpen{
+    width: 30px;
+  }
   .container{
     margin: 10px;
     /*-webkit-perspective: 800;*/
@@ -791,9 +845,9 @@ right: 0%;
 }
 
  .headImage{
-    width: 20%;
-    height: auto;
-    /* padding: 12px 0;    */
+  width: 20%;
+  height: auto;
+  /* padding: 12px 0;    */
 }
 .contFirstScreen .pokedexGif{
     width: 27%;

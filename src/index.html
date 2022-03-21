@@ -9,12 +9,12 @@
 
   </head>
   <body>
+   
     <section class="firstScreen">
       <header class="mainPart">
         <img class="pokemonLogo" src="./img/pokemon-logo-png-0.png">
         <img class= "battleGift" src="./img/Battle1Gift.gif">
       </header>
- 
       <div class="contFirstScreen">
         <div class="row">
           <div class="introBox">
@@ -35,30 +35,26 @@
     
     <section class="secondScreen">
       <header class="secondScreenMain">
-        <div class="headLogo">
-          <div class="iconMenu">
-            <input type="checkbox" id="menuBtn">
-            <label for ="menuBtn" class="menuHorLabel">
-              <img src="./img/Imagenmenu.png" id="menuHor"> 
-            </label>
-          </div>
-          <img class="headImage" src="./img/pokemon-logo-png-0.png">
-        </div>
+        <input type="checkbox" id="menuBtn">
+        <label for ="menuBtn" class="menuHorLabel">
+          <img src="./img/Imagenmenu.png" id="menuHor"> 
+        </label>
+        <img class="headImage" src="./img/pokemon-logo-png-0.png">
         <nav class = "pokeBrowser">
           <div class = "selectInfo">
-            <ul>
-              <li>
+            <ul id="navMenHor">
+              <li class="optionNavMenu">
                   <input type="checkbox" id="pokeAllBtn">
                   <label for ="pokeAllBtn" class="labelFilter">
                     TIPOS DE POKEMÓN<img src="./img/pokebola_.png" id="pokebol"> 
                   </label>
               </li>
-              <li><input type="checkbox" id="pokeEvolution">
+              <li class="optionNavMenu"><input type="checkbox" id="pokeEvolution">
                   <label for="pokeEvolution" class="labelFilter">
                     EVOLUCIONES <img src="./img/rare-candy.png" id="candyEvol"/>
                   </label>
               </li>
-              <li><input type="checkbox" id="statsBtn">
+              <li class="optionNavMenu"><input type="checkbox" id="statsBtn">
                   <label for="statsBtn" class="labelFilter"> 
                   ESTADÍSTICOS <img src="./img/top-10.png" id="top10">
                   </label>
@@ -81,6 +77,7 @@
             </ul>
           </div>
         </nav>
+        <div class="backMenu"></div>
 
      </header>
      <div class="blockContent">
@@ -155,17 +152,22 @@
          <ul class="blockContentStat">
             <li class="topTenMessage">Top 10</li>
             <li class="statOptions" id="base-attack">Ataque
-              <i class="fa-solid fa-mace"></i>
+              <img class="icon-medium icon-filter" src="img/attack-icon.png">
             </li>
             <li class="statOptions" id="base-defense">Defensa
-              <img class="icon-medium icon-filter" src="img/attack-icon.png">
-              <i class="fa-solid fa-shield-halved"></i>
+              <img src="./img/defensa.png"class="imgStat">
             </li>
-
-            <li class="statOptions" id="base-stamina">Resistencia</li>
-            <li class="statOptions" id="max-cp">Poder de Combate</li>
-            <li class="statOptions" id="max-hp">Poder de Sanación</li>
+            <li class="statOptions" id="base-stamina">Resistencia
+              <img src="./img/resistencia.png"class="imgStat">
+            </li>
+            <li class="statOptions" id="max-cp">Poder de Combate
+              <img src="./img/cp.png" class="imgStat">
+            </li>
+            <li class="statOptions" id="max-hp">Poder de Sanación
+              <img src="./img/sanacion.png" class="imgStat">
+            </li>
           </ul>
+          <img src="./img/mostrar.png" id="mostrarStat">
         </aside>
 
        <!-- </div> -->

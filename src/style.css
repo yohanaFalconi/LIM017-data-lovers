@@ -370,13 +370,13 @@
     flex-wrap: wrap;
     background-color: #2693b3;
   }
-  .selectInfo>ul{
+  #navMenHor{
     display: flex;
     flex-grow: 1;
     justify-content: space-evenly;
     flex-wrap: wrap;
   }
-  .selectInfo>ul>li{
+  #navMenHor>li{
     display: flex;
     align-items: center;
   
@@ -516,6 +516,15 @@
     color: #0f191c;
   }
   
+  .backMenu{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0,0,0,0.5);
+        display: none;
+  }
     /*---barra de navegación LATERAL---*/
 
     
@@ -566,12 +575,17 @@
     margin: 5px;
     cursor:pointer;
   } */
-  /*.asides,*/.sideBarType, .sideBarStat{
+  /*.asides,*/.sideBarType{
     display: flex;
     flex-direction: column;
-    background: aliceblue;
+    /* background: aliceblue; */
     height: max-content;
   }
+  .sideBarStat{
+    display: flex;
+    height: max-content;
+  }
+
 
   .filterBy, .topTenMessage{
     display: flex;
@@ -594,7 +608,12 @@
   .icon-medium {
     width: 32px;
     height: 32px;
-    margin: 1px;
+    margin: 5px;
+  }
+
+  .imgStat{
+    width: 25px;
+    margin: 5px;
   }
   .optionsPokType,.statOptions{
     /* position: relative; */
@@ -611,6 +630,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    border-top: 1px solid #a3dbe9;
   }
   /* .statOptions{
     position: relative;
@@ -825,8 +845,9 @@
 }
 
  .headImage{
-  width: 35%;
-  height: 35%;   
+  width: 20%;
+  height: auto;
+  /* padding: 12px 0;    */
 }
 .contFirstScreen .pokedexGif{
     width: 27%;
@@ -861,12 +882,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #8bc34a;
+  background-color: #3a445d;;
   height: 80%;
   width: 50%;
   padding: 30px;
   border-radius: 15px;
-  margin-top: 5%;
+  top: 10%;
   position: fixed;
   box-shadow: 5px 8px 16px 1px;
 }
@@ -875,11 +896,11 @@
   /*Título*/
   #namePokeEvol{
     text-transform: uppercase;
-    background-color: #a7d7c7;
+    background-color: #2bc9c8;
     padding: 8px;
     border-radius: 7px 0px;
     border-style: groove;
-    border-color: #50c59e;
+    border-color: #3a445d;
     box-shadow: inset 4px 2px 5px;
     font-size: 25px;
   }
@@ -895,7 +916,7 @@
 
   #exit{
     cursor: pointer;
-    background-color: beige;
+    background-color: white;
     margin-bottom: 15px;
     position: left;
     top: left;
@@ -908,7 +929,7 @@
 
   #exit:hover{
     transform: scale(1.1);
-    background-color: rgb(89, 89, 172);
+    background-color: #d1eaea;
   }
   /*TABLAS*/
   .tableEvol{
@@ -918,7 +939,7 @@
   #sizes{
     font-size: 18px;
     padding: 10px;
-    background-color: rgb(203 187 204);
+    background-color: #b1bddb;
     border-radius: 5px;
     width: 150px;
     display: flex;
@@ -933,13 +954,14 @@
     width: 180px;
     padding: 3px;
     text-align: center;
-    background-color: aqua;
+    background-color: #d1eaea;
     border-radius: 5px;
   }
   .titleHeight,.titleWeight{
     padding: 5px;
-    background-color: beige;
+    background-color: #2693b3;
     border-radius: 5px;
+    color: white;
   }
   #imgHeight, #imgWeight{
     height:25px;
@@ -954,15 +976,15 @@
     border: 5px;
     border-style: groove;
     border-radius: 7px;
-    border-color: blueviolet;
+    border-color: #2be299;;
     padding: 10px;
-    width: 50%;
+    width: auto;
   }
   #evolutionsTitle{
     font-size: 18px;
     padding: 10px;
     margin: 5px;
-    background-color: #c1a7d9;
+    background-color: #b1bddb;
     border-radius: 8px;
   }
   .cardPokemonEvolution{
@@ -972,11 +994,12 @@
   }
   .namePokeEvol{
     text-transform: uppercase;
-    background-color: #e3e2d7;
+    background-color: #e2da8b;
     padding: 10px;
     border-radius: 5px;
   }
   /* .imagePokeModal{
+    width:auto;
   } */
   .candyCost{
     align-items: center;
@@ -984,6 +1007,7 @@
   }
   .qtyCandy{
     font-size: medium;
+    color: white;
   }
   .candy{
     width: 25px;
@@ -996,11 +1020,20 @@
 .statsReverseCard{
   display:none;
 } 
-/* ul.blockContentStat{
-  display:none;
-} */
+.blockContentStat{
+  display:flex;
+  margin: 5px;
+  text-align: left;
+  font-size: 14px;
+  flex-direction: column;
+  width: 140px;
+  /* background:aliceblue */
+}
+#mostrarStat{
+  display: none;
+}
 
-@media only screen and (max-width:320px) {
+@media  (max-width:320px) {
  
   .labelFilter {
     text-align: left;
@@ -1008,50 +1041,111 @@
     width: 200px;
    
 }
-#inputPokeSearch{
-  width: 80vw;
+  #inputPokeSearch{
+    width: 80vw;
+  }
+  #inputPokeSearch::placeholder{
+    font-size: 11px;
+  }
+  /* .selectInfo>ul {
+    margin-right: 34vw;
+  } */
+  #cleanFilterBtn {
+    padding: 5px;
+    font-size: 11px;
+  }
+  .orderBySelect {
+    width: 100px;
+    padding: 8px;
+    border-width: 3px;
+    font-size: 10px;
+  }
+  .dataEvolution{
+    height: 82vh;
+  }
+  .blockContentStat{
+    width: 75vw;
+  }
+  .statOptions{
+    justify-content: space-around;
+  }
+  /* #typePokeEvol{
+    font-size: 15px;
+    padding: 5px;
+  }
+  #sizes{
+    padding: 3px; 
+  }
+
+  #evolutionsTitle{
+    padding: 3px;
+    width: 150px;
+    text-align: center;
+  }
+  #sectionImgEvolution {
+    height: auto;
+    padding: 5px;
+    flex-direction: column;
+  }
+  .namePokeEvol{
+    font-size: 12px;
+  }
+  .imagePokeModal{
+      width:70%;
+    }
+ */
+
+
+
 }
-#inputPokeSearch::placeholder{
-  background-image: none
-}
-/* .selectInfo>ul {
-  margin-right: 34vw;
-} */
-#cleanFilterBtn {
-  padding: 5px;
-  font-size: 11px;
-}
-.orderBySelect {
-  width: 100px;
-  padding: 8px;
-  border-width: 3px;
-  font-size: 10px;
-}
+@media  (max-width:418px) {
+  #inputPokeSearch::placeholder{
+    background-image: none;
+  }
+
+  .dataEvolution{
+    
+    height: 70vh;
+    width: 80vw;
+  }
+   
 }
 @media (max-width:544px) {
+
+  .headImage{
+    width: 100px;
+    height: auto;
+    padding: 12px 0;
+  }
   .menuHorLabel{
     display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 67px;  /*la altura dependera del height del encabezado*/
   }
   .menuHorLabel:hover{
-    background-color: #488490;
-    
+    background-color: #488490;    
   }
-  .selectInfo>ul{
+  #navMenHor{
     display: flex;
     flex-direction: column;
     position: absolute;
     top: 8.38vh;/*aqui colocar la altura del header en pixeles*/
     /* margin-right: 40%; */
-    left: -62%;
+    left: -105%;
+
     z-index: 1;
+    /* transition: all 0.5s; */
+  }
+  #navMenHor>li{
+    border-top: 1px solid #a3dbe9;
     transition: all 0.5s;
   }
-  .selectInfo>ul>li{
-    border-top: 1px solid #a3dbe9;
-  }
   .labelFilter {
-    width: 60vw;
+    width: 98.1vw;
     font-size: 12.5px;
+    justify-content:center;
   }
   .labelFilter:hover{
     background-color:rgb(97, 172, 147);
@@ -1061,11 +1155,150 @@
     width: 80vw;
   }
 
-
-
-  #menuBtn:checked ~ .pokeBrowser>.selectInfo>ul{
+  #menuBtn:checked ~ .pokeBrowser>.selectInfo>#navMenHor{
     left:0;
     /* position: relative; */
   }
+  #menuBtn:checked ~ .backMenu{
+    left:0;
+    display: block;
+    z-index: 1;
+    top: 30.8vh;
+  }
+  .dataEvolution{
+    
+    height: 70vh;
+    width: 80vw;
+  }
+   
+  #typePokeEvol{
+    font-size: 15px;
+    padding: 5px;
+  }
+  #sizes{
+    padding: 3px; 
+  }
 
+  #evolutionsTitle{
+    padding: 3px;
+    width: 150px;
+    text-align: center;
+  }
+  #sectionImgEvolution {
+    height: auto;
+    padding: 5px;
+    flex-direction: column;
+  }
+  .namePokeEvol{
+    font-size: 12px;
+  }
+  .imagePokeModal{
+      width:70%;
+  }
+
+  /* .backMenu{
+    position: fixed;
+    top: 20vh;
+    left: 0;
+    width: 100%;
+    height: 80vh;
+    background: rgba(0,0,0,0.5);
+    display: block;
+    z
+} */
+
+ /*ocultar opciones estadísticas*/
+ #mostrarStat{
+  display: block;
+  width: 35px;
+  height: 35px;
+  margin: 8px;
+
+ }
+ .sideBarStat{
+   background-color: rgba(228, 239, 240, 0.568);
+   display: flex;
+   z-index: 1;
+   position: absolute;
+   height: 100%;
+   width:100vw;
+
+ }
+ .blockContentStat{
+   /* height:auto; */
+   /* background-color: aliceblue; */
+   width: 60vw;
+   /* left: -100%; */
+   position: absolute;
+ }
+
+
+
+}
+@media  (max-width: 650px){
+  #inputPokeSearch{
+    width: 70vw;
+  }
+}
+
+@media  (max-width:750px){
+  .dataEvolution{
+    width: 80vw;
+    height: 80vh;
+  }
+  #namePokeEvol{
+    font-size: 22px;
+  }
+  #typePokeEvol {
+    margin: 5px;
+  }
+  #sizes {
+  font-size: 15px;
+  margin: 5px;
+  padding: 8px;
+  font-weight: 600;
+  }
+  .titleHeight, .titleWeight {
+    padding: 2px;
+  }
+  .dataSize {
+    width: 150px;
+    padding: 2px;
+  }
+  #imgHeight, #imgWeight {
+    height: 20px;
+    width: 20px;
+  }
+  #evolutionsTitle {
+    font-size: 15px;
+    padding: 8px;
+  }
+  .namePokeEvol {
+    padding: 8px;
+  }
+  /* #sectionImgEvolution {
+    width: 50vw;
+  } */
+}
+ 
+
+ @media only screen and (max-width: 1071px) {
+   
+  .dataEvolution {
+    height: 75vh;
+    width: 70vw;
+  }
+
+ }
+
+/*Barra personalizada*/
+body::-webkit-scrollbar{
+  width:10px;
+  background-color: #488490;
+}
+body::-webkit-scrollbar-thumb{
+ border-radius: 5px;
+ background-color: #50c59e;
+ width: 8px;
+ margin: 2px
 }

@@ -20,7 +20,6 @@ const pokeAllBtn = document.getElementById("pokeAllBtn");
 const sideBarStat = document.querySelector('.sideBarStat');
 const sideBarType = document.querySelector(".sideBarType");
 // const optionsType = document.querySelector(".optionsType");
-// const blockContentStat = document.querySelector(".blockContentStat");
 const orderBySelect = document.querySelector('.orderBySelect');
 const pokeEvolution = document.getElementById("pokeEvolution");
 	// aparezca la segunda pantalla
@@ -40,12 +39,14 @@ const pokeEvolution = document.getElementById("pokeEvolution");
   
  //botón de atrás: Back Arrow
 
-// const backArrow = document.getElementById("backArrow");
-// backArrow.addEventListener("click",()=>{
-//    firstScreen.style.display = 'block';
-//    secondScreen.style.display = 'none';
-//    pokeEvolution.checked = false;
-//    pokemonFeatures(pokemones,false);
+// const headMenu = document.querySelector(".headMenu");
+// headMenu.addEventListener("click",()=>{
+//   //  firstScreen.style.display = 'block';
+//   //  secondScreen.style.display = 'none';
+//   //  pokeEvolution.checked = false;
+//   //  pokemonFeatures(pokemones,false);
+//   firstScreen.classList.remove("hide");
+//   secondScreen.classList.add.apply("hide");
 // }) 
 
   //botón de recargar la página todos los pokemones, sin filtros
@@ -293,7 +294,7 @@ const pokeEvolutionImage = (poke, cardContainer) => {
           divCardContainer = document.createElement('div');
           divCardContainer.className = 'cardPokemonEvolution';
           divCardContainer.innerHTML = `<span class="namePokeEvol">${next[i]['next-evolution'][j].name}</span>
-                                        <img src="${pokemn.img}" alt="" class="imageModal">
+                                        <img src="${pokemn.img}" alt="" class="imagePokeModal">
                                         <div class="candyCost">
                                             <p class="qtyCandy">${next[i]['next-evolution'][j]["candy-cost"]} </p>
                                             <img src="./img/candyCost.png" class="candy">
@@ -319,8 +320,8 @@ const pokeEvolutionImage = (poke, cardContainer) => {
     const divInfo = document.createElement('div');
     divInfo.setAttribute('class', 'dataEvolution');
     const info = `
-      <i class="fas fa-times" id="exit">X</i>
-      <p id="namePokeEvol">${dataEvol.name}</p>  
+      <span  id="exit">X</span>
+      <p id="namePokeModal">${dataEvol.name}</p>  
       <p id="typePokeEvol">${dataEvol.type}</p>
       <p id="sizes">Medidas</p>
       <table class="tableEvol">
@@ -377,30 +378,52 @@ statOptions.forEach((e)=>{
 
 //Menú hamburguesa
  //ocultar menú 
-//  const optionNavMenu = document.querySelector(".optionNavMenu");
-// //  const pokeAllBtn = document.getElementById("pokeAllBtn");
-//  const labelFilter = document.querySelector(".labelFilter");
-//  const navMenHor = document.getElementById("navMenHor");
-//  const backMenu = document.querySelector(".backMenu")
 
-// // labelFilter.addEventListener("click",()=>{
-// //   if(pokeEvolution.checked===true){
-// //     console. log("hola")
+ const backMenu = document.querySelector(".backMenu");
+ const navMenHor = document.getElementById("navMenHor");
+ //const menuHor = document.getElementById("menuHor");
 
-//   }
-//   // console. log("hola")
-//   // backMenu.style.display="none";
-//   // navMenHor.style.left= "-105%"
+//   backMenu.addEventListener("click",()=>{
+
+//   backMenu.style.display="none";
+//   // navMenHor.checked ="true";
+//   // navMenHor.style.left= "-100%";
 // })
 
+//Mostrar barra estadísticos
+const showStat = document.getElementById("showStat");
+const blockContentStat = document.querySelector(".blockContentStat");
+const closeStat = document.getElementById("closeStat");
 
 
-//  flecha.addEventListener("click", (mostrar))
+ showStat.addEventListener("click", showOptionStat);
+ closeStat.addEventListener("click",closeOptionStat);
+//  blockContentStat.addEventListener("click",closeOptionStat);
+
+ 
+
+function showOptionStat() {
+   blockContentStat.style.display="block";
+   closeStat.style.display="block";
+   sideBarStat.style["background-color"] = "rgba(228, 239, 240, 0.568)";
+  //  sideBarStat.style.display = "block";
+ }
+ 
+ function closeOptionStat() {
+  //  console.log('hola')
+  blockContentStat.style.display="none";
+  closeStat.style.display="none";
+  showStat.style.display = "block"
+  sideBarStat.style["background-color"] = "transparent";
+ }
+ 
+ 
+ 
 //  x . ("click, ocultar")
-  //  console.log("hola")
-  // backMenu.style.display="none";
-  // //  console.log("hola")
-  //  console.log('lable', pokeAllBtn.checked)
+//    console.log("hola")
+//   backMenu.style.display="none";
+//   //  console.log("hola")
+//    console.log('lable', pokeAllBtn.checked)
 
 // function ocultar =(){
 //   backMenu.style.display="none";
@@ -410,11 +433,7 @@ statOptions.forEach((e)=>{
 //     backMenu.style.display="block";
 //     navMenHor.style.left= "0"
 //   }
-//   // //  if(labelFilter.checked){
-//   // //   console.log("hola")
-//   //   // backMenu.style.display="none";
-//   //   //   console.log("hola")
-//   //   // navMenHor.style.left= "-105%"
+   
 
 //     if(pokeAllBtn.checked|| pokeEvolution.checked || statsBtn.checked){
 //       backMenu.style.display="none";
@@ -423,8 +442,5 @@ statOptions.forEach((e)=>{
 //   // // console.log("hola")
 //   //   }
 // //  });
-// // Responsive types
-// const arrowOpen = document.getElementById("arrowOpen");
-// const arrowRight = document.getElementById("arrowRight");
-// const txt = document.getElementById("text");
+
 

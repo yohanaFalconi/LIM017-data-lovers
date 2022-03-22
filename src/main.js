@@ -67,6 +67,8 @@ const pokeEvolution = document.getElementById("pokeEvolution");
     sideBarType.classList.remove("hide");
     sideBarStat.classList.add('hide');
     pokeEvolution.checked=false;
+    openIcon.style.display="block";
+
   })
 
   
@@ -165,16 +167,27 @@ const pokemonFeatures = (data, isCheck)=>{
 
  pokemonFeatures(pokemones,false)
 
+// si le dan click al label tipos de pokemon
+
+
+
+
+
 // Filtrando según el tipo de pokémon
 selectBtn.forEach((e)=>{
   e.addEventListener("click", (event) => { 
-    const clickType = event.target.parentElement.id
+    const clickType = event.target.id
     //console.log(event.target.parentElement)
-
     pokemonFeatures(filterData(pokemones,"type",clickType),false)    
     pokeEvolution.checked=false;
   })
+
 })
+
+
+
+
+
 
 //Función buscar
 const inputPokeSearch = document.getElementById("inputPokeSearch");
@@ -376,6 +389,32 @@ statOptions.forEach((e)=>{
 
 
 
+
+
+
+const openIcon = document.getElementById("openIcon");
+openIcon.addEventListener("click",() =>{
+  sideBarType.classList.remove('hide');
+
+}); 
+const closeIcon = document.getElementById("closeIcon");
+closeIcon.addEventListener("click", () =>{
+  sideBarType.classList.add('hide');
+  //openIcon.style.display="block";
+  //backMenu.style.display="none";
+  //navMenHor.style.left= "-105%"
+});
+
+  // }
+  //   function mostrar = (){
+  //     backMenu.style.display="block";
+  //     navMenHor.style.left= "0"
+  //   }
+
+
+
+
+
 //Menú hamburguesa
  //ocultar menú 
 
@@ -442,5 +481,18 @@ function showOptionStat() {
 //   // // console.log("hola")
 //   //   }
 // //  });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

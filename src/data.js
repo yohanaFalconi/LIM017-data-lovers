@@ -25,8 +25,6 @@ export function orderBy(data,clicked){
   case 'Z_A':
     newArray = newArray.sort((a, b) => ((a.name >= b.name) ? -1 : 1));
     break;
-  default:
-    // do nothing
   }
   return newArray; 
 }

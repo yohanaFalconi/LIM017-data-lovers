@@ -392,18 +392,7 @@ statOptions.forEach((e)=>{
 
 
 
-const openIcon = document.getElementById("openIcon");
-openIcon.addEventListener("click",() =>{
-  sideBarType.classList.remove('hide');
 
-}); 
-const closeIcon = document.getElementById("closeIcon");
-closeIcon.addEventListener("click", () =>{
-  sideBarType.classList.add('hide');
-  //openIcon.style.display="block";
-  //backMenu.style.display="none";
-  //navMenHor.style.left= "-105%"
-});
 
   // }
   //   function mostrar = (){
@@ -429,17 +418,34 @@ closeIcon.addEventListener("click", () =>{
 //   // navMenHor.style.left= "-100%";
 // })
 
+const openIcon = document.getElementById("openIcon");
+openIcon.addEventListener("click",() =>{
+  //sideBarType.classList.remove('hide');
+  sideBarType.style.display="block";
+  closeIcon.style.display="block";
+  sideBarStat.style["background-color"] = "rgba(228, 239, 240, 0.568)";
+
+}); 
+const closeIcon = document.getElementById("closeIcon");
+closeIcon.addEventListener("click", () =>{
+  //sideBarType.classList.add('hide');
+  sideBarType.style.display="none";
+  openIcon.style.display = "block"
+  sideBarStat.style["background-color"] = "transparent";
+});
+
+
+
+
+
 //Mostrar barra estadísticos
 const showStat = document.getElementById("showStat");
 const blockContentStat = document.querySelector(".blockContentStat");
 const closeStat = document.getElementById("closeStat");
 
-
  showStat.addEventListener("click", showOptionStat);
  closeStat.addEventListener("click",closeOptionStat);
 //  blockContentStat.addEventListener("click",closeOptionStat);
-
- 
 
 function showOptionStat() {
    blockContentStat.style.display="block";

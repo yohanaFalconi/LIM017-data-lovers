@@ -779,11 +779,11 @@
     backface-visibility: hidden;
     border-radius: 10px;
     justify-content: center;
+    white-space: nowrap;
+    overflow: overlay;
+    text-overflow: ellipsis;
   }
-  /* .reverseCard1 p{
-    font-size: 1px;
-    padding:5px;
-  } */
+
 
   #pokemonType, #pokemonRegion{
     display: flex;
@@ -809,7 +809,7 @@
  
   .pokeFeat{
     background: #d0e9e9;
-    padding: 2px 12px;
+    padding: 2px 19px;
     border-radius: 3px;
     margin: 2px;
   }
@@ -1031,36 +1031,27 @@
   /* background:aliceblue */
 }
 
- .iconDisplayStat{
-   display: flex;
-   flex-direction: column;  
-   align-items: center;
- }
- #showStat{
-    display: none ;
-    height: 35px;
-    width: 35px;
-    left: 8px;
-    top: 5px;
- }
- #closeStat{
-    display: none ;
-    height: 25px;
-    width: 25px;
-    margin: 5px;
- }
 
-#openIcon{
-  width: 35px;
-  height: 35px;
+.iconDisplayStat{
+  display: flex;
+  flex-direction: column;  
+  align-items: center;
+}
+#showStat, #openIcon{
   display: none;
-}
-#closeIcon{
-  display: block;
-  width: 35px;
   height: 35px;
- margin: 8px;
+  width: 35px;
+  left: 8px;
+  top: 5px;
 }
+ 
+#closeStat, #openIcon{
+  display: none ;
+  height: 25px;
+  width: 25px;
+  margin: 5px;
+}
+
 
 
 
@@ -1136,24 +1127,12 @@
     height: 70vh;
     width: 80vw;
   }
-  #openIcon{
-    width: 35px;
-    height: 35px;
-    display: none;
-  }
-  #closeIcon{
-    display: block;
-    width: 35px;
-    height: 35px;
-   margin: 8px;
-  }
    
   .labelFilter {
     font-size: 13px;
   }
 }
 @media screen and (max-width:544px) {
-
   .headImage{
     width: 100px;
     height: 67px;
@@ -1236,32 +1215,19 @@
   .imagePokeModal{
       width:70%;
   }
-
-  /* .backMenu{
-    position: fixed;
-    top: 20vh;
-    left: 0;
-    width: 100%;
-    height: 80vh;
-    background: rgba(0,0,0,0.5);
-    display: block;
-    z
-} */
-
- /*ocultar opciones de types*/
-/* .sideBarType{
-  display: none;
-}*/
-
-
+  .iconDisplayType{
+    display: flex;
+    flex-direction: column;  
+    align-items: center;
+  }
  /*ocultar opciones estadísticas*/
-  #closeStat{
+  #closeStat, #closeIcon{
     display: block;
     right:40%;
     position: absolute;
     z-index: 1;
   }
-  #showStat{
+  #showStat, #openIcon{
     display: block;
     position: absolute;
     /* z-index: 1;

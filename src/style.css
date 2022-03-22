@@ -602,12 +602,11 @@
   .icon-filter {
     left: 0px;
     top: 0.2em;
-    text-align: none;
   }
 
   .icon-medium {
-    width: 32px;
-    height: 32px;
+    width: 35px;
+    height: 35px;
     margin: 5px;
   }
 
@@ -618,7 +617,7 @@
   .optionsPokType,.statOptions{
     /* position: relative; */
     color: aliceblue;
-    font-size: 16px;
+    font-size: 14px;
     /* font-weight: bold; */
     /* text-align: end; */
     /*font-family: 'Baloo Thambi 2', cursive;*/
@@ -1029,9 +1028,19 @@
   width: 140px;
   /* background:aliceblue */
 }
-#mostrarStat{
+
+#openIcon{
+  width: 35px;
+  height: 35px;
   display: none;
 }
+#closeIcon{
+  display: block;
+  width: 35px;
+  height: 35px;
+ margin: 8px;
+}
+
 
 @media  (max-width:320px) {
  
@@ -1094,10 +1103,8 @@
       width:70%;
     }
  */
-
-
-
 }
+
 @media  (max-width:418px) {
   #inputPokeSearch::placeholder{
     background-image: none;
@@ -1107,6 +1114,17 @@
     
     height: 70vh;
     width: 80vw;
+  }
+  #openIcon{
+    width: 35px;
+    height: 35px;
+    display: none;
+  }
+  #closeIcon{
+    display: block;
+    width: 35px;
+    height: 35px;
+   margin: 8px;
   }
    
 }
@@ -1162,7 +1180,7 @@
   #menuBtn:checked ~ .backMenu{
     left:0;
     display: block;
-    z-index: 1;
+    /*z-index: 1;*/
     top: 30.8vh;
   }
   .dataEvolution{
@@ -1207,22 +1225,27 @@
     z
 } */
 
+ /*ocultar opciones de types*/
+/* .sideBarType{
+  display: none;
+}*/
+
+
  /*ocultar opciones estadísticas*/
+
  #mostrarStat{
   display: block;
   width: 35px;
   height: 35px;
   margin: 8px;
-
  }
- .sideBarStat{
+ .sideBarStat, .sideBarType{
    background-color: rgba(228, 239, 240, 0.568);
    display: flex;
    z-index: 1;
    position: absolute;
    height: 100%;
    width:100vw;
-
  }
  .blockContentStat{
    /* height:auto; */
@@ -1289,16 +1312,17 @@
     width: 70vw;
   }
 
+
  }
 
 /*Barra personalizada*/
 body::-webkit-scrollbar{
   width:10px;
-  background-color: #488490;
+  background-color: #fff;
 }
 body::-webkit-scrollbar-thumb{
  border-radius: 5px;
- background-color: #50c59e;
+ background-color: #88d3d3;
  width: 8px;
  margin: 2px
 }

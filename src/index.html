@@ -39,7 +39,9 @@
         <label for ="menuBtn" class="menuHorLabel">
           <img src="./img/Imagenmenu.png" id="menuHor"> 
         </label>
+        
         <img class="headImage" src="./img/pokemon-logo-png-0.png">
+
         <nav class = "pokeBrowser">
           <div class = "selectInfo">
             <ul id="navMenHor">
@@ -49,7 +51,8 @@
                     TIPOS DE POKEMÓN<img src="./img/pokebola_.png" id="pokebol"> 
                   </label>
               </li>
-              <li class="optionNavMenu"><input type="checkbox" id="pokeEvolution">
+              <li class="optionNavMenu">
+                  <input type="checkbox" id="pokeEvolution">
                   <label for="pokeEvolution" class="labelFilter">
                     EVOLUCIONES <img src="./img/rare-candy.png" id="candyEvol"/>
                   </label>
@@ -66,7 +69,7 @@
             <ul>
               <li>
                 <select class="orderBySelect">
-                  <option disabled selected >ORDENAR POR</option>
+                  <option selected >ORDENAR POR</option>
                   <option value="bottomNumber" class = "orderOption">Número inferior</option>
                   <option value="topNumber" class = "orderOption">Número superior</option>
                   <option value="A_Z" class = "orderOption">A-Z</option>
@@ -78,23 +81,20 @@
           </div>
         </nav>
         <div class="backMenu"></div>
-
      </header>
      <div class="blockContent">
         <!-- <div class="asides"> -->
-        <div>
-          <img src="./img/arrowRight.png" id="arrowOpen">
-          <img src="./img/iconClose.png" id="arrowRight">
-        </div>
+        <img src="./img/mostrar.png" id="openIcon">
         <aside class="sideBarType hide">
           <ul class="optionsType">
             <li class="filterBy"> 
               <input type="checkbox" id="filterType">
-              <label id="titleFilterType" ><img src="./img/menuicono.png" id="menuType"> FILTRAR TIPO</label>
+              <label id="titleFilterType" ><img src="./img/menuicono.png" id="menuType"> FILTRAR TIPO<img src="./img/closeIcon.png" id="closeIcon">
+              </label>
             </li>
             <li class="optionsPokType" id="steel">Acero
-                <img class="icon-medium icon-filter" src="img/steel-icon.png">
-            </li>
+              <img class="icon-medium icon-filter" src="img/steel-icon.png"></img>
+            </li>          
             <li class="optionsPokType" id="water">Agua
               <img class="icon-medium icon-filter" src="img/water-icon.png">
             </li>
@@ -147,6 +147,7 @@
               <img class="icon-medium icon-filter" src="img/ground-icon.png">
             </li>
           </ul>
+
         </aside>
         <aside class="sideBarStat hide">
          <ul class="blockContentStat">

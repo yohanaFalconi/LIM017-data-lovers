@@ -798,11 +798,11 @@
   justify-content: center;
   align-items: center;
   background-color: #3a445d;;
-  height: 80%;
+  height: auto;
   width: 50%;
   padding: 30px;
   border-radius: 15px;
-  top: 10%;
+  top: 7%;
   position: fixed;
   box-shadow: 5px 8px 16px 1px;
 }
@@ -1002,9 +1002,9 @@
     border-width: 2px;
     font-size: 10px;
   }
-  .dataEvolution{
+  /* .dataEvolution{
     height: 82vh;
-  }
+  } */
   .blockContentStat{
     width: 75vw;
   }
@@ -1020,7 +1020,7 @@
   }
 
   .dataEvolution{
-    height: 70vh;
+    /* height: 70vh; */
     width: 80vw;
   }
    
@@ -1083,7 +1083,7 @@
   }
   .dataEvolution{
     
-    height: 70vh;
+    /* height: 70vh; */
     width: 80vw;
   }
    
@@ -1181,7 +1181,7 @@
 @media screen and (max-width:750px){
   .dataEvolution{
     width: 80vw;
-    height: 80vh;
+    /* height: 80vh; */
   }
   #namePokeModal{
     font-size: 22px;
@@ -1220,7 +1220,7 @@
  @media screen and (max-width: 1071px) {
    
   .dataEvolution {
-    height: 85%;
+    /* height: 85%; */
     width: 70vw;
   }
 

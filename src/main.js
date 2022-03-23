@@ -5,10 +5,7 @@ import { filterData, orderBy, searchData, topStats} from './data.js';
 import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 
-/* <p id="pokemonResistant">
-              <strong class="pokeFeatTitle">RESISTENCIA</strong>
-              <span class="pokeFeat">${prop.resistant}</span>
-          </p> */
+
 const pokemones = data.pokemon;
 
 const firstScreen = document.querySelector('.firstScreen');
@@ -39,15 +36,15 @@ const pokeEvolution = document.getElementById("pokeEvolution");
   
  //botón de atrás: Back Arrow
 
-// const headMenu = document.querySelector(".headMenu");
-// headMenu.addEventListener("click",()=>{
-//   //  firstScreen.style.display = 'block';
-//   //  secondScreen.style.display = 'none';
-//   //  pokeEvolution.checked = false;
-//   //  pokemonFeatures(pokemones,false);
-//   firstScreen.classList.remove("hide");
-//   secondScreen.classList.add.apply("hide");
-// }) 
+const headImage = document.querySelector(".headImage");
+headImage.addEventListener("click",()=>{
+   firstScreen.style.display = 'block';
+   secondScreen.style.display = 'none';
+   pokeEvolution.checked = false;
+   pokemonFeatures(pokemones,false);
+  firstScreen.classList.remove("hide");
+  secondScreen.classList.add.apply("hide");
+}) 
 
   //botón de recargar la página todos los pokemones, sin filtros
   const cleanFilterBtn = document.getElementById("cleanFilterBtn");
@@ -388,35 +385,7 @@ statOptions.forEach((e)=>{
 })
 
 
-
-
-
-
-
-
-  // }
-  //   function mostrar = (){
-  //     backMenu.style.display="block";
-  //     navMenHor.style.left= "0"
-  //   }
-
-
-
-
-
-//Menú hamburguesa
- //ocultar menú 
-
- const backMenu = document.querySelector(".backMenu");
- const navMenHor = document.getElementById("navMenHor");
- //const menuHor = document.getElementById("menuHor");
-
-//   backMenu.addEventListener("click",()=>{
-
-//   backMenu.style.display="none";
-//   // navMenHor.checked ="true";
-//   // navMenHor.style.left= "-100%";
-// })
+//Ocultar opciones de Tipos de pokemón y estadísticos
 
 const openIcon = document.getElementById("openIcon");
 openIcon.addEventListener("click",() =>{
@@ -455,7 +424,6 @@ function showOptionStat() {
  }
  
  function closeOptionStat() {
-  //  console.log('hola')
   blockContentStat.style.display="none";
   closeStat.style.display="none";
   showStat.style.display = "block"
@@ -464,29 +432,6 @@ function showOptionStat() {
  
  
  
-//  x . ("click, ocultar")
-//    console.log("hola")
-//   backMenu.style.display="none";
-//   //  console.log("hola")
-//    console.log('lable', pokeAllBtn.checked)
-
-// function ocultar =(){
-//   backMenu.style.display="none";
-//     navMenHor.style.left= "-105%"
-// }
-//   function mostrar = (){
-//     backMenu.style.display="block";
-//     navMenHor.style.left= "0"
-//   }
-   
-
-//     if(pokeAllBtn.checked|| pokeEvolution.checked || statsBtn.checked){
-//       backMenu.style.display="none";
-//       navMenHor.style.left= "-105%"
-//    }
-//   // // console.log("hola")
-//   //   }
-// //  });
 
 
 

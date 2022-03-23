@@ -1,28 +1,33 @@
+# POKEDEX
+## RESUMEN
+
+Pokedex es una plataforma enfocada en data de pokemones de la generación i y ii de las regiones Kanto y Johto,  donde el usuario podrá acceder para poder buscar y visualizar los pokemones, además de obtener información referente a ellos, con respecto a sus características, evoluciones, resistencia, debilidades y estadísticos referentes a los top 10 en cuanto a  poderes de combate, poder de sanación, resistencia, etc.
 
 
 
 
 
 
+## DISEÑO DE LA INTERFAZ DE USUARIO
+### Prototipo de baja Fidelidad
+
+
+![baja-Fidelidad.png](https://i.postimg.cc/VvMCRLgz/baja-Fidelidad.png)
+
+
+### Prototipo de alta fidelidad
+
+
+![Altafidelidad-parte1.png](https://i.postimg.cc/KcNFKyxT/Altafidelidad-parte1.png)
+![Altafidelidad-parte2.png](https://i.postimg.cc/vmWkpWmn/Altafidelidad-parte2.png)
+
+### Iteraciones 
+
+![ITERACIONES.png](https://i.postimg.cc/vm8MtYMf/ITERACIONES.png)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+## IMPLEMENTACIÓN DE LA INTERFAZ DE USUARIO (HTML/CSS/JS)
 
 
 

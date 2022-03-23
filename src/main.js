@@ -16,7 +16,7 @@ const pokeAllBtn = document.getElementById("pokeAllBtn");
 //const asides = document.querySelector(".asides");
 const sideBarStat = document.querySelector('.sideBarStat');
 const sideBarType = document.querySelector(".sideBarType");
-// const optionsType = document.querySelector(".optionsType");
+const optionsType = document.querySelector(".optionsType");
 const orderBySelect = document.querySelector('.orderBySelect');
 const pokeEvolution = document.getElementById("pokeEvolution");
 	// aparezca la segunda pantalla
@@ -64,7 +64,7 @@ headImage.addEventListener("click",()=>{
     sideBarType.classList.remove("hide");
     sideBarStat.classList.add('hide');
     pokeEvolution.checked=false;
-    openIcon.style.display="block";
+    //openIcon.style.display="block";
 
   })
 
@@ -385,22 +385,24 @@ statOptions.forEach((e)=>{
 })
 
 
-//Ocultar opciones de Tipos de pokemón y estadísticos
 
+//Ocultar opciones de Tipos de pokemón y estadísticos
 const openIcon = document.getElementById("openIcon");
-openIcon.addEventListener("click",() =>{
-  //sideBarType.classList.remove('hide');
-  sideBarType.style.display="block";
+openIcon.addEventListener("click", () =>{
+  optionsType.classList.remove('hide');
+  //sideBarType.style.display="block";
   closeIcon.style.display="block";
-  sideBarStat.style["background-color"] = "rgba(228, 239, 240, 0.568)";
+  sideBarType.style["background-color"] = "rgba(228, 239, 240, 0.568)";
 
 }); 
+
 const closeIcon = document.getElementById("closeIcon");
 closeIcon.addEventListener("click", () =>{
-  //sideBarType.classList.add('hide');
-  sideBarType.style.display="none";
+  optionsType.classList.add('hide');
+  //sideBarType.style.display="none";
+  closeIcon.style.display = "none"
   openIcon.style.display = "block"
-  sideBarStat.style["background-color"] = "transparent";
+  sideBarType.style["background-color"] = "transparent";
 });
 
 

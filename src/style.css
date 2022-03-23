@@ -459,7 +459,7 @@
     outline: none;
   }
   #inputPokeSearch:hover{
-    border-color:rgb(32, 75, 64);
+    border-color:#e9e56d;
     border-width: 3px;
     transform: scale(1.05);
     border-radius: 3px;
@@ -508,26 +508,20 @@
     list-style: none;
     text-decoration:none;
   }
-
   .sideBarType{
-    margin: 5px;
-  }
-  .sideBarType ul{
     list-style: none;
     text-decoration: none;
     margin: 5px;
     text-align: left;
     display: flex;
-    width: 140px;
+    width: 140px; 
     text-align: none;
     font-size: 14px;
-    flex-direction: column;
-    
+    flex-direction: column;  
   }
-  
-  .sideBarType{
+
+ .sideBarType{
     display: flex;
-    flex-direction: column;
     height: max-content;
   }
   .sideBarStat{
@@ -765,23 +759,7 @@
   }
 
   
-
-
-/*******nuevos cambios */
-
-
-.wave{
-    position: absolute;
-    margin-top: 310px; 
-    margin-left: 0;
-    height:auto;
-    width: 100%;
-    background-size: 250rem 30rem;
-    animation: wave 10s linear infinite;
-    position: absolute;
-}
-
- .headImage{
+.headImage{
   width: 20%;
   height: auto;
   /* padding: 12px 0;    */
@@ -967,6 +945,13 @@
   width: 140px;
   /* background:aliceblue */
 }
+.sideBarType{
+  display:flex;
+  margin: 5px;
+  text-align: left;
+  font-size: 14px;
+  flex-direction: column;
+}
 
 
 .iconDisplayStat{
@@ -1131,6 +1116,20 @@
     flex-direction: column;  
     align-items: center;
   }
+  .optionsType ul{
+    width: 60vw;
+    left: -5px;
+    position: absolute;
+    display: block;
+    z-index: 1;
+  }
+  .optionsType{
+    width: 60vw;
+    left: -5px;
+    position: absolute;
+    display: block;
+    z-index: 1;
+  }
  /*ocultar opciones estadísticas*/
   #closeStat, #closeIcon{
     display: block;
@@ -1170,7 +1169,6 @@
    display: block;
    z-index: 1;
  }
-
 
 
 }

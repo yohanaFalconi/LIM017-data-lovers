@@ -3,6 +3,29 @@
 
 
 
+### Historias de usuario
+
+Se realizó **la investigación de usuario** mediante una encuesta virtual. En la cuál los encuestados señalaron que quieren una plataforma donde puedan ordenar y filtrar a los pokémones por sus tipos, evoluciones y estadísticas. 
+![](https://github.com/yohanaFalconi/LIM017-data-lovers/blob/main/src/img/estad%C3%ADsticas1.PNG)
+Además, se tomó en cuenta los comentarios:
+![](https://github.com/yohanaFalconi/LIM017-data-lovers/blob/main/src/img/estad%C3%ADsticas2.PNG)
+Las **Historias de Usuario** fueron el resultado de la investigación a los usuarios. Asimismo, se cumplió con los criterios de aceptación y definición de terminado Independiente, Negociable, Valiosa, Estimable, Pequeña y Testeable. 
+![](https://github.com/yohanaFalconi/LIM017-data-lovers/blob/main/src/img/historia_usuario.PNG)
+![](https://github.com/yohanaFalconi/LIM017-data-lovers/blob/main/src/img/historia_usuario1.PNG)
+
+
+### Pruebas unitarias
+
+Los test se escribieron para poner a prueba las funciones:
+* _filterData_: filtra el tipo de pokémon según su naturaleza.
+* _searchData_: busca los pomemones por sus nombres. 
+* _orderBy_: ordena los pokemones numéricamente y alfabéticamente de manera ascendente y descendente.
+* _topStats_: filtra los 10 mejores pokemones de acuerdo a los estadísticos ataque, defensa, resistencia poder de comabte y sanación.
+Las pruebas unitarias dieron una cobertura mayor al 70% de _sentencias_, _funciones_, _líneas_, _ramas_. 
+![](https://github.com/yohanaFalconi/LIM017-data-lovers/blob/main/src/img/tests.PNG)
+
+
+
 
 
 
@@ -661,23 +684,23 @@ Cuando ya estés lista para codear, te sugerimos empezar de esta manera:
 
 ## 9. Checklist
 
-* [ ] Usa VanillaJS.
-* [ ] Pasa linter (`npm run pretest`)
-* [ ] Pasa tests (`npm test`)
-* [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
+* [✔] Usa VanillaJS.
+* [✔] Pasa linter (`npm run pretest`)
+* [✔] Pasa tests (`npm test`)
+* [✔] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
   lines y branches.
-* [ ] Incluye _Definición del producto_ clara e informativa en `README.md`.
-* [ ] Incluye historias de usuario en `README.md`.
-* [ ] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
+* [✔] Incluye _Definición del producto_ clara e informativa en `README.md`.
+* [✔] Incluye historias de usuario en `README.md`.
+* [✔] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
   `README.md`.
-* [ ] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
+* [✔] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
   en `README.md`.
 
-* [ ] Incluye link a prototipo de alta fidelidad (Zeplin|Figma|Canva) en `README.md`.
+* [✔] Incluye link a prototipo de alta fidelidad (Zeplin|Figma|Canva) en `README.md`.
 * [ ] Incluye el `Plan de acción` (Objetivos de Aprendizaje priorizados) de cada programadora en el `README.md` o otro documento.
 * [ ] Incluye el listado de problemas que detectaste a través de tests de
   usabilidad en el `README.md`.
-* [ ] UI: Muestra lista y/o tabla con datos y/o indicadores.
-* [ ] UI: Permite ordenar data por uno o más campos (asc y desc).
-* [ ] UI: Permite filtrar data en base a una condición.
-* [ ] UI: Es _responsive_.
+* [✔] UI: Muestra lista y/o tabla con datos y/o indicadores.
+* [✔] UI: Permite ordenar data por uno o más campos (asc y desc).
+* [✔] UI: Permite filtrar data en base a una condición.
+* [✔] UI: Es _responsive_.

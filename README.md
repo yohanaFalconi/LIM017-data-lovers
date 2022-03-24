@@ -3,9 +3,6 @@
 
 Pokedex es una plataforma enfocada en data de pokemones de la generación i y ii de las regiones Kanto y Johto,  donde el usuario podrá acceder para poder buscar y visualizar los pokemones, además de obtener información referente a ellos, con respecto a sus características, evoluciones, resistencia, debilidades y estadísticos referentes a los top 10 en cuanto a  poderes de combate, poder de sanación, resistencia, etc.
 
-
-
-
 ### Historias de usuario
 
 Se realizó **la investigación de usuario** mediante una encuesta virtual. En la cuál los encuestados señalaron que quieren una plataforma donde puedan ordenar y filtrar a los pokémones por sus tipos, evoluciones y estadísticas. 
@@ -46,8 +43,23 @@ Las pruebas unitarias dieron una cobertura mayor al 70% de _sentencias_, _funcio
 
 ### Iteraciones 
 
+#### Primera Iteración: 
+Se evaluó el diseño y colores de la página web principal, inicialmente la carátula contenía dos botones de los cuales. Uno de los botones denominado POKEMONES dirigía a la página principal donde el usuario podría revisar todos los pokemones y poder filtrarlos por tipos, ordenarlos alfabéticamente y numericamente, para ello contabamos con una barra de navegación que contenían iconos que al momento de seleccionarlos ejecutarían las busquedas de tipos, evoluciones, filtros, etc. El otro botón denominado TOP10, dirigía a otra sección donde se podría visualizar a los estadísticos o mejores 10 pokemones en cuando habilidades de combate. 
+
+Pero en base a la experiencia del usuario, el hecho de que tenga que volver a la pagina inicial para poder visualizar los top 10, implicaría un poco mayor esfuerzo para navegar por su parte lo que quizá haria un poco tedioso su experiencia. Adicional a ello, la barra de navegación de la página principal de pokemones, al contener iconos como botones, también podrían dificultad la experiencia del usuario, puesto que un usuario que sepa sobre pokemones lo entendería, pero un usuario nuevo que quiera navegar desconocería el uso de dichos iconos, lo q lo llevaría a experimentar dando click a los iconos de la barra de navegación para comprender ¿qué hacen? o hacia donde conducen, dificultando así la experiencia del usuario e incluso, limitando el target de usuario para la navegación en nuestra página dado que no era muy comprensible
+
 ![ITERACIONES.png](https://i.postimg.cc/vm8MtYMf/ITERACIONES.png)
 
+#### Segunda Iteración:
+
+Ya con las sugerencas previas de la primera iteración, se optó por colocar un sólo botón en la página inicial y los top10 (estadísticos) se colocaron en la barra de navegación de la página principal donde se encontraba todos los pokemones, se quitaron los iconos y en su lugar se colocaron botones con palabras referentes a lo que el usuario podria encontrar al darles click. Al estar los botones funcionales en una sóla página mejoraría la experiencia del usuario, dado que ya no tendría que navegar entre páginas,reduciendo así el esfuerzo por parte del usuario.
+
+Pero aun había otro punto de mejora, con respecto al diseño y los colores de la página web, dado que los botones ubicados en la barra de navegación no se visualizaban adecuadamente bien.
+
+ #### Conclusión
+  Se optó por mejorar visualmente la página web y la portada, así como también se optó por elegir una paleta de colores, de tal modo que se use colores de entonación para todas las secciones de la página
+
+![paleta-de-colores.jpg](https://i.postimg.cc/jdWRsGsV/paleta-de-colores.jpg)
 
 
 ## IMPLEMENTACIÓN DE LA INTERFAZ DE USUARIO (HTML/CSS/JS)
@@ -706,7 +718,7 @@ Cuando ya estés lista para codear, te sugerimos empezar de esta manera:
 
 * [✔] Incluye link a prototipo de alta fidelidad (Zeplin|Figma|Canva) en `README.md`.
 * [ ] Incluye el `Plan de acción` (Objetivos de Aprendizaje priorizados) de cada programadora en el `README.md` o otro documento.
-* [ ] Incluye el listado de problemas que detectaste a través de tests de
+* [✔] Incluye el listado de problemas que detectaste a través de tests de
   usabilidad en el `README.md`.
 * [✔] UI: Muestra lista y/o tabla con datos y/o indicadores.
 * [✔] UI: Permite ordenar data por uno o más campos (asc y desc).

@@ -54,6 +54,9 @@ Las pruebas unitarias dieron una cobertura mayor al 70% de _sentencias_, _funcio
 
 ![Mobile Responsive](https://github.com/yohanaFalconi/LIM017-data-lovers/blob/main/src/img/responsive%20Mobile.png)
 
+Esta plataforma es responsivo para celulares, tablets y desktop. Los siguientes son los disposivos móviles emulados.
+![](https://github.com/yohanaFalconi/LIM017-data-lovers/blob/main/src/img/dispositivos%20emulados.jpg)
+
 
 
 

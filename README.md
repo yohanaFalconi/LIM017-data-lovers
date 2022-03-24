@@ -54,15 +54,12 @@ Pero en base a la experiencia del usuario, el hecho de que tenga que volver a la
 
 Ya con las sugerencas previas de la primera iteración, se optó por colocar un sólo botón en la página inicial y los top10 (estadísticos) se colocaron en la barra de navegación de la página principal donde se encontraba todos los pokemones, se quitaron los iconos y en su lugar se colocaron botones con palabras referentes a lo que el usuario podria encontrar al darles click. Al estar los botones funcionales en una sóla página mejoraría la experiencia del usuario, dado que ya no tendría que navegar entre páginas,reduciendo así el esfuerzo por parte del usuario.
 
-Pero aun había otro punto de mejoras, 
+Pero aun había otro punto de mejora, con respecto al diseño y los colores de la página web, dado que los botones ubicados en la barra de navegación no se visualizaban adecuadamente bien.
 
+ #### Conclusión
+  Se optó por mejorar visualmente la página web y la portada, así como también se optó por elegir una paleta de colores, de tal modo que se use colores de entonación para todas las secciones de la página
 
-
-
-
-
-
-
+![paleta-de-colores.jpg](https://i.postimg.cc/jdWRsGsV/paleta-de-colores.jpg)
 
 
 ## IMPLEMENTACIÓN DE LA INTERFAZ DE USUARIO (HTML/CSS/JS)
@@ -718,7 +715,7 @@ Cuando ya estés lista para codear, te sugerimos empezar de esta manera:
 
 * [✔] Incluye link a prototipo de alta fidelidad (Zeplin|Figma|Canva) en `README.md`.
 * [ ] Incluye el `Plan de acción` (Objetivos de Aprendizaje priorizados) de cada programadora en el `README.md` o otro documento.
-* [ ] Incluye el listado de problemas que detectaste a través de tests de
+* [✔] Incluye el listado de problemas que detectaste a través de tests de
   usabilidad en el `README.md`.
 * [✔] UI: Muestra lista y/o tabla con datos y/o indicadores.
 * [✔] UI: Permite ordenar data por uno o más campos (asc y desc).

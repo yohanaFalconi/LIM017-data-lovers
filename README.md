@@ -64,7 +64,7 @@ Pero aun había otro punto de mejora, con respecto al diseño y los colores de l
 
 ## IMPLEMENTACIÓN DE LA INTERFAZ DE USUARIO (HTML/CSS/JS)
 
-
+![Mobile Responsive](https://github.com/yohanaFalconi/LIM017-data-lovers/blob/main/src/img/responsive%20Mobile.png)
 
 
 

@@ -4,27 +4,207 @@
     <meta charset="utf-8">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://kit.fontawesome.com/acccf8509c.js" crossorigin="anonymous"></script>
+
   </head>
   <body>
-    
-    <header class="">
-      <h1>Bienvenidos a PokeDéx</h1>
-    </header>
-    <section>
-      <img src="./img/pokebola_.png">
-      <div>
-        <p>Hola, futuro maestro pokémon!
-          Aquí encontrarás información sobre los pokémones normales, legendarios y míticos de las regiones Kanto y Johto.
-          Además, podrás identificar ataques especiales, defensas y debilidades que te ayudarán a poner a prueba tus habilidades de combate y convertirte en el mejor maestro de pokémon.
-        </p>
-        <button id="start">Pokémones</button>
-        <button id="start">Top 10</button>
+   
+    <section class="firstScreen">
+      <header class="mainPart">
+        <img class="pokemonLogo" src="./img/pokemon-logo-png-0.png">
+        <img class= "battleGift" src="./img/Battle1Gift.gif">
+      </header>
+      <div class="contFirstScreen">
+        <div class="row">
+          <div class="introBox">
+            <p id="hello">Hola, futuro maestro pokémon!</p>
+            <p id="helloMessage">Aquí encontrarás información sobre los pokémones normales, legendarios y míticos de las regiones Kanto y Johto.
+               Además, podrás identificar ataques especiales, defensas y debilidades que te ayudarán a poner a prueba tus habilidades 
+              de combate y convertirte en el mejor maestro de pokémon.</p>
+            <div class="btnStartContainer">
+              <button id="btnStart">Pokémones</button>
+            </div>
+          </div>
+          <div>
+            <img id="masterImage" src="./img/master_ccexpress.png">
+          </div>
+        </div>
       </div>
     </section>
+    
+    <section class="secondScreen">
+      <header class="secondScreenMain">
+        <input type="checkbox" id="menuBtn">
+        <label for ="menuBtn" class="menuHorLabel">
+          <img src="./img/Imagenmenu.png" id="menuHor"> 
+        </label>
+        
+        <img class="headImage" src="./img/pokemon-logo-png-0.png">
 
+        <nav class = "pokeBrowser">
+          <div class = "selectInfo">
+            <ul id="navMenHor">
+              <li class="optionNavMenu">
+                  <input type="checkbox" id="pokeAllBtn">
+                  <label for ="pokeAllBtn" class="labelFilter">
+                    TIPOS DE POKEMÓN<img src="./img/pokebola_.png" id="pokebol"> 
+                  </label>
+              </li>
+              <li class="optionNavMenu">
+                  <input type="checkbox" id="pokeEvolution">
+                  <label for="pokeEvolution" class="labelFilter">
+                    EVOLUCIONES <img src="./img/rare-candy.png" id="candyEvol"/>
+                  </label>
+              </li>
+              <li class="optionNavMenu"><input type="checkbox" id="statsBtn">
+                  <label for="statsBtn" class="labelFilter"> 
+                  ESTADÍSTICOS <img src="./img/top-10.png" id="top10">
+                  </label>
+              </li> 
+            </ul>
+            <input type="search" id="inputPokeSearch"  placeholder="Ingrese el nombre del pokemón">
+          </div>  
+          <div class="filterSelectClean">
+            <ul>
+              <li>
+                <select class="orderBySelect">
+                  <option selected >ORDENAR POR</option>
+                  <option value="bottomNumber" class = "orderOption">Número inferior</option>
+                  <option value="topNumber" class = "orderOption">Número superior</option>
+                  <option value="A_Z" class = "orderOption">A-Z</option>
+                  <option value="Z_A" class = "orderOption">Z-A</option>
+                </select>
+              </li>
+              <li><button id="cleanFilterBtn">LIMPIAR<img src="./img/sinfiltro.png" id="noFilter"></button></li>    
+            </ul>
+          </div>
+        </nav>
+        <div class="backMenu"></div>
+     </header>
+     <div class="blockContent">
+        <!-- <div class="asides"> -->
+        <aside class="sideBarType hide">
+          <ul class="optionsType">
+            <li class="filterBy"> 
+              <input type="checkbox" id="filterType">
+              <label id="titleFilterType" ><!--<img src="./img/menuicono.png" id="menuType">--> FILTRAR TIPO
+              </label>
+            </li>
+            <li class="optionsPokType" id="steel">Acero
+              <img class="icon-medium icon-filter" src="img/steel-icon.png">
+            </li>          
+            <li class="optionsPokType" id="water">Agua
+              <img class="icon-medium icon-filter" src="img/water-icon.png">
+            </li>
+            <li class="optionsPokType" id="dragon">Dragón
+              <img class="icon-medium icon-filter" src="img/dragon-icon.png">
+            </li>
+            <li class="optionsPokType" id="electric">Eléctrico
+              <img class="icon-medium icon-filter" src="img/electric-icon.png">
+            </li>
+            <li class="optionsPokType" id="ghost">Fantasma
+              <img class="icon-medium icon-filter" src="img/ghost-icon.png">
+            </li>
+            <li class="optionsPokType" id="fire">Fuego
+              <img class="icon-medium icon-filter" src="img/fire-icon.png">
+            </li>
+            <li class="optionsPokType" id="fairy">Hada
+              <img class="icon-medium icon-filter" src="img/fairy-icon.png">
+            </li>
+            <li class="optionsPokType" id="ice">Hielo
+              <img class="icon-medium icon-filter" src="img/ice-icon.png">
+            </li>
+            <li class="optionsPokType" id="bug">Insecto
+              <img class="icon-medium icon-filter" src="img/bug-icon.png"> 
+            </li>
+            <li class="optionsPokType" id="fighting">Luchador
+              <img class="icon-medium icon-filter" src="img/fighting-icon.png">
+            </li>
+            <li class="optionsPokType" id="grass">Planta
+              <img class="icon-medium icon-filter" src="img/grass-icon.png">
+            </li>
+            <li class="optionsPokType" id="psychic">Psíquico
+              <img class="icon-medium icon-filter" src="img/psychic-icon.png">
+            </li>
+            <li class="optionsPokType" id="rock" >Roca
+              <img class="icon-medium icon-filter" src="img/rock-icon.png">
+            </li>
+            <li class="optionsPokType" id="normal">Normal
+              <img class="icon-medium icon-filter" src="img/normal-icon.png">
+            </li>
+            <li class="optionsPokType" id="flying">Volador
+              <img class="icon-medium icon-filter" src="img/flying-icon.png">
+            </li>
+            <li class="optionsPokType" id="poison">Veneno
+              <img class="icon-medium icon-filter" src="img/poison-icon.png">
+            </li>
+            <li class="optionsPokType" id="dark">Siniestro
+              <img class="icon-medium icon-filter" src="img/dark-icon.png">
+            </li>
+            <li class="optionsPokType" id="ground">Tierra
+              <img class="icon-medium icon-filter" src="img/ground-icon.png">
+            </li>
+          </ul>
+          <div class = "iconDisplayType">
+            <img src="./img/mostrar.png" id="openIcon">
+            <img  src="./img/cerrarStat.png" id="closeIcon">
+          </div>
+        </aside>
+        <aside class="sideBarStat hide">
+         <ul class="blockContentStat">
+            <li class="topTenMessage"> TOP 10 </li>
+            <li class="statOptions" id="base-attack"> Ataque
+              <img class="icon-medium icon-filter" src="img/attack-icon.png">
+            </li>
+            <li class="statOptions" id="base-defense"> Defensa
+              <img src="./img/defensa.png" class="imgStat">
+            </li>
+            <li class="statOptions" id="base-stamina"> Resistencia
+              <img src="./img/resistencia.png" class="imgStat">
+            </li>
+            <li class="statOptions" id="max-cp"> Poder de Combate
+              <img src="./img/cp.png" class="imgStat">
+            </li>
+            <li class="statOptions" id="max-hp"> Poder de Sanación
+              <img src="./img/sanacion.png" class="imgStat">
+            </li>
+          </ul>
+          <div class = "iconDisplayStat">
+            <img src="./img/mostrar.png" id="showStat">
+            <img  src="./img/cerrarStat.png" id="closeStat">
+          </div>
+          
+        </aside>
 
+       <!-- </div> -->
+        <div class="container"></div>
+      </div>  
+     <div id="containerModal" class="ocultar"></div>  
 
-    <div id="root"></div>
+    </section>
+    <footer class="footer">
+      <div class="footerContainer">
+        <div class="socialContent">
+          <a href="https://es-la.facebook.com/Pokemon/" target="_blank" class="social"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://twitter.com/pokemon" target="_blank" class="social"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://www.instagram.com/pokemon/?hl=es" target="_blank" class="social"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.youtube.com/channel/UCp6YQGlRtUGKGJPxX-en6mw" target="_blank" class="social"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <div class="oficialPagesFooter">
+          <p class="oficialPage">Páginas Oficiales</p>
+          <a href="https://www.pokemon.com/el/" target="_blank" class="oficialPage">Pokémon Oficial</a>
+          <a href="https://pokemongolive.com/es/" target="_blank" class="oficialPage">PokémonGo</a>
+          <a href="https://unite.pokemon.com/en-gb/" target="_blank" class="oficialPage">Pokémon UNITE</a>
+        </div>
+        <div class="imgFooter">
+          <img src="./img/Pokemones.png">
+          <p class="textFooter">Pokémon © 2022 </p>
+        </div>
+      </div>
+    </footer>
+     
+    <script src="data.js" type="module"></script>
     <script src="main.js" type="module"></script>
   </body>
 </html>

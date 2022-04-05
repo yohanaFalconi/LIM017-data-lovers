@@ -1,10 +1,5 @@
-//import { resetDefaultConfig } from 'eslint/lib/rule-tester/rule-tester';
 import { filterData, orderBy, searchData, topStats} from './data.js';
-
-// import data from './data/lol/lol.js';
 import data from './data/pokemon/pokemon.js';
-// import data from './data/rickandmorty/rickandmorty.js';
-
 
 const pokemones = data.pokemon;
 
@@ -13,7 +8,6 @@ const secondScreen = document.querySelector('.secondScreen');
 const btnStart = document.getElementById('btnStart');
 const selectBtn = document.querySelectorAll('.optionsPokType');
 const pokeAllBtn = document.getElementById("pokeAllBtn");
-//const asides = document.querySelector(".asides");
 const sideBarStat = document.querySelector('.sideBarStat');
 const sideBarType = document.querySelector(".sideBarType");
 const optionsType = document.querySelector(".optionsType");
@@ -26,16 +20,13 @@ const pokeEvolution = document.getElementById("pokeEvolution");
     secondScreen.style.display ='block';
     window.scrollTo(0, 0);
     pokemonFeatures(pokemones,false);
-    //asides.classList.add("hide");
     sideBarType.classList.add("hide");
     sideBarStat.classList.add("hide");
     orderBySelect.style.display="block";
     pokeEvolution.checked=false;
-
   }
   
  //botón de atrás: Back Arrow
-
 const headImage = document.querySelector(".headImage");
 headImage.addEventListener("click",()=>{
    firstScreen.style.display = 'block';
@@ -47,32 +38,26 @@ headImage.addEventListener("click",()=>{
 }) 
 
   //botón de recargar la página todos los pokemones, sin filtros
-  const cleanFilterBtn = document.getElementById("cleanFilterBtn");
-  cleanFilterBtn.addEventListener('click', () =>{
-    pokemonFeatures(pokemones,false);
-    sideBarType.classList.add("hide");
-    sideBarStat.classList.add("hide");
-    //asides.classList.add("hide");
-    orderBySelect.style.display="block";
-    pokeEvolution.checked=false;
-  })
-
+const cleanFilterBtn = document.getElementById("cleanFilterBtn");
+cleanFilterBtn.addEventListener('click', () =>{
+  pokemonFeatures(pokemones,false);
+  sideBarType.classList.add("hide");
+  sideBarStat.classList.add("hide");
+  orderBySelect.style.display="block";
+  pokeEvolution.checked=false;
+})
 
   //Funcionamiento del botón pokeAllBtn y aparición de tipos
-  pokeAllBtn.addEventListener('click',()=>{
+pokeAllBtn.addEventListener('click',()=>{
     pokemonFeatures(pokemones,false);
     sideBarType.classList.remove("hide");
     sideBarStat.classList.add('hide');
     pokeEvolution.checked=false;
-    //openIcon.style.display="block";
+})
 
-  })
-
-  
 // MÉTODO MAPS
 const container = document.querySelector(".container");
 const containerModal = document.querySelector("#containerModal");
-//const statsBtn = document.getElementById("statsBtn");
   
 const pokemonFeatures = (data, isCheck)=>{
   container.innerHTML  = ""
@@ -80,7 +65,6 @@ const pokemonFeatures = (data, isCheck)=>{
     const sectionElement = document.createElement("div");
     sectionElement.setAttribute("class","sectionCardPoke");
     sectionElement.innerHTML += `
-    
       <div class="pokemonCard">
       
         <div class = "frontCard">    
@@ -118,16 +102,8 @@ const pokemonFeatures = (data, isCheck)=>{
               <span class="pokeFeat">${prop["pokemon-rarity"]}</span>
           </p>
         </div>
-        <div class="statsReverseCard hide">
-          <p id="baseAttack">${prop["base-attack"]}</p>
-          <p id="baseDefense">${prop["base-defense"]}</p>
-          <p id="baseStamina">${prop["base-stamina"]}</p>
-          <p id="maxCp">${prop["max-cp"]}</p>
-          <p id="maxHp">${prop["max-hp"]}</p>
-        </div>
       </div>
     `
-    
   const pokemonCard = sectionElement.querySelectorAll(".pokemonCard")
   //rotar las imágenes
   if(isCheck === false){
@@ -139,11 +115,9 @@ const pokemonFeatures = (data, isCheck)=>{
   }
 
   const candyImg = (isCheck) ? sectionElement.querySelector(".candyImg"): "";
-  //console.log(candyImg)
     if(isCheck === true){
       candyImg.classList.remove("hide")
     }
-   
     candyImg && candyImg.addEventListener('click', () => {
 
       containerModal.classList.remove('ocultar');
@@ -158,43 +132,25 @@ const pokemonFeatures = (data, isCheck)=>{
       });    
     });   
     container.appendChild(sectionElement)
-    
  }) 
 }
-
- pokemonFeatures(pokemones,false)
-
-// si le dan click al label tipos de pokemon
-
-
-
-
+pokemonFeatures(pokemones,false)
 
 // Filtrando según el tipo de pokémon
 selectBtn.forEach((e)=>{
   e.addEventListener("click", (event) => { 
     const clickType = event.target.id
-    //console.log(event.target.parentElement)
     pokemonFeatures(filterData(pokemones,"type",clickType),false)    
     pokeEvolution.checked=false;
   })
-
 })
-
-
-
-
-
 
 //Función buscar
 const inputPokeSearch = document.getElementById("inputPokeSearch");
 inputPokeSearch.addEventListener('keyup',()=>{
   const textSearch = inputPokeSearch.value.toLowerCase();
-  
   pokemonFeatures(searchData(pokemones,"name",textSearch),false);
-
   if(container.innerHTML === ''){
-  
     container.innerHTML =`
     <div class="errorSearch">
         <img src="./img/errores.png" id="error">
@@ -206,19 +162,18 @@ inputPokeSearch.addEventListener('keyup',()=>{
         </figure>  
     </div>
     `
-  //--botón tryAgain cuando hay error de búsqueda
-  const figTryAgain = document.querySelector('.figTryAgain');
-  figTryAgain.addEventListener('click', ()=> {
-  pokemonFeatures(pokemones, false);
-  }) 
+     //--botón tryAgain cuando hay error de búsqueda
+    const figTryAgain = document.querySelector('.figTryAgain');
+    figTryAgain.addEventListener('click', ()=> {
+    pokemonFeatures(pokemones, false);
+    }) 
   }
 });
- 
+
 //Función ordenar
 orderBySelect.addEventListener('change', function (e){
   pokeEvolution.checked=false;
   const clickSelected = e.target.value
-  // container.innerHTML="";
   pokemonFeatures(orderBy(pokemones,clickSelected),false)
   
 })
@@ -360,18 +315,15 @@ const pokeEvolutionImage = (poke, cardContainer) => {
   divInfo.innerHTML = info;
   const evolutions= divInfo.querySelector("#sectionImgEvolution")
   pokeEvolutionImage(dataEvol,evolutions)
-  //console.log(evolutions)
   return divInfo;
 }
  
 //estadísticos
 const statsBtn = document.getElementById("statsBtn");
-
 statsBtn.addEventListener("click", () =>{
   pokeEvolution.checked=false;
   sideBarType.classList.add("hide");
   sideBarStat.classList.remove("hide");
-
 });
 
 // Filtrando según el Estadístico
@@ -390,23 +342,17 @@ statOptions.forEach((e)=>{
 const openIcon = document.getElementById("openIcon");
 openIcon.addEventListener("click", () =>{
   optionsType.classList.remove('hide');
-  //sideBarType.style.display="block";
   closeIcon.style.display="block";
   sideBarType.style["background-color"] = "rgba(228, 239, 240, 0.568)";
 
 }); 
-
 const closeIcon = document.getElementById("closeIcon");
 closeIcon.addEventListener("click", () =>{
   optionsType.classList.add('hide');
-  //sideBarType.style.display="none";
   closeIcon.style.display = "none"
   openIcon.style.display = "block"
   sideBarType.style["background-color"] = "transparent";
 });
-
-
-
 
 
 //Mostrar barra estadísticos
@@ -414,23 +360,20 @@ const showStat = document.getElementById("showStat");
 const blockContentStat = document.querySelector(".blockContentStat");
 const closeStat = document.getElementById("closeStat");
 
- showStat.addEventListener("click", showOptionStat);
- closeStat.addEventListener("click",closeOptionStat);
-//  blockContentStat.addEventListener("click",closeOptionStat);
-
+showStat.addEventListener("click", showOptionStat);
+closeStat.addEventListener("click",closeOptionStat);
 function showOptionStat() {
-   blockContentStat.style.display="block";
-   closeStat.style.display="block";
-   sideBarStat.style["background-color"] = "rgba(228, 239, 240, 0.568)";
-  //  sideBarStat.style.display = "block";
- }
+  blockContentStat.style.display="block";
+  closeStat.style.display="block";
+  sideBarStat.style["background-color"] = "rgba(228, 239, 240, 0.568)";
+}
  
- function closeOptionStat() {
+function closeOptionStat() {
   blockContentStat.style.display="none";
   closeStat.style.display="none";
   showStat.style.display = "block"
   sideBarStat.style["background-color"] = "transparent";
- }
+}
  
  
  

@@ -1,5 +1,3 @@
-// estas funciones son de ejemplo
-
 export const filterData  = (data, property, value) => {
   const type = data.filter(elem=> elem[property].includes(value))
   return type

@@ -1,20 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 @import url("http://fonts.cdnfonts.com/css/sofia-pro");
 
-.color2 {color: #e9e56d;}
-.color3 {color: #002c9a;}
-.color4 {color: #007fe3;}
-
-.color5 {color: #00e4ff;}
-.color6 {color: #f8fd4f;}
-
 .color1 {color: #0f191c;}
 .color2 {color: #3a445d;}
 .color3 {color: #2693b3;}
 .color4 {color: #2bc9c8;}
 .color5 {color: #d1eaea;}
-
-
 
 *{
   box-sizing: border-box;
